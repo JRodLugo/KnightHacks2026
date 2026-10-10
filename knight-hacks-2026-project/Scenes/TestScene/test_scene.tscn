@@ -55,7 +55,6 @@ sources/0 = SubResource("TileSetAtlasSource_w5fok")
 [node name="TestScene" type="Node2D" unique_id=396629266]
 
 [node name="TempBackground" type="Sprite2D" parent="." unique_id=812215452]
-modulate = Color(0.5686275, 0.5686275, 0.5686275, 0.31764707)
 position = Vector2(967, 488)
 scale = Vector2(3.515, 3.515)
 texture = ExtResource("1_boajs")
