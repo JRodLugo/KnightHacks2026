@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="7_2lgyq"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_8fo74"]
 [ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="9_sbuu5"]
+[ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="10_mvt77"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("2_woiq1")
@@ -113,7 +114,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=599029206]
 position = Vector2(-10.107504, -10.736954)
 scale = Vector2(1.01286, 1.0081521)
-polygon = PackedVector2Array(-202.74582, -25.221039, 1240.6918, -16.293823, 1237.9692, 432.16278, -203.16904, 419.84167)
+polygon = PackedVector2Array(-181.02515, -40.099747, 1232.7933, -14.309998, 1237.9692, 432.16278, -203.16904, 419.84167)
 
 [node name="Player" parent="." unique_id=517375119 groups=["Player"] instance=ExtResource("9_sbuu5")]
 
@@ -130,4 +131,7 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1234916757]
-polygon = PackedVector2Array(2967, 198, 4391, 213, 4382.242, 687.1124, 2922.5713, 674.69086)
+polygon = PackedVector2Array(2933, 225, 4357, 232, 4382.242, 687.1124, 2922.5713, 674.69086)
+
+[node name="FinishFlower" parent="." unique_id=1087659301 instance=ExtResource("10_mvt77")]
+position = Vector2(3298, 97)

@@ -11,11 +11,11 @@
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("2_8ycom")
-position = Vector2(23.613708, 58.303894)
+position = Vector2(23.613708, 235.59918)
 
 [sub_resource type="Resource" id="Resource_fjxbk"]
 script = ExtResource("2_8ycom")
-position = Vector2(3637.5093, 32.92334)
+position = Vector2(3663.7754, 249.61755)
 
 [sub_resource type="Resource" id="Resource_3jhf0"]
 script = ExtResource("2_8ycom")
@@ -27,7 +27,7 @@ position = Vector2(26.57135, 674.69086)
 
 [sub_resource type="Resource" id="Resource_58k54"]
 script = ExtResource("2_8ycom")
-position = Vector2(23.613708, 58.303894)
+position = Vector2(23.613708, 235.59918)
 
 [sub_resource type="Resource" id="Resource_e0n1a"]
 script = ExtResource("3_a0tou")
@@ -46,15 +46,15 @@ _next_key = 7
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7uxm5"]
 _surfaces = [{
-"aabb": AABB(23.613708, 32.92334, 0, 3620.01, 641.7675, 1e-05),
-"attribute_data": PackedByteArray("/////zOyqEDKcEM9M7KoQMpwQz3/////y/qoQGMocz/L+qhAYyhzP//////Uux098lF6P9S7HT3yUXo//////ywtDD1/Da09LC0MPX8NrT0="),
+"aabb": AABB(23.613708, 235.59918, 0, 3640.1616, 439.09167, 1e-05),
+"attribute_data": PackedByteArray("/////wvqqUA1Obk+C+qpQDU5uT7/////y/qoQGMocz/L+qhAYyhzP//////Uux098lF6P9S7HT3yUXo//////ywtDD1J0q4+LC0MPUnSrj4="),
 "format": 34359742527,
 "index_count": 9,
 "index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray("JlhjRYCxA0IAAAAA+7ljRbbYI0QAAAAAIJLUQTesKEQAAAAA4Oi8QTA3aUIAAAAA/////////7//////////v/////////+//////////78=")
+"vertex_data": PackedByteArray("aPxkRRieeUMAAAAA+7ljRbbYI0QAAAAAIJLUQTesKEQAAAAA4Oi8QWSZa0MAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
 [sub_resource type="Resource" id="Resource_8ycom"]
@@ -86,4 +86,4 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=714857769]
 position = Vector2(3.365265, 338.28632)
 scale = Vector2(1.0081056, 0.61839306)
-polygon = PackedVector2Array(-50.34349, -873.20264, 3534.4949, -914.24536, 3540.56, 92.335754, -47.40963, 123.553406)
+polygon = PackedVector2Array(-50.34349, -586.4994, 3560.5498, -563.8303, 3540.56, 92.335754, -47.40963, 123.553406)
