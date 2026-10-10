@@ -7,7 +7,7 @@ const DE_ACCELERATION = 150.0
 
 var canMoveLeft: bool = true
 var canMoveRight: bool = true
-var jumpCharges: int = 2
+var jumpCharges: int = 4
 
 func _input(event):
 	if event.is_action_pressed("left") and canMoveLeft:
