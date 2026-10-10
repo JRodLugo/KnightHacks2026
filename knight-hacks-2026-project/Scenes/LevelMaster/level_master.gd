@@ -7,6 +7,7 @@ var player: Player
 func _ready():
 	currentSceneFile = load("res://Scenes/TestScene/test_scene.tscn")
 	restart()
+	level_finish()
 
 func restart():
 	%SwipeAnim.play("swipe_in")
@@ -28,6 +29,7 @@ func level_finish():
 	get_tree().paused = true
 	%LevelFinish.visible = true
 	%LevelFinish.get_node("LimbsKept").set_text("Limbs kept:   " + str(get_player_limb_count()))
+	%LevelFinish.get_node("NextLevel").grab_focus()
 	%LFAnim.play("slide_in")
 
 func _on_next_level_button_down() -> void:

@@ -1,5 +1,7 @@
 extends Control
 
+@export var prevContainer: Container
+
 const RESOLUTIONS := [
 	Vector2i(1920, 1080),
 	Vector2i(1600, 900),
@@ -9,10 +11,12 @@ const RESOLUTIONS := [
 
 func _ready():
 	DisplayServer.window_set_size(Vector2i(1920, 1080))
-	
 
 func _on_close_button_down() -> void:
 	visible = false
+	for i in prevContainer.get_children():
+		i.focus_mode = Control.FOCUS_ALL
+		i.grab_focus()
 
 func _on_resolution_item_selected(index: int) -> void:
 	var new_size: Vector2i = RESOLUTIONS[index]

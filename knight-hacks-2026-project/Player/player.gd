@@ -35,10 +35,8 @@ func _unhandled_input(event):
 		change_anim("walk")
 	
 	elif event.is_action_pressed("pause"):
-		finish.emit()
-		return
-		if get_tree().paused: return # it will try to re-pause if you use escape to resume
 		$UI/PauseMenu.visible = true
+		$UI/PauseMenu/VBoxContainer/Resume.grab_focus()
 		get_tree().paused = true
 
 func _physics_process(delta: float) -> void:
