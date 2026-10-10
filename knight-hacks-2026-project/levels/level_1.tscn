@@ -1,0 +1,15 @@
+[gd_scene format=4 uid="uid://du4nt3vy26cc7"]
+
+[ext_resource type="TileSet" uid="uid://dd2yusivm6ouo" path="res://assets/tileset.tres" id="1_vn7o3"]
+[ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="2_jirdo"]
+
+[node name="Level1" type="Node2D" unique_id=857158571]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=390877584]
+position = Vector2(-403, -216)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAABAAkAAQAAAAAAAAACAAkAAQAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAQAAAAAAAAAFAAkAAQAAAAAAAAAGAAkAAQAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQAAAAAAAAAKAAkAAQAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAQAAAAAAAAAPAAkAAQAAAAAAAAAQAAkAAQAAAAAAAAARAAkAAAAAAAAAAAAJAAgAAgAAAAAAABAKAAgAAwAAAAAAABALAAgAAQAAAAAAAAAMAAgAAQAAAAAAAAANAAgAAQAAAAAAAAAOAAgAAQAAAAAAAAA=")
+tile_set = ExtResource("1_vn7o3")
+
+[node name="Player" parent="." unique_id=517375119 instance=ExtResource("2_jirdo")]
+position = Vector2(-127, 761)
