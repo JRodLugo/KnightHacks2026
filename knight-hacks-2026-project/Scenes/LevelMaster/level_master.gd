@@ -1,16 +1,23 @@
 class_name LevelMaster extends Node2D
 
+@export var levels: Array[LevelData]
+
 var currentScene: Node2D
 var currentSceneFile: PackedScene
 var player: Player
+var levelEntry: PackedScene = preload("res://Scenes/LevelMaster/level_entry.tscn")
 
 func _ready():
-	currentSceneFile = load("res://Scenes/TestScene/test_scene.tscn")
-	restart()
+	for level in levels:
+		var newEntry = levelEntry.instantiate()
+		newEntry.get_node("LevelTitle").set_text(level.level_name)
+		newEntry.get_node("PlayLevel").button_down.connect(func(): switch(level.level_scene))
+		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
 
 func restart():
 	%SwipeAnim.play("swipe_in")
 	await %SwipeAnim.animation_finished
+	$UI/LevelSelect.visible = false
 	if currentScene: currentScene.queue_free()
 	currentScene = currentSceneFile.instantiate()
 	add_child(currentScene)
@@ -18,6 +25,7 @@ func restart():
 	
 	player = currentScene.get_node("Player")
 	$UI/DebugMenu.player = player
+	player.get_node("Camera2D").make_current()
 	player.restart_level.connect(restart)
 	player.finish.connect(level_finish)
 
