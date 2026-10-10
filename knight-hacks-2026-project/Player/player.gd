@@ -1,10 +1,12 @@
 class_name Player extends CharacterBody2D
 
-const SPEED = 1000.0
-const JUMP_VELOCITY = -1500.0
-const GRAVITY = 2000.0
-const DE_ACCELERATION = 200.0
+signal restart_level
+signal finish
 
+const SPEED = 600.0
+const JUMP_VELOCITY = -1000.0
+const GRAVITY = 2500.0
+const DE_ACCELERATION = 150.0
 
 var limbVFX = preload("res://Player/limb_explosion.tscn")
 var canMoveLeft: bool = true
@@ -30,6 +32,8 @@ func _unhandled_input(event):
 		%AnimationPlayer.play("walk")
 	
 	elif event.is_action_pressed("pause"):
+		finish.emit()
+		return
 		if get_tree().paused: return # it will try to re-pause if you use escape to resume
 		$UI/PauseMenu.visible = true
 		get_tree().paused = true
