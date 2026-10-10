@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://biylp83fubcv0"]
+
+[ext_resource type="Script" uid="uid://6snmv56vkqxa" path="res://node_2d.gd" id="1_xfssv"]
+[ext_resource type="Shape2D" uid="uid://bniw2nisdptks" path="res://fallbackCol.tres" id="2_ti7p7"]
+[ext_resource type="Texture2D" uid="uid://chq1j5v4ost82" path="res://image.png" id="2_ymmxf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gojnm"]
+
+[node name="EnemyPace" type="CharacterBody2D" unique_id=2133997665 node_paths=PackedStringArray("sprite", "col_shape", "nav_agent")]
+script = ExtResource("1_xfssv")
+sprite = NodePath("Sprite2D")
+col_form = ExtResource("2_ti7p7")
+col_shape = NodePath("CollisionShape2D")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=698039048]
+scale = Vector2(0.15150681, 0.15150681)
+texture = ExtResource("2_ymmxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2131564933]
+scale = Vector2(2.2289124, 2.2289124)
+shape = SubResource("CircleShape2D_gojnm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=357288714]
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://hax56dvhds6t"]
+
+[ext_resource type="Texture2D" uid="uid://u6ac5ivo026d" path="res://icon.svg" id="1_8nqel"]
+
+[node name="EnemyBase" type="CharacterBody2D" unique_id=927621434]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1513321075]
+texture = ExtResource("1_8nqel")
+
+[node name="ColShape" type="CollisionShape2D" parent="." unique_id=1704852957]
+
+[node name="NavAgent" type="NavigationAgent2D" parent="." unique_id=1885314500]
+debug_enabled = true
