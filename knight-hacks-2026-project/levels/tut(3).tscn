@@ -1,0 +1,98 @@
+[gd_scene format=4 uid="uid://bpmw1u6o7qwjw"]
+
+[ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="1_1fhn5"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="2_dob74"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_w5yer"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_g0nrn"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="5_0hpm6"]
+[ext_resource type="Texture2D" uid="uid://coxgh1mf8kxng" path="res://assets/sprite/grass singe.webp" id="6_2xio0"]
+[ext_resource type="Script" uid="uid://mc8hrt0xxmjg" path="res://addons/rmsmartshape/shapes/mesh_cache.gd" id="7_2fq5s"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_aho07"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_78mqv"]
+[ext_resource type="PackedScene" uid="uid://cxnae1fd2sugx" path="res://Scenes/essence.tscn" id="10_gs8i2"]
+
+[sub_resource type="Resource" id="Resource_na6ls"]
+script = ExtResource("3_w5yer")
+position = Vector2(23.613708, 58.303894)
+
+[sub_resource type="Resource" id="Resource_fjxbk"]
+script = ExtResource("3_w5yer")
+position = Vector2(1480.1279, 64.64966)
+
+[sub_resource type="Resource" id="Resource_3jhf0"]
+script = ExtResource("3_w5yer")
+position = Vector2(1486.2424, 687.1124)
+
+[sub_resource type="Resource" id="Resource_jl3d8"]
+script = ExtResource("3_w5yer")
+position = Vector2(26.57135, 674.69086)
+
+[sub_resource type="Resource" id="Resource_58k54"]
+script = ExtResource("3_w5yer")
+position = Vector2(23.613708, 58.303894)
+
+[sub_resource type="Resource" id="Resource_e64fh"]
+script = ExtResource("4_g0nrn")
+_points = {
+0: SubResource("Resource_na6ls"),
+1: SubResource("Resource_fjxbk"),
+2: SubResource("Resource_3jhf0"),
+3: SubResource("Resource_jl3d8"),
+4: SubResource("Resource_58k54")
+}
+_point_order = PackedInt32Array(0, 1, 2, 3, 4)
+_constraints = {
+Vector2i(0, 4): 15
+}
+_next_key = 7
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_go3as"]
+_surfaces = [{
+"aabb": AABB(23.613708, 58.303894, 0, 1462.6287, 628.80853, 1e-05),
+"attribute_data": PackedByteArray("/////4hJCUBA4789iEkJQEDjvz3/////uNoJQL7tfj+42glAvu1+P//////Uux098lF6P9S7HT3yUXo//////ywtDD1/Da09LC0MPX8NrT0="),
+"format": 34359742527,
+"index_count": 9,
+"index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("GAS5RKBMgUIAAAAAwse5RDLHK0QAAAAAIJLUQTesKEQAAAAA4Oi8QTA3aUIAAAAA/////////7//////////v/////////+//////////78=")
+}]
+
+[sub_resource type="Resource" id="Resource_wgjqt"]
+script = ExtResource("5_0hpm6")
+texture = ExtResource("6_2xio0")
+mesh = SubResource("ArrayMesh_go3as")
+z_index = -10
+
+[sub_resource type="Resource" id="Resource_a6b40"]
+script = ExtResource("7_2fq5s")
+meshes = Array[ExtResource("5_0hpm6")]([SubResource("Resource_wgjqt")])
+
+[sub_resource type="Resource" id="Resource_h68uj"]
+script = ExtResource("9_78mqv")
+_edge_meta_materials = Array[ExtResource("8_aho07")]([null])
+fill_textures = Array[Texture2D]([ExtResource("6_2xio0")])
+
+[node name="Node2D" type="Node2D" unique_id=1295468489]
+
+[node name="Player" parent="." unique_id=517375119 groups=["Player"] instance=ExtResource("1_1fhn5")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1816383902]
+position = Vector2(690, 119)
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2" unique_id=1495701650]
+position = Vector2(-748, -53)
+script = ExtResource("2_dob74")
+_points = SubResource("Resource_e64fh")
+_mesh_cache = SubResource("Resource_a6b40")
+shape_material = SubResource("Resource_h68uj")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=1179891868]
+position = Vector2(7, 33)
+polygon = PackedVector2Array(-731.3863, -27.696106, 725.1279, -21.350342, 731.24243, 601.1124, -728.42865, 588.69086)
+
+[node name="Area2D" parent="." unique_id=1973813749 instance=ExtResource("10_gs8i2")]
+position = Vector2(1662, -390)
