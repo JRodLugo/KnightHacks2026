@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://cib71abeubc1d"]
 
-[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/enemy_pace.tscn" id="1_yphe8"]
 [ext_resource type="Texture2D" uid="uid://u6ac5ivo026d" path="res://icon.svg" id="2_ss3ks"]
 [ext_resource type="Texture2D" uid="uid://b8wm6qn4a8uxu" path="res://Rough_TileMap.png" id="3_kikuh"]
+[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/BloomFly/enemy_pace.tscn" id="3_ss3ks"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufb2d"]
-vertices = PackedVector2Array(911.9219, 183.13281, -50.929688, 195.85938, -49.070313, -80, 910.0703, -80)
+vertices = PackedVector2Array(1275.4922, 188.28906, -292.8672, 214.79688, -241.96094, -271.17188, 984.40625, -295.8828)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-59, -90, -61, 206, 922, 193, 920, -90)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-251, -281, -304, 225, 1293, 198, 990, -306)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ss3ks"]
 texture = ExtResource("3_kikuh")
@@ -43,13 +43,8 @@ sources/2 = SubResource("TileSetAtlasSource_kikuh")
 position = Vector2(145, 179)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=245478171]
-position = Vector2(280, 650)
+position = Vector2(-95, -20)
 navigation_polygon = SubResource("NavigationPolygon_ufb2d")
-
-[node name="EnemyPace" parent="." unique_id=1382008709 instance=ExtResource("1_yphe8")]
-position = Vector2(385, 740)
-move_speed = 100.0
-enemy_positions = Array[Vector2]([Vector2(800, 1000), Vector2(1250, 800)])
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2135258954]
 visible = false
@@ -57,10 +52,16 @@ tile_map_data = PackedByteArray("AAD//wQAAQAAAAAAAAD//wUAAQAAAAAAAAD//wMAAQAAAAA
 tile_set = SubResource("TileSet_2ce4y")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=889362838]
+position = Vector2(-339, -731)
 tile_map_data = PackedByteArray("AAABAAQAAgAAAAAAAAADAAQAAgABAAAAAAAEAAQAAgAAAAEAAAAAAAQAAgABAAAAAAACAAQAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ufb2d")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1158522468]
-position = Vector2(696, 691.00006)
+position = Vector2(259.00003, 71)
 scale = Vector2(5.5886793, 1.2435814)
-zoom = Vector2(0.695, 0.695)
+enabled = false
+zoom = Vector2(1.085, 1.085)
+
+[node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("3_ss3ks")]
+position = Vector2(-56, 0)
+move_speed = 25.0

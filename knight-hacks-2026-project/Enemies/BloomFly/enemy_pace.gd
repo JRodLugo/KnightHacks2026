@@ -12,6 +12,7 @@ const FALLBACK_COL = preload("uid://bniw2nisdptks")
 
 # Assume the enemy's first "position" is its starting global position.
 @export var enemy_positions : Array[Vector2];
+@export var anim_player : AnimationPlayer;
 
 ## Unique Index number of this enemy type.
 var enemy_type : int;
@@ -24,11 +25,12 @@ var position_count : int;
 ## Where in the position array is the enemy moving to?
 var position_index : int = 0;
 
-@onready var wait_time : Timer = $WaitTime;
+@export var wait_time : Timer;
 
 
 
 func _ready() -> void:
+	print(global_position)
 	# Initializing
 	self.enemy_type = ENEMY_INDEX.Pace;
 	self.wait_time.one_shot = true;
@@ -62,7 +64,9 @@ func movement_handler(_delta) -> void:
 		next_pos = next_pos.normalized();
 		# commit to movement
 		# * 5 to make movespeed numbers nicer
-		velocity = next_pos * (move_speed*5);
+		print(next_pos)
+		print("V: " + str(velocity))
+		velocity = next_pos * (move_speed);
 		move_and_slide();
 	else:
 		is_moving = false;
@@ -92,9 +96,9 @@ func next_goal(cur_index) -> int:
 
 # When reaching the target
 func _on_navigation_agent_2d_target_reached() -> void:
-	#print("Finished");
+	print("Finished");
 	wait_time.start(cooldown_time);
 
 func _on_wait_time_timeout() -> void:
-	#print("Start moving");
+	print("Start moving");
 	position_index = next_goal(position_index);
