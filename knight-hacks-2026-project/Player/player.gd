@@ -88,7 +88,7 @@ func change_anim(anim: String):
 	%AnimationPlayer.play(anim)
 	%MainSprite.play(anim)
 
-func reset(): # no real use yet but we'll see
+func reset_player(): # no real use yet but we'll see
 	$RightArmPivot.visible = true
 	$LeftArmPivot.visible = true
 	$RightLegPivot.visible = true
