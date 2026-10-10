@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dgcng6ni84wm6"]
+
+[ext_resource type="Theme" uid="uid://dctcahscxrwhr" path="res://Scenes/SettingsMenu/settings.tres" id="1_4ibsa"]
+[ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_5sxhn"]
+
+[node name="LevelEntry" type="Panel" unique_id=1917596584]
+custom_minimum_size = Vector2(0, 60)
+custom_maximum_size = Vector2(-1, 60)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme = ExtResource("1_4ibsa")
+
+[node name="LevelTitle" type="Label" parent="." unique_id=748303486]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -18.0
+offset_right = 358.0
+offset_bottom = 19.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+text = "LEVEL TEXT PLACEHOLDER"
+
+[node name="PlayLevel" type="Button" parent="." unique_id=1250043954]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -20.0
+offset_right = -12.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_5sxhn")
+text = "PLAY"
+
+[connection signal="button_down" from="PlayLevel" to="." method="_on_play_level_button_down"]
