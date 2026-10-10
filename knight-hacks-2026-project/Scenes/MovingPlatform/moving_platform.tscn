@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cl3pnyiik20ha"]
+
+[ext_resource type="Script" uid="uid://qk8pgm4rb6tu" path="res://Scenes/MovingPlatform/moving_platform.gd" id="1_fqhap"]
+[ext_resource type="Texture2D" uid="uid://u6ac5ivo026d" path="res://icon.svg" id="1_xewek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3vf3"]
+size = Vector2(488, 120)
+
+[node name="MovingPlatform" type="StaticBody2D" unique_id=430009440]
+script = ExtResource("1_fqhap")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=343956931]
+modulate = Color(0.85, 1, 0, 1)
+scale = Vector2(3.859375, 1)
+texture = ExtResource("1_xewek")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1271314244]
+shape = SubResource("RectangleShape2D_x3vf3")
