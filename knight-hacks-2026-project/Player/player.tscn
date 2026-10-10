@@ -255,7 +255,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_x3vf3")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"jump",
 "speed": 5.0
 }]
 
@@ -312,8 +317,9 @@ texture = ExtResource("3_fhl08")
 position = Vector2(8, -29.500006)
 scale = Vector2(0.4873417, 0.6217765)
 sprite_frames = SubResource("SpriteFrames_lqcak")
-autoplay = "default"
-frame_progress = 0.0918438
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 0.49557498
 
 [node name="RightArmPivot" type="Node2D" parent="." unique_id=574629979]
 position = Vector2(30.000004, -30.000002)
