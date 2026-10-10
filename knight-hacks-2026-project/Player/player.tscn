@@ -694,3 +694,11 @@ debug_color = Color(1.6364455e-06, 0.6189321, 0.5768011, 0.41960785)
 
 [node name="PauseMenu" parent="UI" unique_id=1585771940 instance=ExtResource("6_fhl08")]
 visible = false
+
+[node name="Groundcast" type="RayCast2D" parent="." unique_id=1962018076]
+unique_name_in_owner = true
+target_position = Vector2(0, 130)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1402125157]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true

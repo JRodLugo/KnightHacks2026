@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 signal restart_level
-signal finish
+signal finish # this is called from the finish flower, disregard warning
 
 const SPEED = 800.0
 const JUMP_VELOCITY = -1000.0
@@ -35,6 +35,9 @@ func _unhandled_input(event):
 		$RightArmPivot.visible = false
 		limb_explode($RightArmPivot.global_position)
 		change_anim("walk")
+	elif event.is_action_pressed("stop") and %Groundcast.get_collider():
+		velocity.x = 0
+		change_anim("idle")
 	
 	elif event.is_action_pressed("pause"):
 		$UI/PauseMenu.visible = true
@@ -44,10 +47,15 @@ func _unhandled_input(event):
 func _physics_process(delta: float) -> void:
 	if dead: return
 	
-	var grounded = is_on_floor()
+	var grounded = %Groundcast.get_collider()
 	
 	if not grounded:
 		velocity += Vector2(0, GRAVITY) * delta
+	else:
+		if grounded is Conveyor:
+			velocity.x = grounded.conveyorSpeed
+		elif grounded is MovingPlatform and velocity.x == 0.0:
+			global_position.x = grounded.global_position.x
 
 	if Input.is_action_just_pressed("jump") and jumpCharges > 0:
 		velocity.y = JUMP_VELOCITY
