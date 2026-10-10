@@ -3,9 +3,9 @@ class_name Player extends CharacterBody2D
 signal restart_level
 signal finish
 
-const SPEED = 600.0
+const SPEED = 800.0
 const JUMP_VELOCITY = -1000.0
-const GRAVITY = 2500.0
+const GRAVITY = 1000.0
 const DE_ACCELERATION = 150.0
 
 var limbVFX = preload("res://Player/limb_explosion.tscn")
