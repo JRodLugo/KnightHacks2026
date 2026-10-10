@@ -100,3 +100,29 @@ func limb_explode(given_position: Vector2):
 	newParticle.restart()
 	await newParticle.finished
 	newParticle.queue_free()
+
+#take damage
+func takeDamage():
+	if jumpCharges > 0:
+		jumpCharges -= 1
+		%AnimationPlayer.play("jump")
+		
+		# weird ternary to remove right then left sequentially, im sorry
+		var selectedLeg = get_node(("Right" if jumpCharges == 1 else "Left") + "LegPivot")
+		selectedLeg.visible = false
+		limb_explode(selectedLeg.global_position)
+		
+		if jumpCharges == 0: $LegCollision.disabled = true
+	elif canMoveLeft:
+		canMoveLeft = false
+		$LeftArmPivot.visible = false
+		limb_explode($LeftArmPivot.global_position)
+	elif canMoveRight:
+		canMoveRight = false
+		$RightArmPivot.visible = false
+		limb_explode($RightArmPivot.global_position)
+	else:
+		kill()
+	
+		
+	
