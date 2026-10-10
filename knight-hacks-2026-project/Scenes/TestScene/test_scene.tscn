@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="5_egy0e"]
 [ext_resource type="PackedScene" uid="uid://dilyr60r4pnrt" path="res://Scenes/Conveyor/conveyor.tscn" id="6_wm1xt"]
 [ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="7_dvv8h"]
+[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/BloomFly/enemy_pace.tscn" id="8_8xnil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a7y3"]
 texture = ExtResource("1_fyvjo")
@@ -61,6 +62,11 @@ scenes/1/scene = ExtResource("6_wm1xt")
 tile_size = Vector2i(128, 64)
 sources/0 = SubResource("TileSetScenesCollectionSource_dvv8h")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ufb2d"]
+vertices = PackedVector2Array(574.1094, 74.00781, -147.07813, 74.97656, -148.90625, -149.11719, 576.8672, -157.86719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-159, -159, 587, -168, 584, 84, -157, 85)])
+
 [node name="TestScene" type="Node2D" unique_id=396629266]
 
 [node name="TempBackground" type="Sprite2D" parent="." unique_id=812215452]
@@ -94,3 +100,13 @@ tile_set = SubResource("TileSet_55par")
 [node name="MovingPlatform" parent="." unique_id=430009440 instance=ExtResource("7_dvv8h")]
 position = Vector2(-99, 1055)
 targetOffset = Vector2(-500, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1005694301]
+position = Vector2(308, 833)
+navigation_polygon = SubResource("NavigationPolygon_ufb2d")
+
+[node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("8_8xnil")]
+position = Vector2(308, 833)
+move_speed = 250.0
+cooldown_time = 0.2
+enemy_positions = Array[Vector2]([Vector2(200, 800), Vector2(550, 900), Vector2(800, 800)])

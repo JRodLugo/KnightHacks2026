@@ -90,13 +90,12 @@ _data = {
 
 [node name="EnemyPace" type="CharacterBody2D" unique_id=2133997665 node_paths=PackedStringArray("anim_player", "wait_time", "sprite", "col_shape", "nav_agent")]
 collision_layer = 4
-collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_ckxdx")
 anim_player = NodePath("AnimationPlayer")
 wait_time = NodePath("WaitTime")
 sprite = NodePath("Sprite2D")
-col_shape = NodePath("CollisionShape2D")
+col_shape = NodePath("Area2D/CollisionShape2D")
 nav_agent = NodePath("NavigationAgent2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=698039048]
@@ -104,12 +103,13 @@ scale = Vector2(0.745, 0.745)
 texture = ExtResource("2_tu0sn")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2131564933]
+[node name="Area2D" type="Area2D" parent="." unique_id=11425810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2131564933]
 position = Vector2(0, 13.45)
 shape = SubResource("CircleShape2D_ff2q2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=357288714]
-debug_enabled = true
 
 [node name="WaitTime" type="Timer" parent="." unique_id=1674102019]
 one_shot = true
@@ -118,5 +118,6 @@ one_shot = true
 libraries/ = SubResource("AnimationLibrary_hurxv")
 libraries/bloomfly = SubResource("AnimationLibrary_p6rp5")
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

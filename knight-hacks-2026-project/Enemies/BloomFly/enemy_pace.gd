@@ -2,7 +2,7 @@ extends Enemy
 # Enemy that walks back and forth along set positions.
 
 const DEFAULT_SPEED : float = 10.0;
-const DEFAULT_COOLDOWN : float= 2.0;
+const DEFAULT_COOLDOWN : float = 2.0;
 ## Use a default collision form if there is none provided.
 const FALLBACK_COL = preload("uid://bniw2nisdptks")
 ## The enemy's speed.
@@ -117,3 +117,9 @@ func _on_navigation_agent_2d_target_reached() -> void:
 func _on_wait_time_timeout() -> void:
 	print("Start moving");
 	position_index = next_goal(position_index);
+
+# damage player
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Hurt player")
+	if body is Player:
+		body.damaged.emit();
