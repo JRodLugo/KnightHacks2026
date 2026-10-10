@@ -1,9 +1,9 @@
 class_name Player extends CharacterBody2D
 
-const SPEED = 800.0
+const SPEED = 1000.0
 const JUMP_VELOCITY = -1500.0
 const GRAVITY = 2000.0
-const DE_ACCELERATION = 150.0
+const DE_ACCELERATION = 200.0
 
 var canMoveLeft: bool = true
 var canMoveRight: bool = true
@@ -12,12 +12,14 @@ var jumpCharges: int = 2
 func _input(event):
 	if event.is_action_pressed("left") and canMoveLeft:
 		velocity.x = -1.0 * SPEED
+		velocity.y = 0
 		canMoveLeft = false
 		scale.x = -1
 		$LeftArmPivot.visible = false
 		%AnimationPlayer.play("walk")
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
+		velocity.y = 0
 		canMoveRight = false
 		scale.x = 1
 		$RightArmPivot.visible = false
