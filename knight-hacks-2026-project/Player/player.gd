@@ -4,8 +4,8 @@ signal restart_level
 signal finish # this is called from the finish flower, disregard warning
 
 const SPEED = 800.0
-const JUMP_VELOCITY = -1000.0
-const GRAVITY = 1000.0
+const JUMP_VELOCITY = -1500.0
+const GRAVITY = 900.0
 const DE_ACCELERATION = 150.0
 
 var limbVFX = preload("res://Player/limb_explosion.tscn")

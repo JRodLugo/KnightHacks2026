@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://mc8hrt0xxmjg" path="res://addons/rmsmartshape/shapes/mesh_cache.gd" id="9_ucjya"]
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="10_l36fa"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_tcm2s"]
-[ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="12_c1xn4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
 texture = ExtResource("3_tx6u6")
@@ -880,11 +879,11 @@ position = Vector2(23.613708, 58.303894)
 
 [sub_resource type="Resource" id="Resource_fjxbk"]
 script = ExtResource("5_1em4s")
-position = Vector2(1480.1279, 64.64966)
+position = Vector2(3637.5093, 32.92334)
 
 [sub_resource type="Resource" id="Resource_3jhf0"]
 script = ExtResource("5_1em4s")
-position = Vector2(1486.2424, 687.1124)
+position = Vector2(3643.6238, 655.3861)
 
 [sub_resource type="Resource" id="Resource_jl3d8"]
 script = ExtResource("5_1em4s")
@@ -911,15 +910,15 @@ _next_key = 7
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rujob"]
 _surfaces = [{
-"aabb": AABB(23.613708, 58.303894, 0, 1462.6287, 628.80853, 1e-05),
-"attribute_data": PackedByteArray("/////4hJCUBA4789iEkJQEDjvz3/////uNoJQL7tfj+42glAvu1+P//////Uux098lF6P9S7HT3yUXo//////ywtDD1/Da09LC0MPX8NrT0="),
+"aabb": AABB(23.613708, 32.92334, 0, 3620.01, 641.7675, 1e-05),
+"attribute_data": PackedByteArray("/////zOyqEDKcEM9M7KoQMpwQz3/////y/qoQGMocz/L+qhAYyhzP//////Uux098lF6P9S7HT3yUXo//////ywtDD1/Da09LC0MPX8NrT0="),
 "format": 34359742527,
 "index_count": 9,
 "index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray("GAS5RKBMgUIAAAAAwse5RDLHK0QAAAAAIJLUQTesKEQAAAAA4Oi8QTA3aUIAAAAA/////////7//////////v/////////+//////////78=")
+"vertex_data": PackedByteArray("JlhjRYCxA0IAAAAA+7ljRbbYI0QAAAAAIJLUQTesKEQAAAAA4Oi8QTA3aUIAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
 [sub_resource type="Resource" id="Resource_3e35u"]
@@ -948,6 +947,7 @@ tile_set = SubResource("TileSet_eb70v")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1608625673]
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D" unique_id=1033871373]
+position = Vector2(-71, -260)
 script = ExtResource("4_h1y8g")
 _points = SubResource("Resource_e0n1a")
 _mesh_cache = SubResource("Resource_fiah5")
@@ -956,9 +956,6 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=257258134]
-position = Vector2(3.365265, 0)
-scale = Vector2(1.0081056, 1)
-polygon = PackedVector2Array(20.085636, 58.303894, 1464.8887, 64.64966, 1470.9541, 687.1124, 23.019497, 674.69086)
-
-[node name="MovingPlatform" parent="." unique_id=430009440 instance=ExtResource("12_c1xn4")]
-position = Vector2(2586, 132)
+position = Vector2(3.365265, 338.28632)
+scale = Vector2(1.0081056, 0.61839306)
+polygon = PackedVector2Array(-20.201519, -619.8102, 3542.9172, -611.72473, 3540.56, 92.335754, -47.40963, 123.553406)
