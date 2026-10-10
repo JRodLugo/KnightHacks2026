@@ -8,6 +8,8 @@
 
 [node name="EnemyPace" type="CharacterBody2D" unique_id=2133997665 node_paths=PackedStringArray("sprite", "col_shape", "nav_agent")]
 script = ExtResource("1_xfssv")
+move_speed = 10000
+enemy_positions = Array[Vector2]([Vector2(200, 0)])
 sprite = NodePath("Sprite2D")
 col_form = ExtResource("2_ti7p7")
 col_shape = NodePath("CollisionShape2D")
@@ -23,4 +25,8 @@ shape = SubResource("CircleShape2D_gojnm")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=357288714]
 
+[node name="WaitTime" type="Timer" parent="." unique_id=1674102019]
+one_shot = true
+
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]
