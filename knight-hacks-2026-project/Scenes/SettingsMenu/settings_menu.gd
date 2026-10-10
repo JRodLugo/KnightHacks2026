@@ -10,7 +10,8 @@ const RESOLUTIONS := [
 ]
 
 func _ready():
-	DisplayServer.window_set_size(Vector2i(1920, 1080))
+	pass
+	#DisplayServer.window_set_size(Vector2i(1920, 1080))
 
 func _on_close_button_down() -> void:
 	visible = false
