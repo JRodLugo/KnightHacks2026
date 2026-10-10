@@ -7,7 +7,6 @@ var player: Player
 func _ready():
 	currentSceneFile = load("res://Scenes/TestScene/test_scene.tscn")
 	restart()
-	level_finish()
 
 func restart():
 	%SwipeAnim.play("swipe_in")

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://u6ac5ivo026d" path="res://icon.svg" id="1_fyvjo"]
 [ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="2_4a7y3"]
 [ext_resource type="Texture2D" uid="uid://bdnrktm2sismw" path="res://assets/tilemaps/Rough_TileMapV2.png" id="4_w5fok"]
+[ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="5_egy0e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a7y3"]
 texture = ExtResource("1_fyvjo")
@@ -74,3 +75,6 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(151, 1016)
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAIAAAAAAAQAAAABAP//AAAAAAEAAAABAAAAAAAAAAIAAAABAAEAAAAAAAMAAAABAAIAAAAAAAQAAAACAP//AAABAAEAAAACAAAAAAABAAIAAAACAAEAAAABAAMAAAACAAIAAAABAAQAAAADAP//AAABAAEAAAADAAAAAAABAAIAAAADAAEAAAABAAMAAAADAAIAAAABAAQAAAAEAP//AAAAAAEAAAAEAAAAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAIAAAAAAAQAAAAFAP//AAABAAEAAAAFAAAAAAABAAIAAAAFAAEAAAABAAMAAAAFAAIAAAABAAQAAAD/////AAABAAEAAAD//wAAAAABAAIAAAD//wEAAAABAAMAAAD//wIAAAABAAQAAAA=")
 tile_set = SubResource("TileSet_egy0e")
+
+[node name="FinishFlower" parent="." unique_id=1087659301 instance=ExtResource("5_egy0e")]
+position = Vector2(1757, 899)

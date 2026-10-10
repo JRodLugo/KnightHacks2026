@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://pnlptn7ujrlt"]
+
+[ext_resource type="Texture2D" uid="uid://b7ivtjo4pvvss" path="res://Scenes/FinishFlower/Rough_TileMapV3.png" id="1_47twy"]
+[ext_resource type="Script" uid="uid://dx5d0rldcjh0k" path="res://Scenes/FinishFlower/finish_flower.gd" id="1_aqgyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqcak"]
+size = Vector2(122, 192)
+
+[node name="FinishFlower" type="Area2D" unique_id=1087659301]
+script = ExtResource("1_aqgyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105484877]
+scale = Vector2(1.7087379, 1.708738)
+texture = ExtResource("1_47twy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74862897]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_lqcak")
+debug_color = Color(0.6896485, 0.49873078, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
