@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://deki1f6xnu440"]
+
+[ext_resource type="Script" uid="uid://dp56x58ot1m8x" path="res://Scenes/EndScreen/end_screen.gd" id="1_432hg"]
+
+[node name="EndScreen" type="Control" unique_id=702668456]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_432hg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=968893998]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=90973899]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -88.0
+offset_right = 294.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 73
+text = "- END OF DEMO -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThankYou" type="Label" parent="." unique_id=1053892943]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -1.0
+offset_right = 294.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "Thank you for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
