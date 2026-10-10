@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cxnae1fd2sugx"]
+
+[ext_resource type="Script" uid="uid://b6kelb64rdlj0" path="res://Scenes/Essence/essence.gd" id="1_uxs5l"]
+[ext_resource type="Texture2D" uid="uid://7lqqxe4dgjhj" path="res://Scenes/Essence/Blight_Crystal_Sheet.png" id="2_gjlnl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kcv2"]
+radius = 48.0
+height = 250.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56opg"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(0, 0, 165, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb0rc"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(165, 0, 165, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhjsd"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(330, 0, 165, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_132hr"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(495, 0, 165, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id0ma"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(660, 0, 165, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twwos"]
+atlas = ExtResource("2_gjlnl")
+region = Rect2(825, 0, 165, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqcak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56opg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb0rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhjsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_132hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id0ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twwos")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Essence" type="Area2D" unique_id=1973813749]
+script = ExtResource("1_uxs5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=134660133]
+position = Vector2(2, -3)
+shape = SubResource("CapsuleShape2D_4kcv2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591245411]
+position = Vector2(-11, -15)
+sprite_frames = SubResource("SpriteFrames_lqcak")
+autoplay = "default"
+frame_progress = 0.951328
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
