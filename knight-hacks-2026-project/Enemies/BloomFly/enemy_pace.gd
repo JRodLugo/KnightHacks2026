@@ -57,14 +57,23 @@ func _physics_process(delta: float) -> void:
 	movement_handler(delta);
 	
 
-func movement_handler(_delta) -> void:
+func movement_handler(delta) -> void:
 	if (!nav_agent.is_target_reached()):
 		is_moving = true;
 		var next_pos : Vector2 = to_local(nav_agent.get_next_path_position());
 		next_pos = next_pos.normalized();
+		var dist_to_target : float = global_position.distance_to(enemy_positions[position_index]);
+		
+		
+		if dist_to_target < 100: # slow down if approaching target
+			velocity = velocity.lerp(next_pos, delta);
+		else:
+			# * 5 to make movespeed export numbers nicer
+			velocity = next_pos * (move_speed*5);
+		
+		
+		
 		# commit to movement
-		# * 5 to make movespeed numbers nicer
-		velocity = next_pos * (move_speed*5);
 		move_and_slide();
 		
 		anim_player.play("bloomfly/moving");
