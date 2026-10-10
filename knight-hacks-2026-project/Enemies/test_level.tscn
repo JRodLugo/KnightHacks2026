@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cib71abeubc1d"]
 
-[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://enemy_pace.tscn" id="1_gojnm"]
+[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/enemy_pace.tscn" id="1_yphe8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ufb2d"]
-vertices = PackedVector2Array(973.03125, 199.96094, -50.929688, 196.03125, -49.0625, -80.14844, 973.96094, -96.828125)
+vertices = PackedVector2Array(573.03125, 195.00781, -50.929688, 195.97656, -49.0625, -80.03906, 573.96094, -82.953125)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-59, -90, -61, 206, 983, 210, 984, -107)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-59, -90, -61, 206, 583, 205, 584, -93)])
 
 [node name="testLevel" type="Node2D" unique_id=1604091972]
 position = Vector2(145, 179)
@@ -14,4 +14,4 @@ position = Vector2(145, 179)
 position = Vector2(-41, -56)
 navigation_polygon = SubResource("NavigationPolygon_ufb2d")
 
-[node name="EnemyPace" parent="." unique_id=1382008709 instance=ExtResource("1_gojnm")]
+[node name="EnemyPace" parent="." unique_id=1382008709 instance=ExtResource("1_yphe8")]

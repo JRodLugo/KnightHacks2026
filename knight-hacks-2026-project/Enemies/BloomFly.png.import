@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3jdvqifrhihg"
-path="res://.godot/imported/BloomFly.png-8f5977b10d76272747dc407fd62d5268.ctex"
+path="res://.godot/imported/BloomFly.png-6bee60c0c6313a5ddbe42d688bb7147b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BloomFly.png"
-dest_files=["res://.godot/imported/BloomFly.png-8f5977b10d76272747dc407fd62d5268.ctex"]
+source_file="res://Enemies/BloomFly.png"
+dest_files=["res://.godot/imported/BloomFly.png-6bee60c0c6313a5ddbe42d688bb7147b.ctex"]
 
 [params]
 
