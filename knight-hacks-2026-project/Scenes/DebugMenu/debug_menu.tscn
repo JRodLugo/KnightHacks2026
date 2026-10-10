@@ -39,7 +39,7 @@ offset_top = -23.0
 offset_right = 164.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 13
-text = "press 1 to open/close"
+text = "press 0 to open/close"
 
 [connection signal="button_down" from="VBoxContainer/ResetPlayer" to="." method="_on_reset_player_button_down"]
 [connection signal="button_down" from="VBoxContainer/RestartLevel" to="." method="_on_restart_level_button_down"]

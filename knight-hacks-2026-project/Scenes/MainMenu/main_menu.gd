@@ -4,6 +4,8 @@ func _ready():
 	$VBoxContainer/Play.grab_focus()
 
 func _on_play_button_down() -> void:
+	$BlackScreen.visible = true
+	await get_tree().create_tween().tween_property($BlackScreen, "modulate:a", 1, .5).finished
 	get_tree().change_scene_to_file("res://Scenes/LevelMaster/level_master.tscn")
 
 func _on_settings_button_down() -> void:

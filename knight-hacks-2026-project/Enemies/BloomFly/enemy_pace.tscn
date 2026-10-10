@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://biylp83fubcv0"]
+
+[ext_resource type="Script" uid="uid://6snmv56vkqxa" path="res://Enemies/BloomFly/enemy_pace.gd" id="1_ckxdx"]
+[ext_resource type="Texture2D" uid="uid://dleyg20kwsxqh" path="res://Enemies/BloomFly/BloomFly_sprSheet.png" id="2_tu0sn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ff2q2"]
+radius = 14.1
+
+[sub_resource type="Animation" id="Animation_ptqja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hurxv"]
+_data = {
+&"RESET": SubResource("Animation_ptqja")
+}
+
+[sub_resource type="Animation" id="Animation_oai35"]
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.53333336),
+"transitions": PackedFloat32Array(1, 1.2311447, 1),
+"update": 0,
+"values": [0.0, -5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7c2hc"]
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6rp5"]
+_data = {
+&"idle": SubResource("Animation_oai35"),
+&"moving": SubResource("Animation_7c2hc")
+}
+
+[node name="EnemyPace" type="CharacterBody2D" unique_id=2133997665 node_paths=PackedStringArray("anim_player", "wait_time", "sprite", "col_shape", "nav_agent")]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_ckxdx")
+anim_player = NodePath("AnimationPlayer")
+wait_time = NodePath("WaitTime")
+sprite = NodePath("Sprite2D")
+col_shape = NodePath("Area2D/CollisionShape2D")
+nav_agent = NodePath("NavigationAgent2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=698039048]
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("2_tu0sn")
+hframes = 8
+
+[node name="Area2D" type="Area2D" parent="." unique_id=11425810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2131564933]
+position = Vector2(0, 13.45)
+shape = SubResource("CircleShape2D_ff2q2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=357288714]
+
+[node name="WaitTime" type="Timer" parent="." unique_id=1674102019]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1209716908]
+libraries/ = SubResource("AnimationLibrary_hurxv")
+libraries/bloomfly = SubResource("AnimationLibrary_p6rp5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="WaitTime" to="." method="_on_wait_time_timeout"]

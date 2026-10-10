@@ -1,13 +1,18 @@
 extends Enemy
 # Enemy that walks back and forth along set positions.
 
+const DEFAULT_SPEED : float = 10.0;
+const DEFAULT_COOLDOWN : float = 2.0;
+## Use a default collision form if there is none provided.
+const FALLBACK_COL = preload("uid://bniw2nisdptks")
 ## The enemy's speed.
-@export var move_speed : int = 1000;
+@export var move_speed : float = DEFAULT_SPEED;
 ## How long (in seconds) will the enemy wait to move again?
-@export var cooldown_time : int = 2;
+@export var cooldown_time : float = DEFAULT_COOLDOWN;
 
 # Assume the enemy's first "position" is its starting global position.
 @export var enemy_positions : Array[Vector2];
+@export var anim_player : AnimationPlayer;
 
 ## Unique Index number of this enemy type.
 var enemy_type : int;
@@ -20,19 +25,21 @@ var position_count : int;
 ## Where in the position array is the enemy moving to?
 var position_index : int = 0;
 
-@onready var wait_time : Timer = $WaitTime;
-## Use a default collision form if there is none provided.
-const FALLBACK_COL = preload("uid://bniw2nisdptks")
+@export var wait_time : Timer;
+
+
 
 func _ready() -> void:
+	#print(global_position)
 	# Initializing
 	self.enemy_type = ENEMY_INDEX.Pace;
 	self.wait_time.one_shot = true;
 	self.position_count = enemy_positions.size();
 	self.col_form = self.col_shape.shape
+	#self.nav_agent.max_speed = move_speed;
 	# Use fallback collision form if it doesn't exist.
 	if !self.col_form: 
-		push_warning("No collision form for Node " + self.name + "!");
+		push_warning("No collision form for Enemy Node " + self.name + "! Using fallback shape.");
 		col_form = FALLBACK_COL;
 	
 	
@@ -47,16 +54,37 @@ func _ready() -> void:
 	position_index = next_goal(self.position_index);
 
 func _physics_process(delta: float) -> void:
+	movement_handler(delta);
+	
+
+func movement_handler(delta) -> void:
 	if (!nav_agent.is_target_reached()):
 		is_moving = true;
-		var next_pos = to_local(nav_agent.get_next_path_position());
+		var next_pos : Vector2 = to_local(nav_agent.get_next_path_position());
 		next_pos = next_pos.normalized();
-		#print(next_pos)
+		var dist_to_target : float = global_position.distance_to(enemy_positions[position_index]);
+		
+		
+		if dist_to_target < 100: # slow down if approaching target
+			velocity = velocity.lerp(next_pos, delta);
+		else:
+			# * 5 to make movespeed export numbers nicer
+			velocity = next_pos * (move_speed*5);
+		
+		
+		
 		# commit to movement
-		velocity = next_pos * move_speed * delta;
 		move_and_slide();
+		
+		anim_player.play("bloomfly/moving");
+		# flip sprite based on direction
+		if (abs(velocity.x) != velocity.x):
+			sprite.flip_h = true;
+		else:
+			sprite.flip_h = false;
 	else:
 		is_moving = false;
+		anim_player.play("bloomfly/idle");
 		velocity = Vector2(); # stop moving immediately
 
 ## Set the position of this Enemy's next goal.
@@ -83,9 +111,15 @@ func next_goal(cur_index) -> int:
 
 # When reaching the target
 func _on_navigation_agent_2d_target_reached() -> void:
-	#print("Finished");
+	print("Finished");
 	wait_time.start(cooldown_time);
 
 func _on_wait_time_timeout() -> void:
-	#print("Start moving");
+	print("Start moving");
 	position_index = next_goal(position_index);
+
+# damage player
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Hurt player")
+	if body is Player:
+		body.damaged.emit();
