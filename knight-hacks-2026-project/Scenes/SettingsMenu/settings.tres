@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dctcahscxrwhr"]
 
+[ext_resource type="FontFile" uid="uid://begw8hs5bbsm1" path="res://assets/fonts/QALO.ttf" id="1_kq3t6"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdrbc"]
 bg_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 expand_margin_top = 3.0
@@ -23,6 +25,8 @@ border_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 [resource]
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_bdrbc")
 HSlider/styles/slider = SubResource("StyleBoxFlat_r3on5")
+Label/font_sizes/font_size = 43
+Label/fonts/font = ExtResource("1_kq3t6")
 OptionButton/colors/font_color = Color(1, 1, 1, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_kq3t6")
 VSeparator/constants/separation = 10

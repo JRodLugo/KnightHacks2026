@@ -13,6 +13,8 @@ func _ready():
 		newEntry.get_node("LevelTitle").set_text(level.level_name)
 		newEntry.get_node("PlayLevel").button_down.connect(func(): switch(level.level_scene))
 		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
+	%SwipeAnim.play("swipe_out")
+	
 
 func restart():
 	%SwipeAnim.play("swipe_in")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="KnightHacks_2026_Project"
-run/main_scene="uid://ciyovrn17635u"
+run/main_scene="uid://c5e1sxdlo6g4t"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://77glkvansy2v"
 
