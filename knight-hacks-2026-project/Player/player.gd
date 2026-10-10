@@ -102,6 +102,6 @@ func takeDamage():
 		canMoveRight = false
 		$RightArmPivot.visible = false
 		limb_explode($RightArmPivot.global_position)
+	
 		
-		
-		
+	
