@@ -30,7 +30,7 @@ var position_index : int = 0;
 
 
 func _ready() -> void:
-	print(global_position)
+	#print(global_position)
 	# Initializing
 	self.enemy_type = ENEMY_INDEX.Pace;
 	self.wait_time.one_shot = true;
@@ -64,12 +64,18 @@ func movement_handler(_delta) -> void:
 		next_pos = next_pos.normalized();
 		# commit to movement
 		# * 5 to make movespeed numbers nicer
-		print(next_pos)
-		print("V: " + str(velocity))
-		velocity = next_pos * (move_speed);
+		velocity = next_pos * (move_speed*5);
 		move_and_slide();
+		
+		anim_player.play("bloomfly/moving");
+		# flip sprite based on direction
+		if (abs(velocity.x) != velocity.x):
+			sprite.flip_h = true;
+		else:
+			sprite.flip_h = false;
 	else:
 		is_moving = false;
+		anim_player.play("bloomfly/idle");
 		velocity = Vector2(); # stop moving immediately
 
 ## Set the position of this Enemy's next goal.

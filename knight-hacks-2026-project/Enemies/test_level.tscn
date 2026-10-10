@@ -65,3 +65,4 @@ zoom = Vector2(1.085, 1.085)
 [node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("3_ss3ks")]
 position = Vector2(-56, 0)
 move_speed = 25.0
+enemy_positions = Array[Vector2]([Vector2(200, 300), Vector2(600, 250), Vector2(700, 199)])
