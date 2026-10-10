@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dq6fuevvkm278" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bvexkysvlrxbb" path="res://Player/Assets/Mushroom_leftArm_Concept.png" id="2_gwnis"]
 [ext_resource type="Texture2D" uid="uid://ckcngdy12hyq7" path="res://Player/Assets/Mushroom_Leg_Concept.png" id="3_fhl08"]
-[ext_resource type="Texture2D" uid="uid://77glkvansy2v" path="res://Player/Assets/Mushroom_body_Concept.png" id="4_k53q1"]
+[ext_resource type="Texture2D" uid="uid://bc7srrjuxuda2" path="res://Player/Assets/Mush_IDL_Sheet.png" id="4_fhl08"]
 [ext_resource type="Texture2D" uid="uid://rls7ofx0vnpu" path="res://Player/Assets/Mushroom_RightArm_Concept.png" id="5_k53q1"]
+[ext_resource type="PackedScene" uid="uid://cpyddf2qand11" path="res://Scenes/PauseMenu/pause_menu.tscn" id="6_fhl08"]
 
 [sub_resource type="Animation" id="Animation_l8h54"]
 length = 0.001
@@ -222,6 +223,42 @@ _data = {
 &"walk": SubResource("Animation_btcbx")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtle1"]
+atlas = ExtResource("4_fhl08")
+region = Rect2(0, 0, 316, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od3ui"]
+atlas = ExtResource("4_fhl08")
+region = Rect2(350, 0, 316, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tjw"]
+atlas = ExtResource("4_fhl08")
+region = Rect2(700, 0, 316, 349)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vf3"]
+atlas = ExtResource("4_fhl08")
+region = Rect2(0, 349, 316, 349)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqcak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_od3ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vf3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btcbx"]
 radius = 63.0
 height = 176.0
@@ -271,10 +308,12 @@ rotation = 0.10774994
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_fhl08")
 
-[node name="Main" type="Sprite2D" parent="." unique_id=1189632573]
-position = Vector2(0, -35)
-scale = Vector2(0.17714284, 0.2611111)
-texture = ExtResource("4_k53q1")
+[node name="Main" type="AnimatedSprite2D" parent="." unique_id=1076028552]
+position = Vector2(8, -29.500006)
+scale = Vector2(0.4873417, 0.6217765)
+sprite_frames = SubResource("SpriteFrames_lqcak")
+autoplay = "default"
+frame_progress = 0.0918438
 
 [node name="RightArmPivot" type="Node2D" parent="." unique_id=574629979]
 position = Vector2(30.000004, -30.000002)
@@ -296,3 +335,8 @@ debug_color = Color(0.82364446, 0.0016749501, 0.96007365, 0.41960785)
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_4ntmi")
 debug_color = Color(1.6364455e-06, 0.6189321, 0.5768011, 0.41960785)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1526435864]
+
+[node name="PauseMenu" parent="UI" unique_id=1585771940 instance=ExtResource("6_fhl08")]
+visible = false

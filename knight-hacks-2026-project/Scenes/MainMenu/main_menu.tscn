@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://c5e1sxdlo6g4t"]
+
+[ext_resource type="Script" uid="uid://d0hvehogubkjw" path="res://Scenes/MainMenu/main_menu.gd" id="1_0qgbs"]
+[ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="1_uqdog"]
+[ext_resource type="Texture2D" uid="uid://p42it4ggy30a" path="res://Scenes/TestScene/TEMP_Background.jpg" id="1_v763k"]
+[ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="3_qgdf6"]
+[ext_resource type="PackedScene" uid="uid://cla4y1qhotjkp" path="res://Scenes/SettingsMenu/settings_menu.tscn" id="5_adu2g"]
+
+[node name="MainMenu" type="Control" unique_id=1464975273]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qgbs")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1018370755]
+modulate = Color(0.65012825, 0.6501283, 0.65012825, 0.42745098)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v763k")
+
+[node name="Title" type="Label" parent="." unique_id=1964878756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -208.0
+offset_right = 250.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+theme_override_colors/font_outline_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "- THE MUSHROOM GAME -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="helloiammushroomguy" type="Label" parent="." unique_id=53261206]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -339.0
+offset_right = 414.0
+offset_bottom = -284.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "hello i am mushroom guy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=54292232]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -108.0
+offset_right = 204.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=946174777]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uqdog")
+text = "Play"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=731847994]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uqdog")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=51648869]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uqdog")
+text = "Quit"
+
+[node name="Player" parent="." unique_id=517375119 instance=ExtResource("3_qgdf6")]
+process_mode = 4
+position = Vector2(171, 501)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1876376123]
+layout_mode = 1
+offset_left = -113.6445
+offset_top = 104.6445
+offset_right = 206.11954
+offset_bottom = 252.6445
+rotation = -0.7853982
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1134612248]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -219.64453
+offset_top = 10.644653
+offset_right = 100.11963
+offset_bottom = 158.64465
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.7853982
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=256981800]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -430.99994
+offset_right = 327.11694
+offset_bottom = -282.99994
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -2.3561945
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="SettingsMenu" parent="." unique_id=1938883888 instance=ExtResource("5_adu2g")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]

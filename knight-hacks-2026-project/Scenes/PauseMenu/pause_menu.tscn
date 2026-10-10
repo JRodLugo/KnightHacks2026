@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://cpyddf2qand11"]
+
+[ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="1_bgicp"]
+[ext_resource type="Script" uid="uid://qfuh5wfstihi" path="res://Scenes/PauseMenu/pause_menu.gd" id="1_pmgrh"]
+[ext_resource type="PackedScene" uid="uid://cla4y1qhotjkp" path="res://Scenes/SettingsMenu/settings_menu.tscn" id="3_7flpu"]
+
+[node name="PauseMenu" type="Control" unique_id=1585771940]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmgrh")
+
+[node name="Background" type="ColorRect" parent="." unique_id=174115010]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="Title" type="Label" parent="." unique_id=1486801290]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -452.99994
+offset_top = -246.0
+offset_right = 47.0
+offset_bottom = -191.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.11819059
+theme_override_colors/font_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+theme_override_colors/font_outline_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 40
+text = "- PAUSED -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=517773754]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -355.22217
+offset_top = -220.0
+offset_right = -36.0
+offset_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 9
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=491378232]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_bgicp")
+text = "Resume"
+
+[node name="BackToMenu" type="Button" parent="VBoxContainer" unique_id=1446968580]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_bgicp")
+text = "Back To Menu"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1332218831]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_bgicp")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=423882806]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_bgicp")
+text = "Quit"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1614719523]
+layout_mode = 0
+offset_left = -113.6445
+offset_top = 104.6445
+offset_right = 206.11954
+offset_bottom = 214.05698
+rotation = -0.7853982
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=625229680]
+layout_mode = 0
+offset_left = -47.94403
+offset_top = 470.944
+offset_right = 271.82
+offset_bottom = 573.7683
+rotation = 0.7853982
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=804280005]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.278442
+offset_top = -462.2784
+offset_right = 358.3954
+offset_bottom = -358.51285
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -2.3561945
+color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[node name="SettingsMenu" parent="." unique_id=1938883888 instance=ExtResource("3_7flpu")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_button_down"]
+[connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="VBoxContainer/Quit" to="." method="_on_quit_button_down"]
