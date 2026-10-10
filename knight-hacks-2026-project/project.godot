@@ -20,6 +20,10 @@ config/icon="uid://77glkvansy2v"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Player=""
+
 [input]
 
 left={
@@ -60,4 +64,5 @@ pause={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"

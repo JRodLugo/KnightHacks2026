@@ -16,6 +16,7 @@ var jumpCharges: int = 2
 func _unhandled_input(event):
 	if event.is_action_pressed("left") and canMoveLeft:
 		velocity.x = -1.0 * SPEED
+		velocity.y = 0
 		canMoveLeft = false
 		scale.x = -1
 		$LeftArmPivot.visible = false
@@ -23,6 +24,7 @@ func _unhandled_input(event):
 		%AnimationPlayer.play("walk")
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
+		velocity.y = 0
 		canMoveRight = false
 		scale.x = 1
 		$RightArmPivot.visible = false
@@ -42,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	if not grounded:
 		velocity += Vector2(0, GRAVITY) * delta
 
-	if Input.is_action_just_pressed("jump") and grounded and jumpCharges > 0:
+	if Input.is_action_just_pressed("jump") and jumpCharges > 0:
 		velocity.y = JUMP_VELOCITY
 		jumpCharges -= 1
 		%AnimationPlayer.play("jump")
