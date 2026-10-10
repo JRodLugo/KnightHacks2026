@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://ciyovrn17635u"]
+
+[ext_resource type="Script" uid="uid://bxft6xehcac1t" path="res://Scenes/LevelMaster/level_master.gd" id="1_twtm3"]
+[ext_resource type="Theme" uid="uid://dctcahscxrwhr" path="res://Scenes/SettingsMenu/settings.tres" id="2_mbwfx"]
+[ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_op2tr"]
+
+[sub_resource type="Animation" id="Animation_twtm3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 694.61)]
+}
+
+[sub_resource type="Animation" id="Animation_mbwfx"]
+resource_name = "Swipe"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 692.87), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_op2tr"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -692.135)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_op2tr"]
+_data = {
+&"RESET": SubResource("Animation_twtm3"),
+&"swipe_in": SubResource("Animation_mbwfx"),
+&"swipe_out": SubResource("Animation_op2tr")
+}
+
+[sub_resource type="Animation" id="Animation_3grtt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_op3wu"]
+resource_name = "slide_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 600), Vector2(0, 10.655), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe7c7"]
+_data = {
+&"RESET": SubResource("Animation_3grtt"),
+&"slide_in": SubResource("Animation_op3wu")
+}
+
+[node name="LevelMaster" type="Node2D" unique_id=1773990131]
+script = ExtResource("1_twtm3")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1067555238]
+
+[node name="ScreenSwipe" type="ColorRect" parent="UI" unique_id=1175082671]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.111084
+offset_top = -31.0
+offset_right = 55.111084
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 694.61)
+color = Color(0, 0, 0, 1)
+
+[node name="SwipeAnim" type="AnimationPlayer" parent="UI/ScreenSwipe" unique_id=993757954]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_op2tr")
+
+[node name="LevelFinish" type="Panel" parent="UI" unique_id=810115538]
+unique_name_in_owner = true
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -162.0
+offset_right = 225.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 600)
+theme = ExtResource("2_mbwfx")
+
+[node name="LFAnim" type="AnimationPlayer" parent="UI/LevelFinish" unique_id=1487235571]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_qe7c7")
+
+[node name="Title" type="Label" parent="UI/LevelFinish" unique_id=739729955]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 33.0
+offset_right = 79.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 28
+text = "FOREST CORRUPTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LimbsKept" type="Label" parent="UI/LevelFinish" unique_id=1007445620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -44.0
+offset_right = 79.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 18
+text = "Limbs kept:   0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevel" type="Button" parent="UI/LevelFinish" unique_id=2048944511]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -87.0
+offset_right = 131.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_op2tr")
+text = "NEXT"
+
+[node name="HSeparator" type="HSeparator" parent="UI/LevelFinish" unique_id=227893458]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -84.0
+offset_right = 189.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="UI/LevelFinish/NextLevel" to="." method="_on_next_level_button_down"]
