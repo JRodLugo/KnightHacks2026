@@ -6,6 +6,23 @@
 [ext_resource type="Script" uid="uid://cwsqppim08cap" path="res://scripts/level_data.gd" id="2_qe7c7"]
 [ext_resource type="Resource" uid="uid://dx4pvg8d5q45q" path="res://Scenes/LevelMaster/LevelData/TestScene.tres" id="3_ht6gj"]
 [ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_op2tr"]
+[ext_resource type="Texture2D" uid="uid://bn1vc2n3nqiyr" path="res://Scenes/MainMenu/Menu.png" id="5_ht6gj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe7c7"]
+bg_color = Color(0.024660021, 0.00089999917, 0.09, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht6gj"]
+bg_color = Color(0.079420015, 0.0056999945, 0.19, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 
 [sub_resource type="Animation" id="Animation_twtm3"]
 length = 0.001
@@ -19,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 694.61)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mbwfx"]
@@ -110,6 +127,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_mbwfx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qe7c7")
+
+[node name="TextureRect" type="TextureRect" parent="UI/LevelSelect" unique_id=1885062005]
+modulate = Color(0.2792476, 0.22020254, 0.4025245, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ht6gj")
+expand_mode = 1
 
 [node name="Title" type="Label" parent="UI/LevelSelect" unique_id=1921070900]
 layout_mode = 0
@@ -134,6 +167,7 @@ offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_mbwfx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ht6gj")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/LevelSelect/Entries" unique_id=2018173543]
 layout_mode = 1
@@ -161,7 +195,6 @@ offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, 694.61)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
@@ -196,15 +229,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -78.0
-offset_top = 33.0
-offset_right = 79.0
-offset_bottom = 56.0
+offset_left = -166.0
+offset_top = 10.0
+offset_right = 167.0
+offset_bottom = 73.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 62
 text = "FOREST CORRUPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -216,17 +249,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = -44.0
-offset_right = 79.0
-offset_bottom = -5.0
+offset_left = -84.0
+offset_top = -49.0
+offset_right = 85.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 39
 text = "Limbs kept:   0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collectibles" type="Label" parent="UI/LevelFinish" unique_id=2048388793]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -12.0
+offset_right = 85.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 39
+text = "Collectibles:   0/?"
 horizontal_alignment = 1
 vertical_alignment = 1
 

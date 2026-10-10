@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dv65ia60vg3jj"]
 
+[ext_resource type="FontFile" uid="uid://d0q0x0dw64t1c" path="res://assets/fonts/Manchineel Lands.ttf" id="1_mcqx7"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihsrk"]
 bg_color = Color(0, 0, 0, 0)
 border_width_left = 8
@@ -12,30 +14,32 @@ corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcqx7"]
-bg_color = Color(0.43033832, 0.30028218, 0.797972, 1)
-border_width_bottom = 8
+bg_color = Color(0.22795483, 0.13608623, 0.4580015, 1)
 border_color = Color(0.74978, 0.74978, 0.74977994, 1)
 corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adu2g"]
 bg_color = Color(0.43033832, 0.30028218, 0.797972, 1)
-border_width_bottom = 8
-border_color = Color(0.12955844, 0.1295585, 0.12955835, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uslqc"]
-bg_color = Color(0.43033832, 0.30028218, 0.797972, 1)
-skew = Vector2(0.435, 0.12)
+bg_color = Color(0.037663557, 0.0144238835, 0.113420896, 1)
 border_color = Color(0.12955844, 0.1295585, 0.12955835, 1)
 corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
 [resource]
+default_font = ExtResource("1_mcqx7")
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 6
-Button/font_sizes/font_size = 18
+Button/font_sizes/font_size = 44
 Button/styles/focus = SubResource("StyleBoxFlat_ihsrk")
 Button/styles/hover = SubResource("StyleBoxFlat_mcqx7")
 Button/styles/normal = SubResource("StyleBoxFlat_adu2g")
