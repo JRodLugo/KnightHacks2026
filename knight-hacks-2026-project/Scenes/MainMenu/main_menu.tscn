@@ -139,9 +139,10 @@ grow_vertical = 0
 rotation = -2.3561945
 color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 
-[node name="SettingsMenu" parent="." unique_id=1938883888 instance=ExtResource("5_adu2g")]
+[node name="SettingsMenu" parent="." unique_id=1938883888 node_paths=PackedStringArray("prevContainer") instance=ExtResource("5_adu2g")]
 visible = false
 layout_mode = 1
+prevContainer = NodePath("../VBoxContainer")
 
 [connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]

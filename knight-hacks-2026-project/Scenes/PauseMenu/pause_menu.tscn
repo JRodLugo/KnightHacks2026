@@ -119,9 +119,10 @@ grow_vertical = 0
 rotation = -2.3561945
 color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 
-[node name="SettingsMenu" parent="." unique_id=1938883888 instance=ExtResource("3_7flpu")]
+[node name="SettingsMenu" parent="." unique_id=1938883888 node_paths=PackedStringArray("prevContainer") instance=ExtResource("3_7flpu")]
 visible = false
 layout_mode = 1
+prevContainer = NodePath("../VBoxContainer")
 
 [connection signal="button_down" from="VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="VBoxContainer/BackToMenu" to="." method="_on_back_to_menu_button_down"]
