@@ -1,10 +1,14 @@
 extends Enemy
 # Enemy that walks back and forth along set positions.
 
+const DEFAULT_SPEED : float = 10.0;
+const DEFAULT_COOLDOWN : float= 2.0;
+## Use a default collision form if there is none provided.
+const FALLBACK_COL = preload("uid://bniw2nisdptks")
 ## The enemy's speed.
-@export var move_speed : int = 1000;
+@export var move_speed : float = DEFAULT_SPEED;
 ## How long (in seconds) will the enemy wait to move again?
-@export var cooldown_time : int = 2;
+@export var cooldown_time : float = DEFAULT_COOLDOWN;
 
 # Assume the enemy's first "position" is its starting global position.
 @export var enemy_positions : Array[Vector2];
@@ -21,8 +25,8 @@ var position_count : int;
 var position_index : int = 0;
 
 @onready var wait_time : Timer = $WaitTime;
-## Use a default collision form if there is none provided.
-const FALLBACK_COL = preload("uid://bniw2nisdptks")
+
+
 
 func _ready() -> void:
 	# Initializing
@@ -30,9 +34,10 @@ func _ready() -> void:
 	self.wait_time.one_shot = true;
 	self.position_count = enemy_positions.size();
 	self.col_form = self.col_shape.shape
+	#self.nav_agent.max_speed = move_speed;
 	# Use fallback collision form if it doesn't exist.
 	if !self.col_form: 
-		push_warning("No collision form for Node " + self.name + "!");
+		push_warning("No collision form for Enemy Node " + self.name + "! Using fallback shape.");
 		col_form = FALLBACK_COL;
 	
 	
@@ -47,13 +52,17 @@ func _ready() -> void:
 	position_index = next_goal(self.position_index);
 
 func _physics_process(delta: float) -> void:
+	movement_handler(delta);
+	
+
+func movement_handler(_delta) -> void:
 	if (!nav_agent.is_target_reached()):
 		is_moving = true;
-		var next_pos = to_local(nav_agent.get_next_path_position());
+		var next_pos : Vector2 = to_local(nav_agent.get_next_path_position());
 		next_pos = next_pos.normalized();
-		#print(next_pos)
 		# commit to movement
-		velocity = next_pos * move_speed * delta;
+		# * 5 to make movespeed numbers nicer
+		velocity = next_pos * (move_speed*5);
 		move_and_slide();
 	else:
 		is_moving = false;
