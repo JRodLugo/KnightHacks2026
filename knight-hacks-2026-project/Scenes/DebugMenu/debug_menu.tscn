@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://caimp7yi1wt76"]
+
+[ext_resource type="Script" uid="uid://du2dlxcdg7vac" path="res://Scenes/DebugMenu/debug_menu.gd" id="1_v2gip"]
+
+[node name="DebugMenu" type="Panel" unique_id=1864926283]
+process_mode = 3
+offset_right = 155.0
+offset_bottom = 132.0
+mouse_filter = 1
+script = ExtResource("1_v2gip")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=688249877]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResetPlayer" type="Button" parent="VBoxContainer" unique_id=150883874]
+layout_mode = 2
+text = "Reset Player"
+
+[node name="RestartLevel" type="Button" parent="VBoxContainer" unique_id=1218085125]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="FinishLevel" type="Button" parent="VBoxContainer" unique_id=1269068701]
+layout_mode = 2
+text = "Finish Level
+"
+
+[node name="Label" type="Label" parent="." unique_id=486414408]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 164.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+text = "press 1 to open/close"
+
+[connection signal="button_down" from="VBoxContainer/ResetPlayer" to="." method="_on_reset_player_button_down"]
+[connection signal="button_down" from="VBoxContainer/RestartLevel" to="." method="_on_restart_level_button_down"]
+[connection signal="button_down" from="VBoxContainer/FinishLevel" to="." method="_on_finish_level_button_down"]

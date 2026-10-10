@@ -7,7 +7,6 @@ var player: Player
 func _ready():
 	currentSceneFile = load("res://Scenes/TestScene/test_scene.tscn")
 	restart()
-	level_finish()
 
 func restart():
 	%SwipeAnim.play("swipe_in")
@@ -18,6 +17,7 @@ func restart():
 	%SwipeAnim.play("swipe_out")
 	
 	player = currentScene.get_node("Player")
+	$UI/DebugMenu.player = player
 	player.restart_level.connect(restart)
 	player.finish.connect(level_finish)
 

@@ -21,7 +21,8 @@ func _unhandled_input(event):
 		velocity.x = -1.0 * SPEED
 		velocity.y = 0
 		canMoveLeft = false
-		scale.x = -1
+		rotation = 0
+		scale = Vector2(-1, 1)
 		$LeftArmPivot.visible = false
 		limb_explode($LeftArmPivot.global_position)
 		change_anim("walk")
@@ -29,7 +30,8 @@ func _unhandled_input(event):
 		velocity.x = SPEED
 		velocity.y = 0
 		canMoveRight = false
-		scale.x = 1
+		rotation = 0
+		scale = Vector2(1, 1)
 		$RightArmPivot.visible = false
 		limb_explode($RightArmPivot.global_position)
 		change_anim("walk")
