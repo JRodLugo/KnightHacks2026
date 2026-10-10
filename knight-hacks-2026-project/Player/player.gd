@@ -1,8 +1,8 @@
 class_name Player extends CharacterBody2D
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -1000.0
-const GRAVITY = 2500.0
+const SPEED = 800.0
+const JUMP_VELOCITY = -1500.0
+const GRAVITY = 2000.0
 const DE_ACCELERATION = 150.0
 
 var canMoveLeft: bool = true
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if not grounded:
 		velocity += Vector2(0, GRAVITY) * delta
 
-	if Input.is_action_just_pressed("jump") and grounded and jumpCharges > 0:
+	if Input.is_action_just_pressed("jump") and jumpCharges > 0:
 		velocity.y = JUMP_VELOCITY
 		jumpCharges -= 1
 		%AnimationPlayer.play("jump")
