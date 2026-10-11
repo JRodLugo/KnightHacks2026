@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bm01in5hyjbor"]
 
+[ext_resource type="Texture2D" uid="uid://bkx672hidouqo" path="res://assets/background.png" id="1_ktsy3"]
 [ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="1_mvt77"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="2_woiq1"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="3_ktsy3"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_8fo74"]
 [ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="9_sbuu5"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="10_mvt77"]
+[ext_resource type="PackedScene" uid="uid://cb1eybgfttg6y" path="res://Scenes/BudFlower/bud_flower.tscn" id="11_woiq1"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("2_woiq1")
@@ -99,6 +101,55 @@ meshes = Array[ExtResource("4_qad2b")]([SubResource("Resource_hm01w")])
 
 [node name="Tut(part2)" type="Node2D" unique_id=2001726470]
 
+[node name="Backgrounds" type="Node2D" parent="." unique_id=279962493]
+modulate = Color(0.84, 0.52766, 0.025199976, 1)
+z_index = -10
+position = Vector2(-324, -9)
+
+[node name="Background2" type="Sprite2D" parent="Backgrounds" unique_id=736324712]
+position = Vector2(-1080.2222, 416.5)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background4" type="Sprite2D" parent="Backgrounds" unique_id=689896096]
+position = Vector2(5290.5557, 417.00006)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background3" type="Sprite2D" parent="Backgrounds" unique_id=649943677]
+position = Vector2(3347.5557, 417)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background" type="Sprite2D" parent="Backgrounds" unique_id=1833784179]
+position = Vector2(862.77783, 416.50006)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background5" type="Sprite2D" parent="Backgrounds" unique_id=488756346]
+position = Vector2(-969.22217, -1092.8999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background6" type="Sprite2D" parent="Backgrounds" unique_id=57664016]
+position = Vector2(5401.5557, -1092.3999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background7" type="Sprite2D" parent="Backgrounds" unique_id=96406069]
+position = Vector2(3458.5557, -1092.3999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
+[node name="Background8" type="Sprite2D" parent="Backgrounds" unique_id=54711266]
+position = Vector2(973.77783, -1092.8999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_ktsy3")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1356008823]
 position = Vector2(101, 324)
 
@@ -119,7 +170,7 @@ polygon = PackedVector2Array(-206.08911, -191.56113, 1231.9324, -185.26668, 1237
 [node name="Player" parent="." unique_id=517375119 groups=["Player"] instance=ExtResource("9_sbuu5")]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=102603220]
-position = Vector2(-1027, 129)
+position = Vector2(-988, -544)
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2" unique_id=1264064252]
 position = Vector2(2896, 0)
@@ -134,4 +185,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 polygon = PackedVector2Array(2919.6138, 58.303894, 4376.128, 64.64966, 4382.242, 687.1124, 2922.5713, 674.69086)
 
 [node name="FinishFlower" parent="." unique_id=1087659301 instance=ExtResource("10_mvt77")]
-position = Vector2(2642, 113)
+position = Vector2(2681, -560)
+
+[node name="BudFlower" parent="." unique_id=1499620023 instance=ExtResource("11_woiq1")]
+position = Vector2(1208, 65)

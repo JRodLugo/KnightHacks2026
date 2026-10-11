@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cb1eybgfttg6y"]
+
+[ext_resource type="Script" uid="uid://dfmh1an1fgqya" path="res://Scenes/BudFlower/bud_flower.gd" id="1_cyh2s"]
+[ext_resource type="Texture2D" uid="uid://c6mg1581saok5" path="res://Scenes/BudFlower/KillableFlower_sprSheet.png" id="1_piibj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyh2s"]
+atlas = ExtResource("1_piibj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yvgg"]
+atlas = ExtResource("1_piibj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3le4"]
+atlas = ExtResource("1_piibj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkvb5"]
+atlas = ExtResource("1_piibj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqcak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyh2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yvgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3le4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkvb5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqcak"]
+size = Vector2(112, 112)
+
+[node name="BudFlower" type="Area2D" unique_id=1499620023]
+script = ExtResource("1_cyh2s")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=396041557]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lqcak")
+autoplay = "default"
+frame_progress = 0.8180604
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=517642973]
+position = Vector2(3, 9)
+shape = SubResource("RectangleShape2D_lqcak")
+debug_color = Color(1.540184e-06, 0.646585, 0.24094296, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
