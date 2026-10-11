@@ -4,10 +4,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihsrk"]
 bg_color = Color(0, 0, 0, 0)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
 border_color = Color(0.41730604, 0.24781525, 0.99314195, 1)
 border_blend = true
 corner_radius_top_left = 50
