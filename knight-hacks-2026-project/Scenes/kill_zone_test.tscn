@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://deflq3aisgany"]
+
+[ext_resource type="PackedScene" uid="uid://carc51jqs07q7" path="res://Scenes/Misc/kill_boarder.tscn" id="1_6dvgs"]
+[ext_resource type="PackedScene" uid="uid://csr4vdks7axvc" path="res://Player/player.tscn" id="2_7ly71"]
+[ext_resource type="Texture2D" uid="uid://3jdvqifrhihg" path="res://Enemies/BloomFly.png" id="3_7ly71"]
+
+[node name="Kill_Zone_TEST" type="Node2D" unique_id=1592201032]
+
+[node name="Player" parent="." unique_id=517375119 instance=ExtResource("2_7ly71")]
+position = Vector2(594, 41)
+
+[node name="Kill_Boarder" parent="." unique_id=813336665 instance=ExtResource("1_6dvgs")]
+position = Vector2(167, 378)
+
+[node name="BloomFly" type="Sprite2D" parent="." unique_id=28377674]
+position = Vector2(158, 266)
+texture = ExtResource("3_7ly71")

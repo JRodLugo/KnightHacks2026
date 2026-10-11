@@ -17,6 +17,7 @@ ss2d/version="3.3.2"
 config/name="KnightHacks_2026_Project"
 run/main_scene="uid://c5e1sxdlo6g4t"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/image="uid://3jdvqifrhihg"
 config/icon="uid://77glkvansy2v"
 
 [display]
