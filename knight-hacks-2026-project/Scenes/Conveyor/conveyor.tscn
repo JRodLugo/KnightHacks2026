@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dilyr60r4pnrt"]
 
 [ext_resource type="Script" uid="uid://co35k6qipadpl" path="res://Scenes/Conveyor/conveyor.gd" id="1_6yxt8"]
-[ext_resource type="Texture2D" uid="uid://u6ac5ivo026d" path="res://icon.svg" id="2_jk3r1"]
+[ext_resource type="Texture2D" uid="uid://bgpka04wcc8hq" path="res://assets/Enchanted_Ground.png" id="2_jk3r1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk3r1"]
 size = Vector2(128, 26)
@@ -10,8 +10,9 @@ size = Vector2(128, 26)
 script = ExtResource("1_6yxt8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1513740786]
-modulate = Color(0.1833334, 0, 1, 1)
-scale = Vector2(1, 0.2)
+modulate = Color(0.6745098, 0.6392157, 0.83137256, 1)
+position = Vector2(1.5, 8.000002)
+scale = Vector2(0.18405797, 0.05507246)
 texture = ExtResource("2_jk3r1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2094834664]

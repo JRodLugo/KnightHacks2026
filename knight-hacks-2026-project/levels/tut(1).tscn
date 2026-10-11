@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_tcm2s"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="11_y61qw"]
 [ext_resource type="PackedScene" uid="uid://brf2txwpq5b6h" path="res://Enemies/Slug/enemy_slug.tscn" id="13_dcs56"]
+[ext_resource type="PackedScene" uid="uid://carc51jqs07q7" path="res://Scenes/Misc/kill_boarder.tscn" id="14_tx6u6"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("5_1em4s")
@@ -160,3 +161,6 @@ position = Vector2(-264, -58)
 [node name="Slug" parent="." unique_id=444600714 instance=ExtResource("13_dcs56")]
 position = Vector2(-996, 12)
 movement_speed = 700.0
+
+[node name="Kill_Boarder" parent="." unique_id=813336665 instance=ExtResource("14_tx6u6")]
+position = Vector2(-13, 705)
