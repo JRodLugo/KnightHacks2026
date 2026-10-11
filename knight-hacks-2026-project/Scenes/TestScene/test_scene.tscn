@@ -109,5 +109,5 @@ navigation_polygon = SubResource("NavigationPolygon_ufb2d")
 
 [node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("8_8xnil")]
 position = Vector2(308, 833)
-cooldown_time = 0.2
+move_speed = 25.0
 enemy_positions = Array[Vector2]([Vector2(200, 800), Vector2(550, 900), Vector2(800, 800)])

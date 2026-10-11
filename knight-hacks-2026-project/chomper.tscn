@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dtef6hmuvib4x"]
+
+[ext_resource type="Script" uid="uid://c250juyfqc3by" path="res://Enemies/Chomper/chomper.gd" id="1_065o3"]
+[ext_resource type="Texture2D" uid="uid://c7qvygv2n76kc" path="res://Enemies/Chomper/Chomper_sprSheet.png" id="2_kmbxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbow8"]
+
+[sub_resource type="Animation" id="Animation_vbow8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm6tl"]
+_data = {
+&"RESET": SubResource("Animation_vbow8")
+}
+
+[sub_resource type="Animation" id="Animation_8ewe4"]
+length = 0.2666700139079243
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-1.0, 1.0, -2.0, 1.0, -1.0, 1.0, -1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.05]
+}
+
+[sub_resource type="Animation" id="Animation_7ye4b"]
+length = 1.1333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.5333333, 0.8),
+"transitions": PackedFloat32Array(1, -2, -2, -2, -2, 1e-05),
+"update": 0,
+"values": [0.0, 1.0, -1.0, 1.0, -1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kmbxj"]
+length = 0.5000033594105393
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 2, 1, 1),
+"update": 0,
+"values": [1.0, 1.1, 1.0, 1.05]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.33333334, 0.33375812, 0.4, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, 0.0, -1.0, 1.0, -1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdhpp"]
+_data = {
+&"hissing": SubResource("Animation_8ewe4"),
+&"idle": SubResource("Animation_7ye4b"),
+&"idle-to-hiss": SubResource("Animation_kmbxj")
+}
+
+[node name="Chomper" type="CharacterBody2D" unique_id=2127503277 node_paths=PackedStringArray("sprite", "col_shape")]
+script = ExtResource("1_065o3")
+hiss_radius = SubResource("RectangleShape2D_vbow8")
+sprite = NodePath("Sprite2D")
+col_shape = NodePath("Area2D/CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=556041692]
+texture = ExtResource("2_kmbxj")
+offset = Vector2(0, -32)
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2102489849]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1897250255]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=733606613]
+libraries/ = SubResource("AnimationLibrary_pm6tl")
+libraries/chomper = SubResource("AnimationLibrary_qdhpp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
