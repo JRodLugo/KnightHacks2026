@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="13_0hpm6"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="14_0hpm6"]
 [ext_resource type="PackedScene" uid="uid://cb1eybgfttg6y" path="res://Scenes/BudFlower/bud_flower.tscn" id="15_2xio0"]
+[ext_resource type="PackedScene" uid="uid://carc51jqs07q7" path="res://Scenes/Misc/kill_boarder.tscn" id="17_aho07"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("3_w5yer")
@@ -541,3 +542,6 @@ position = Vector2(5255, 339)
 
 [node name="BudFlower" parent="." unique_id=1499620023 instance=ExtResource("15_2xio0")]
 position = Vector2(-612, 216)
+
+[node name="Kill_Boarder" parent="." unique_id=813336665 instance=ExtResource("17_aho07")]
+position = Vector2(633, 859)
