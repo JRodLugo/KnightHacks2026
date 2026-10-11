@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 signal restart_level
 signal finish # this is called from the finish flower, disregard warning
+signal damaged # emitted by enemies.
 
 const SPEED = 800.0
 const JUMP_VELOCITY = -1500.0
@@ -13,6 +14,7 @@ var canMoveLeft: bool = true
 var canMoveRight: bool = true
 var dead: bool = false
 var jumpCharges: int = 2
+var inv_time : float = 1.0;
 
 func _unhandled_input(event):
 	if dead: return
@@ -136,3 +138,8 @@ func takeDamage():
 	
 		
 	
+# collide with enemies
+
+
+func _on_damaged() -> void:
+	takeDamage();
