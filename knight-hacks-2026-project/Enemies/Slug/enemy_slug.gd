@@ -17,9 +17,12 @@ func _ready():
 func _physics_process(_delta: float) -> void:
 	if player_in_vision && player_ref && $DownTime.time_left == 0:
 		nav_agent.target_position = player_ref.global_position;
-		var next_pos : Vector2 = to_local(nav_agent.get_next_path_position());
-		next_pos = next_pos.normalized();
-		velocity.x = next_pos.x * movement_speed;
+		turn_to_player(player_ref)
+		var player_direction = player_ref.global_position.direction_to(global_position);
+		if (player_direction.x <= 0):
+			velocity.x = movement_speed;
+		else:
+			velocity.x = -movement_speed;
 		move_and_slide();
 
 func _on_vision_radius_body_entered(body: Node2D) -> void:
