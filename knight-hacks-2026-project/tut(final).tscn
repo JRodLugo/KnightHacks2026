@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="13_337vv"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="14_lxlcu"]
 [ext_resource type="PackedScene" uid="uid://dtef6hmuvib4x" path="res://Enemies/Chomper/enemy_chomper.tscn" id="15_7rfui"]
+[ext_resource type="Texture2D" uid="uid://1nlh1len6kj" path="res://assets/sprite/bg_mushrooms.webp" id="16_baic4"]
 
 [sub_resource type="Resource" id="Resource_eqrsh"]
 script = ExtResource("2_adlev")
@@ -51,7 +52,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 7
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lxlcu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q4swo"]
 _surfaces = [{
 "aabb": AABB(-17.65378, -133.8444, 0, 2822.9697, 556.8869, 1e-05),
 "attribute_data": PackedByteArray("/////ziE+by8IMQ9OIT5vLwgxD3/////CcGZQHhX5DwJwZlAeFfkPP////8D4ppAiBp9PwPimkCIGn0//////4mSNTxqEnw/iZI1PGoSfD8="),
@@ -64,15 +65,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("8TqNwRX9vMIAAAAA7Q0uRSvYBcMAAAAADlUvRXCF00MAAAAAsIvNQHJa0kMAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_7rfui"]
+[sub_resource type="Resource" id="Resource_4hut4"]
 script = ExtResource("4_lxlcu")
 texture = ExtResource("5_7rfui")
-mesh = SubResource("ArrayMesh_lxlcu")
+mesh = SubResource("ArrayMesh_q4swo")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_q4swo"]
+[sub_resource type="Resource" id="Resource_1gt02"]
 script = ExtResource("6_baic4")
-meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_7rfui")])
+meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_4hut4")])
 
 [sub_resource type="Resource" id="Resource_c5gc3"]
 script = ExtResource("8_4hut4")
@@ -115,7 +116,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4hut4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6q801"]
 _surfaces = [{
 "aabb": AABB(3431.4985, 18.057129, 0, 1256.3208, 699.208, 1e-05),
 "attribute_data": PackedByteArray("/////5w62EDzYdY8nDrYQPNh1jz/////+GfZQNIOhT/4Z9lA0g6FP/////+TMp9AwB6CP5Myn0DAHoI//////1gkn0Butec8WCSfQG615zw="),
@@ -128,15 +129,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("frORRQB1kEEAAAAAjn6SRfhQM0QAAAAAKItWRXBbL0QAAAAA+ndWRcAhnEEAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_1gt02"]
+[sub_resource type="Resource" id="Resource_lk16k"]
 script = ExtResource("4_lxlcu")
 texture = ExtResource("11_dh1wr")
-mesh = SubResource("ArrayMesh_4hut4")
+mesh = SubResource("ArrayMesh_6q801")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_lk16k"]
+[sub_resource type="Resource" id="Resource_0ap3d"]
 script = ExtResource("6_baic4")
-meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_1gt02")])
+meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_lk16k")])
 
 [sub_resource type="Resource" id="Resource_qiqrj"]
 script = ExtResource("8_4hut4")
@@ -208,7 +209,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 16
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0ap3d"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tcoab"]
 _surfaces = [{
 "aabb": AABB(4175.2686, -2731.0876, 0, 2135.1875, 5733.6875, 1e-05),
 "attribute_data": PackedByteArray("/////xOvXEFUQGFBE69cQVRAYUH/////hCsSQXOiX0GEKxJBc6JfQf////+RAxJBpf9KQZEDEkGl/0pB/////8NnHEGm/0pBw2ccQab/SkH/////XM4bQR8zu0BczhtBHzO7QP////8yhixBBSG7QDKGLEEFIbtA/////0c4LUGlR0tBRzgtQaVHS0H/////lqo9QdpMS0GWqj1B2kxLQf////8qGlpB/uFMwSoaWkH+4UzB/////3XYO0FWqUvBddg7QVapS8E="),
@@ -224,10 +225,10 @@ _surfaces = [{
 [sub_resource type="Resource" id="Resource_k8yb6"]
 script = ExtResource("4_lxlcu")
 texture = ExtResource("12_adlev")
-mesh = SubResource("ArrayMesh_0ap3d")
+mesh = SubResource("ArrayMesh_tcoab")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_rw41a"]
+[sub_resource type="Resource" id="Resource_gtqba"]
 script = ExtResource("6_baic4")
 meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_k8yb6")])
 
@@ -243,6 +244,7 @@ position = Vector2(2843.8555, 113.86182)
 [sub_resource type="Resource" id="Resource_337vv"]
 script = ExtResource("2_adlev")
 position = Vector2(2232.9866, 108.73071)
+texture_idx = 10
 
 [sub_resource type="Resource" id="Resource_baic4"]
 script = ExtResource("2_adlev")
@@ -312,7 +314,7 @@ Vector2i(0, 6): 15
 }
 _next_key = 19
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7rfui"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_yf2v5"]
 _surfaces = [{
 "aabb": AABB(2225.196, 108.73071, 0, 2062.889, 2739.8203, 1e-05),
 "attribute_data": PackedByteArray("/////xCM4UBZiJdAEIzhQFmIl0D/////y4PhQLYxS0DLg+FAtjFLQP////9TBfFAqAJJQFMF8UCoAklA/////4JU80BQtuNAglTzQFC240D/////CYjiQIuF5EAJiOJAi4XkQP////8RmuJAVqUUQRGa4kBWpRRB/////89EpkBashRBz0SmQFqyFEH/////9mKmQOZBLUH2YqZA5kEtQf////9TinxA/18tQVOKfED/Xy1B/////6tsfUAlxdM+q2x9QCXF0z7/////K9+iQGsemUAr36JAax6ZQP////9bYKFAg8PdPltgoUCDw90+"),
@@ -325,20 +327,66 @@ _surfaces = [{
 "vertex_data": PackedByteArray("RGt4ReWam0QAAAAAKWJ4RbCnUEQAAAAAHbuERZxpTkQAAAAArgCGRfrU6UQAAAAAyoB5Rcap6kQAAAAAppR5RQWkGEUAAAAAJiE3RWOxGEUAAAAAW0I3RenpMUUAAAAAIxMLRdEIMkUAAAAAyY8LRSB22UIAAAAAUmMzReE7nUQAAAAAsL0xRUC540IAAAAA//////7//7///////v//v//////+//+///////7//7//////////v//////+//+///////7//7//////////v//////+//+//////////7///////v//v/////////+/")
 }]
 
-[sub_resource type="Resource" id="Resource_4hut4"]
+[sub_resource type="Resource" id="Resource_rw41a"]
 script = ExtResource("4_lxlcu")
 texture = ExtResource("12_adlev")
-mesh = SubResource("ArrayMesh_7rfui")
+mesh = SubResource("ArrayMesh_yf2v5")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_s732y"]
+[sub_resource type="Resource" id="Resource_i1y18"]
 script = ExtResource("6_baic4")
-meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_4hut4")])
+meshes = Array[ExtResource("4_lxlcu")]([SubResource("Resource_rw41a")])
 
 [sub_resource type="Resource" id="Resource_chulx"]
 script = ExtResource("8_4hut4")
 fill_textures = Array[Texture2D]([ExtResource("12_adlev")])
 fill_texture_scale = 2.12
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_whucc"]
+texture = ExtResource("16_baic4")
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g461s"]
+sources/0 = SubResource("TileSetAtlasSource_whucc")
 
 [node name="Node2D" type="Node2D" unique_id=1550178291]
 
@@ -350,7 +398,7 @@ position = Vector2(116, 148)
 rotation = 0.01921685
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_nauge")
-_mesh_cache = SubResource("Resource_q4swo")
+_mesh_cache = SubResource("Resource_1gt02")
 shape_material = SubResource("Resource_c5gc3")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -372,7 +420,7 @@ position = Vector2(83, 150)
 position = Vector2(-51, -204)
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_7nyxr")
-_mesh_cache = SubResource("Resource_lk16k")
+_mesh_cache = SubResource("Resource_0ap3d")
 shape_material = SubResource("Resource_qiqrj")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -387,7 +435,7 @@ position = Vector2(-218, 64)
 [node name="SS2D_Shape" type="Node2D" parent="column" unique_id=1931997230]
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_6ty1f")
-_mesh_cache = SubResource("Resource_rw41a")
+_mesh_cache = SubResource("Resource_gtqba")
 shape_material = SubResource("Resource_40e1t")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -406,7 +454,7 @@ position = Vector2(-451, -84)
 position = Vector2(29, 522)
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_vb0f7")
-_mesh_cache = SubResource("Resource_s732y")
+_mesh_cache = SubResource("Resource_i1y18")
 shape_material = SubResource("Resource_chulx")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -438,3 +486,9 @@ position = Vector2(4767, 2771)
 
 [node name="Chomper6" parent="." unique_id=1050854798 instance=ExtResource("15_7rfui")]
 position = Vector2(5191, 2778)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1170871643]
+z_index = -11
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AADlAEwAAAAAAAEAAADlAE0AAAAAAAIAAADmAEwAAAABAAEAAADmAE0AAAABAAIAAADmAE4AAAABAAMAAADnAEwAAAACAAEAAADnAE0AAAACAAIAAADnAE4AAAACAAMAAADoAEwAAAADAAEAAADoAE0AAAADAAIAAADoAE4AAAADAAMAAADxAFMAAAAAAAEAAFDxAFQAAAABAAEAAFDxAFUAAAACAAEAAFDxAFYAAAADAAEAAFDwAFMAAAAAAAIAAFDwAFQAAAABAAIAAFDwAFUAAAACAAIAAFDwAFYAAAADAAIAAFDvAFQAAAABAAMAAFDvAFUAAAACAAMAAFDvAFYAAAADAAMAAFDxAFsAAAAAAAEAAFDxAFwAAAABAAEAAFDxAF0AAAACAAEAAFDxAF4AAAADAAEAAFDwAFsAAAAAAAIAAFDwAFwAAAABAAIAAFDwAF0AAAACAAIAAFDwAF4AAAADAAIAAFDvAFwAAAABAAMAAFDvAF0AAAACAAMAAFDvAF4AAAADAAMAAFAOAVEAAAAAAAIAAAAOAVAAAAAAAAEAAAAPAVIAAAABAAMAAAAPAVEAAAABAAIAAAAPAVAAAAABAAEAAAAQAVIAAAACAAMAAAAQAVEAAAACAAIAAAAQAVAAAAACAAEAAAARAVIAAAADAAMAAAARAVEAAAADAAIAAAARAVAAAAADAAEAAAAZAVEAAAAAAAIAAAAZAVAAAAAAAAEAAAAaAVIAAAABAAMAAAAaAVEAAAABAAIAAAAaAVAAAAABAAEAAAAbAVIAAAACAAMAAAAbAVEAAAACAAIAAAAbAVAAAAACAAEAAAAcAVIAAAADAAMAAAAcAVEAAAADAAIAAAAcAVAAAAADAAEAAAAgAVAAAAAIAAIAAAAgAVEAAAAIAAMAAAAhAU8AAAAJAAEAAAAhAVAAAAAJAAIAAAAhAVEAAAAJAAMAAAAiAU8AAAAKAAEAAAAiAVAAAAAKAAIAAAAiAVEAAAAKAAMAAAAjAU8AAAALAAEAAAAjAVEAAAALAAMAAAATAVAAAAAIAAIAAAATAVEAAAAIAAMAAAAUAU8AAAAJAAEAAAAUAVAAAAAJAAIAAAAUAVEAAAAJAAMAAAAVAU8AAAAKAAEAAAAVAVAAAAAKAAIAAAAVAVEAAAAKAAMAAAAWAU8AAAALAAEAAAAWAVEAAAALAAMAAAApAVoAAAAJAAEAAFApAVsAAAAKAAEAAFApAVwAAAALAAEAAFAoAVkAAAAIAAIAAFAoAVoAAAAJAAIAAFAoAVsAAAAKAAIAAFAnAVkAAAAIAAMAAFAnAVoAAAAJAAMAAFAnAVsAAAAKAAMAAFAnAVwAAAALAAMAAFDGADgAAAAJAAEAAFDGADkAAAAKAAEAAFDGADoAAAALAAEAAFDFADcAAAAIAAIAAFDFADgAAAAJAAIAAFDFADkAAAAKAAIAAFDEADcAAAAIAAMAAFDEADgAAAAJAAMAAFDEADkAAAAKAAMAAFDEADoAAAALAAMAAFBkACQAAAAJAAEAAFBkACUAAAAKAAEAAFBkACYAAAALAAEAAFBjACMAAAAIAAIAAFBjACQAAAAJAAIAAFBjACUAAAAKAAIAAFBiACMAAAAIAAMAAFBiACQAAAAJAAMAAFBiACUAAAAKAAMAAFBiACYAAAALAAMAAFBkAC4AAAAJAAEAAFBkAC8AAAAKAAEAAFBkADAAAAALAAEAAFBjAC0AAAAIAAIAAFBjAC4AAAAJAAIAAFBjAC8AAAAKAAIAAFBiAC0AAAAIAAMAAFBiAC4AAAAJAAMAAFBiAC8AAAAKAAMAAFBiADAAAAALAAMAAFBMADMAAAAJAAEAAFBMADQAAAAKAAEAAFBMADUAAAALAAEAAFBLADIAAAAIAAIAAFBLADMAAAAJAAIAAFBLADQAAAAKAAIAAFBKADIAAAAIAAMAAFBKADMAAAAJAAMAAFBKADQAAAAKAAMAAFBKADUAAAALAAMAAFBRABsAAAAJAAEAAFBRABwAAAAKAAEAAFBRAB0AAAALAAEAAFBQABoAAAAIAAIAAFBQABsAAAAJAAIAAFBQABwAAAAKAAIAAFBPABoAAAAIAAMAAFBPABsAAAAJAAMAAFBPABwAAAAKAAMAAFBPAB0AAAALAAMAAFBZABoAAAAIAAMAAABZABkAAAAIAAIAAABaABoAAAAJAAMAAABaABkAAAAJAAIAAABaABgAAAAJAAEAAABbABoAAAAKAAMAAABbABkAAAAKAAIAAABbABgAAAAKAAEAAABcABoAAAALAAMAAABcABgAAAALAAEAAABKABoAAAAIAAMAAABKABkAAAAIAAIAAABLABoAAAAJAAMAAABLABkAAAAJAAIAAABLABgAAAAJAAEAAABMABoAAAAKAAMAAABMABkAAAAKAAIAAABMABgAAAAKAAEAAABNABoAAAALAAMAAABNABgAAAALAAEAAAA1AA8AAAAJAAEAAFA1ABAAAAAKAAEAAFA1ABEAAAALAAEAAFA0AA4AAAAIAAIAAFA0AA8AAAAJAAIAAFA0ABAAAAAKAAIAAFAzAA4AAAAIAAMAAFAzAA8AAAAJAAMAAFAzABAAAAAKAAMAAFAzABEAAAALAAMAAFA1ABcAAAAJAAEAAFA1ABgAAAAKAAEAAFA1ABkAAAAAAAEAAFA0ABYAAAAIAAIAAFA0ABcAAAAJAAIAAFA0ABgAAAAKAAIAAFAzABYAAAAIAAMAAFAzABcAAAAJAAMAAFAzABgAAAAKAAMAAFAzABkAAAALAAMAAFBLAA0AAAAEAAcAADBKAA0AAAAFAAcAADBJAA0AAAAGAAcAADBIAA0AAAAHAAcAADBPAA0AAAAAAAcAADBOAA0AAAABAAcAADBNAA0AAAACAAcAADBMAA0AAAADAAcAADBTAA0AAAAFAAcAADBSAA0AAAAGAAcAADBRAA0AAAAHAAcAADBQAA0AAAADAAcAADBXAA0AAAAEAAcAADBWAA0AAAAFAAcAADBVAA0AAAAGAAcAADBUAA0AAAAEAAcAADBbAA0AAAADAAcAADBaAA0AAAABAAcAADBZAA0AAAACAAcAADBYAA0AAAADAAcAADBeAA0AAAAHAAcAADBdAA0AAAADAAcAADBcAA0AAAACAAcAADBgAA0AAAAFAAcAADBfAA0AAAAGAAcAADBhAA0AAAAEAAcAADAzABUAAAADAAMAAFAzABQAAAACAAMAAFAzABMAAAABAAMAAFAzABIAAAAAAAcAAFAzAA0AAAADAAcAAFAzAAwAAAACAAcAAFAzAAsAAAABAAcAAFAzAAoAAAAAAAcAAFBsAC4AAAADAAcAAGBsAC8AAAACAAcAAGBsADAAAAABAAcAAGBsADEAAAAAAAcAAGBrAC0AAAAHAAcAAGBrACwAAAAFAAcAAGBrACsAAAAEAAcAAGBrACoAAAAFAAcAAGBrACkAAAAGAAcAAGBrACgAAAAHAAcAAGBrADAAAAAEAAcAAGBrAC8AAAAFAAcAAGBrAC4AAAAGAAcAAGBrACAAAAAEAAcAAGBrAB8AAAAFAAcAAGBrAB4AAAAGAAcAAGBrAB0AAAAHAAcAAGBrAA8AAAAEAAcAAGBrAA4AAAAFAAcAAGBrAA0AAAAGAAcAAGBrAAwAAAAHAAcAAGA1ABIAAAAAAAEAAFA1ABMAAAABAAEAAFA1ABQAAAACAAEAAFA1ABUAAAADAAEAAFA0ABIAAAAAAAIAAFA0ABMAAAABAAIAAFA0ABQAAAACAAIAAFA0ABUAAAADAAIAAFA1ABoAAAABAAEAAFA1ABsAAAACAAEAAFA1ABwAAAADAAEAAFA0ABkAAAAAAAIAAFA0ABoAAAABAAIAAFA0ABsAAAACAAIAAFA0ABwAAAADAAIAAFAzABoAAAABAAMAAFAzABsAAAACAAMAAFAzABwAAAADAAMAAFBqABIAAAAAAAIAAEBpABIAAAAAAAEAAEBrABMAAAABAAMAAEBqABMAAAABAAIAAEBpABMAAAABAAEAAEBrABQAAAACAAMAAEBqABQAAAACAAIAAEBpABQAAAACAAEAAEBrABUAAAADAAMAAEBqABUAAAADAAIAAEBpABUAAAADAAEAAEA=")
+tile_set = SubResource("TileSet_g461s")
