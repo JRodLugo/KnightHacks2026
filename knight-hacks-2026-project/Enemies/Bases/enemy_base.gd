@@ -7,8 +7,16 @@
 var col_form : Shape2D; # The form/shape used to MAKE the collision.
 ## The position the enemy is attempting to reach.
 var cur_goal_pos : Vector2;
+## Does this enemy move at all?
+var is_imobile : bool;
 
 enum ENEMY_INDEX
 {
 	Pace
 };
+
+func _ready():
+	if !nav_agent:
+		is_imobile = true;
+	else:
+		is_imobile = false;
