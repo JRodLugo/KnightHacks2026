@@ -6,15 +6,16 @@ var currentScene: Node2D
 var currentSceneFile: PackedScene
 var player: Player
 var levelEntry: PackedScene = preload("res://Scenes/LevelMaster/level_entry.tscn")
+var collected: int = 0
+var collectibleMax: int = 0
 
 func _ready():
 	for level in levels:
 		var newEntry = levelEntry.instantiate()
 		newEntry.get_node("LevelTitle").set_text(level.level_name)
-		newEntry.get_node("PlayLevel").button_down.connect(func(): switch(level.level_scene))
+		newEntry.get_node("PlayLevel").button_down.connect(func(): switch(level.level_scene, level.collectible_amount))
 		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
 	%SwipeAnim.play("swipe_out")
-	
 
 func restart():
 	%SwipeAnim.play("swipe_in")
@@ -31,21 +32,25 @@ func restart():
 	player.get_node("Camera2D").make_current()
 	player.restart_level.connect(restart)
 	player.finish.connect(level_finish)
+	player.collect.connect(func(): collected += 1)
 
-func switch(target: PackedScene):
+func switch(target: PackedScene, collect_max: int):
 	currentSceneFile = target
+	collectibleMax = collect_max
 	restart()
 
 func level_finish():
 	get_tree().paused = true
 	%LevelFinish.visible = true
 	%LevelFinish.get_node("LimbsKept").set_text("Limbs kept:   " + str(get_player_limb_count()))
+	%LevelFinish.get_node("Collectibles").set_text("Buds squashed:   " + str(collected)+"/"+str(collectibleMax))
 	%LevelFinish.get_node("NextLevel").grab_focus()
 	%LFAnim.play("slide_in")
 
 func _on_next_level_button_down() -> void:
 	%LFAnim.play("RESET")
 	%LFAnim.get_parent().visible = false
+	collected = 0
 	get_tree().paused = false
 	restart() # either I'm gonna set next level somewhere else or here but its this while we wait for levels
 	

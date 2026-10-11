@@ -283,7 +283,7 @@ theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 39
-text = "Collectibles:   0/?"
+text = "Buds squashed:   0/?"
 horizontal_alignment = 1
 vertical_alignment = 1
 

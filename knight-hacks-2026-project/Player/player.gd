@@ -2,10 +2,11 @@ class_name Player extends CharacterBody2D
 
 signal restart_level
 signal finish # this is called from the finish flower, disregard warning
-signal damaged # emitted by enemies.
+signal collect # this is called by the bud flower, also disregard
+signal damaged # emitted by enemies. #disregard
 
-const SPEED = 900.0
-const JUMP_VELOCITY = -1600.0
+const SPEED = 1100.0
+const JUMP_VELOCITY = -1800.0
 const GRAVITY = 2500.0
 const DE_ACCELERATION = 150.0
 
