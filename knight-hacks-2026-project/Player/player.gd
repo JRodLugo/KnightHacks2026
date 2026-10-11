@@ -6,7 +6,7 @@ signal damaged # emitted by enemies.
 
 const SPEED = 800.0
 const JUMP_VELOCITY = -1500.0
-const GRAVITY = 900.0
+const GRAVITY = 2500.0
 const DE_ACCELERATION = 150.0
 
 var limbVFX = preload("res://Player/limb_explosion.tscn")
@@ -136,10 +136,7 @@ func takeDamage():
 	else:
 		kill()
 	
-		
-	
 # collide with enemies
 
-
 func _on_damaged() -> void:
-	takeDamage();
+	takeDamage.call_deferred()
