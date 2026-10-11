@@ -44,6 +44,8 @@ func _unhandled_input(event):
 		$UI/PauseMenu.visible = true
 		$UI/PauseMenu/VBoxContainer/Resume.grab_focus()
 		get_tree().paused = true
+	
+	elif event.is_action_pressed("reset"): kill()
 
 func _physics_process(delta: float) -> void:
 	if dead: return
@@ -104,6 +106,16 @@ func reset_player(): # no real use yet but we'll see
 	canMoveRight = true
 
 func kill():
+	# to make sure for functions like the reset input that call this cold
+	dead = true
+	$RightArmPivot.visible = false
+	$LeftArmPivot.visible = false
+	$RightLegPivot.visible = false
+	$LeftLegPivot.visible = false
+	$LegCollision.disabled = true
+	jumpCharges = 0
+	canMoveLeft = false
+	canMoveRight = false
 	change_anim("death")
 	await get_tree().create_timer(1).timeout
 	restart_level.emit()
