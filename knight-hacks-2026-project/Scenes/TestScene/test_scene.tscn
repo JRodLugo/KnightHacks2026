@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="5_egy0e"]
 [ext_resource type="PackedScene" uid="uid://dilyr60r4pnrt" path="res://Scenes/Conveyor/conveyor.tscn" id="6_wm1xt"]
 [ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="7_dvv8h"]
+[ext_resource type="PackedScene" uid="uid://dtef6hmuvib4x" path="res://Enemies/Chomper/enemy_chomper.tscn" id="8_6g6sg"]
 [ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/BloomFly/enemy_pace.tscn" id="8_8xnil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5fok"]
@@ -109,5 +110,9 @@ navigation_polygon = SubResource("NavigationPolygon_ufb2d")
 
 [node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("8_8xnil")]
 position = Vector2(308, 833)
-move_speed = 25.0
+move_speed = 0.0
 enemy_positions = Array[Vector2]([Vector2(200, 800), Vector2(550, 900), Vector2(800, 800)])
+
+[node name="Chomper" parent="." unique_id=2127503277 instance=ExtResource("8_6g6sg")]
+position = Vector2(838, 997)
+collision_layer = 4

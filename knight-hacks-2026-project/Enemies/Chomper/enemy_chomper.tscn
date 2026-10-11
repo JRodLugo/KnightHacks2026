@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dtef6hmuvib4x"]
 
-[ext_resource type="Script" uid="uid://c250juyfqc3by" path="res://Enemies/Chomper/chomper.gd" id="1_065o3"]
-[ext_resource type="Texture2D" uid="uid://c7qvygv2n76kc" path="res://Enemies/Chomper/Chomper_sprSheet.png" id="2_kmbxj"]
+[ext_resource type="Script" uid="uid://c250juyfqc3by" path="res://Enemies/Chomper/enemy_chomper.gd" id="1_7g0im"]
+[ext_resource type="Texture2D" uid="uid://c7qvygv2n76kc" path="res://Enemies/Chomper/Chomper_sprSheet.png" id="2_4c3qh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbow8"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w5mv"]
+radius = 20.0
+height = 58.0
 
 [sub_resource type="Animation" id="Animation_vbow8"]
 length = 0.001
@@ -175,23 +177,41 @@ _data = {
 &"idle-to-hiss": SubResource("Animation_kmbxj")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vaq45"]
+radius = 150.00333
+
 [node name="Chomper" type="CharacterBody2D" unique_id=2127503277 node_paths=PackedStringArray("sprite", "col_shape")]
-script = ExtResource("1_065o3")
-hiss_radius = SubResource("RectangleShape2D_vbow8")
+scale = Vector2(2, 2)
+script = ExtResource("1_7g0im")
 sprite = NodePath("Sprite2D")
-col_shape = NodePath("Area2D/CollisionShape2D")
+col_shape = NodePath("ColRadius/ColShape")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=556041692]
-texture = ExtResource("2_kmbxj")
+texture = ExtResource("2_4c3qh")
 offset = Vector2(0, -32)
 hframes = 3
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2102489849]
+[node name="ColRadius" type="Area2D" parent="." unique_id=2102489849]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1897250255]
+[node name="ColShape" type="CollisionShape2D" parent="ColRadius" unique_id=1897250255]
+unique_name_in_owner = true
+position = Vector2(1, -30)
+shape = SubResource("CapsuleShape2D_3w5mv")
+debug_color = Color(0.991008, 0, 0.27701768, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=733606613]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_pm6tl")
 libraries/chomper = SubResource("AnimationLibrary_qdhpp")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="HissRadius" type="Area2D" parent="." unique_id=319080785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HissRadius" unique_id=1498229812]
+position = Vector2(0, -31)
+shape = SubResource("CircleShape2D_vaq45")
+debug_color = Color(0.8728875, 0.72647285, 0, 0.41960785)
+
+[connection signal="body_entered" from="ColRadius" to="." method="_on_col_radius_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="HissRadius" to="." method="_on_hiss_radius_body_entered"]
+[connection signal="body_exited" from="HissRadius" to="." method="_on_hiss_radius_body_exited"]
