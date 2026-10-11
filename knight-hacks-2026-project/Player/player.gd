@@ -73,7 +73,10 @@ func _physics_process(delta: float) -> void:
 		if jumpCharges == 0: $LegCollision.disabled = true
 	
 	if velocity.x != 0.0:
-		velocity.x = move_toward(velocity.x, 0.0, delta * DE_ACCELERATION)
+		var colNormal = %Groundcast.get_collision_normal()
+		var targetVelocity = 0.0 if (colNormal.y < -.9) else velocity.x * 3
+		velocity.x = move_toward(velocity.x, targetVelocity, delta * DE_ACCELERATION)
+		velocity.y += targetVelocity
 		%AnimationPlayer.speed_scale = abs(velocity.x / 500.0)
 		if grounded: change_anim("walk")
 	else: # if velocity == 0
@@ -83,7 +86,7 @@ func _physics_process(delta: float) -> void:
 				dead = true
 				await get_tree().create_timer(1).timeout
 				kill()
-
+	
 	move_and_slide()
 
 func change_anim(anim: String):
