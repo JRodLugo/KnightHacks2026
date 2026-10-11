@@ -6,7 +6,11 @@
 [ext_resource type="Script" uid="uid://cwsqppim08cap" path="res://scripts/level_data.gd" id="2_qe7c7"]
 [ext_resource type="Resource" uid="uid://dx4pvg8d5q45q" path="res://Scenes/LevelMaster/LevelData/TestScene.tres" id="3_ht6gj"]
 [ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_op2tr"]
+[ext_resource type="Resource" uid="uid://4ppqpmklo4hk" path="res://Scenes/LevelMaster/LevelData/Tut1.tres" id="4_d82ts"]
 [ext_resource type="Texture2D" uid="uid://bn1vc2n3nqiyr" path="res://Scenes/MainMenu/Menu.png" id="5_ht6gj"]
+[ext_resource type="Resource" uid="uid://1q4si7urpypi" path="res://Scenes/LevelMaster/LevelData/Tut2.tres" id="5_otxae"]
+[ext_resource type="Resource" uid="uid://sd7kpixpnl3b" path="res://Scenes/LevelMaster/LevelData/Tut3.tres" id="6_2t5ai"]
+[ext_resource type="Resource" uid="uid://dip2r104lfik3" path="res://Scenes/LevelMaster/LevelData/TutFin.tres" id="7_otxae"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe7c7"]
 bg_color = Color(0.024660021, 0.00089999917, 0.09, 0)
@@ -116,7 +120,7 @@ _data = {
 
 [node name="LevelMaster" type="Node2D" unique_id=1773990131]
 script = ExtResource("1_twtm3")
-levels = Array[ExtResource("2_qe7c7")]([ExtResource("3_ht6gj")])
+levels = Array[ExtResource("2_qe7c7")]([ExtResource("3_ht6gj"), ExtResource("4_d82ts"), ExtResource("5_otxae"), ExtResource("6_2t5ai"), ExtResource("7_otxae")])
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1067555238]
 
@@ -280,7 +284,7 @@ theme_override_colors/font_color = Color(0.66417927, 0.44230947, 0.99409825, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
 theme_override_font_sizes/font_size = 39
-text = "Collectibles:   0/?"
+text = "Buds squashed:   0/?"
 horizontal_alignment = 1
 vertical_alignment = 1
 

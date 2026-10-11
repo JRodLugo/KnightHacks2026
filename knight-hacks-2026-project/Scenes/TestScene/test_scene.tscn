@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="5_egy0e"]
 [ext_resource type="PackedScene" uid="uid://dilyr60r4pnrt" path="res://Scenes/Conveyor/conveyor.tscn" id="6_wm1xt"]
 [ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="7_dvv8h"]
-[ext_resource type="PackedScene" uid="uid://brf2txwpq5b6h" path="res://Enemies/Slug/enemy_slug.tscn" id="9_6g6sg"]
+[ext_resource type="PackedScene" uid="uid://cb1eybgfttg6y" path="res://Scenes/BudFlower/bud_flower.tscn" id="8_6g6sg"]
+[ext_resource type="PackedScene" uid="uid://biylp83fubcv0" path="res://Enemies/BloomFly/enemy_pace.tscn" id="8_8xnil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w5fok"]
 texture = ExtResource("4_w5fok")
@@ -57,26 +58,52 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-159, -159, 587, -168, 
 
 [node name="TestScene" type="Node2D" unique_id=396629266]
 
-[node name="Backgrounds" type="Node2D" parent="." unique_id=333958372]
+[node name="Backgrounds" type="Node2D" parent="." unique_id=478513714]
 modulate = Color(0.84, 0.52766, 0.025199976, 1)
+z_index = -10
+position = Vector2(-627, 427)
 
-[node name="Background2" type="Sprite2D" parent="Backgrounds" unique_id=274393972]
+[node name="Background2" type="Sprite2D" parent="Backgrounds" unique_id=332380546]
 position = Vector2(-1080.2222, 416.5)
 scale = Vector2(1.9652779, 2.1252778)
 texture = ExtResource("1_wm1xt")
 
-[node name="Background4" type="Sprite2D" parent="Backgrounds" unique_id=670162641]
+[node name="Background4" type="Sprite2D" parent="Backgrounds" unique_id=960365684]
 position = Vector2(5290.5557, 417.00006)
 scale = Vector2(1.9652779, 2.1252778)
 texture = ExtResource("1_wm1xt")
 
-[node name="Background3" type="Sprite2D" parent="Backgrounds" unique_id=1346121453]
+[node name="Background3" type="Sprite2D" parent="Backgrounds" unique_id=426804164]
 position = Vector2(3347.5557, 417)
 scale = Vector2(1.9652779, 2.1252778)
 texture = ExtResource("1_wm1xt")
 
-[node name="Background" type="Sprite2D" parent="Backgrounds" unique_id=812215452]
+[node name="Background" type="Sprite2D" parent="Backgrounds" unique_id=1467560860]
 position = Vector2(862.77783, 416.50006)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_wm1xt")
+
+[node name="Background5" type="Sprite2D" parent="Backgrounds" unique_id=812951038]
+position = Vector2(-961.22217, -1092.8999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_wm1xt")
+
+[node name="Background6" type="Sprite2D" parent="Backgrounds" unique_id=1733579381]
+position = Vector2(5409.5557, -1092.3999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_wm1xt")
+
+[node name="Background7" type="Sprite2D" parent="Backgrounds" unique_id=1063171994]
+position = Vector2(3466.5557, -1092.3999)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("1_wm1xt")
+
+[node name="Background8" type="Sprite2D" parent="Backgrounds" unique_id=981689376]
+position = Vector2(981.77783, -1092.8999)
+rotation = -3.1415927
 scale = Vector2(1.9652779, 2.1252778)
 texture = ExtResource("1_wm1xt")
 
@@ -107,6 +134,10 @@ targetOffset = Vector2(-500, 0)
 position = Vector2(308, 833)
 navigation_polygon = SubResource("NavigationPolygon_ufb2d")
 
-[node name="Slug" parent="." unique_id=444600714 instance=ExtResource("9_6g6sg")]
-position = Vector2(1048, 989)
-scale = Vector2(2, 2)
+[node name="EnemyPace" parent="." unique_id=2133997665 instance=ExtResource("8_8xnil")]
+position = Vector2(308, 833)
+cooldown_time = 0.2
+enemy_positions = Array[Vector2]([Vector2(200, 800), Vector2(550, 900), Vector2(800, 800)])
+
+[node name="BudFlower" parent="." unique_id=1499620023 instance=ExtResource("8_6g6sg")]
+position = Vector2(1164, 915)

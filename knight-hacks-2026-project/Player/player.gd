@@ -2,10 +2,11 @@ class_name Player extends CharacterBody2D
 
 signal restart_level
 signal finish # this is called from the finish flower, disregard warning
-signal damaged # emitted by enemies.
+signal collect # this is called by the bud flower, also disregard
+signal damaged # emitted by enemies. #disregard
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -1000.0
+const SPEED = 1100.0
+const JUMP_VELOCITY = -1800.0
 const GRAVITY = 2500.0
 const DE_ACCELERATION = 150.0
 
@@ -21,7 +22,6 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("left") and canMoveLeft:
 		velocity.x = -1.0 * SPEED
-		velocity.y = 0
 		canMoveLeft = false
 		rotation = 0
 		scale = Vector2(-1, 1)
@@ -30,7 +30,6 @@ func _unhandled_input(event):
 		change_anim("walk")
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
-		velocity.y = 0
 		canMoveRight = false
 		rotation = 0
 		scale = Vector2(1, 1)
@@ -45,6 +44,8 @@ func _unhandled_input(event):
 		$UI/PauseMenu.visible = true
 		$UI/PauseMenu/VBoxContainer/Resume.grab_focus()
 		get_tree().paused = true
+	
+	elif event.is_action_pressed("reset"): kill()
 
 func _physics_process(delta: float) -> void:
 	if dead: return
@@ -87,13 +88,14 @@ func _physics_process(delta: float) -> void:
 				await get_tree().create_timer(1).timeout
 				kill()
 	
+	velocity.y = clampf(velocity.y, JUMP_VELOCITY, -JUMP_VELOCITY)
 	move_and_slide()
 
 func change_anim(anim: String):
 	%AnimationPlayer.play(anim)
 	%MainSprite.play(anim)
 
-func reset(): # no real use yet but we'll see
+func reset_player(): # no real use yet but we'll see
 	$RightArmPivot.visible = true
 	$LeftArmPivot.visible = true
 	$RightLegPivot.visible = true
@@ -104,6 +106,16 @@ func reset(): # no real use yet but we'll see
 	canMoveRight = true
 
 func kill():
+	# to make sure for functions like the reset input that call this cold
+	dead = true
+	$RightArmPivot.visible = false
+	$LeftArmPivot.visible = false
+	$RightLegPivot.visible = false
+	$LeftLegPivot.visible = false
+	$LegCollision.disabled = true
+	jumpCharges = 0
+	canMoveLeft = false
+	canMoveRight = false
 	change_anim("death")
 	await get_tree().create_timer(1).timeout
 	restart_level.emit()
@@ -139,10 +151,7 @@ func takeDamage():
 	else:
 		kill()
 	
-		
-	
 # collide with enemies
 
-
 func _on_damaged() -> void:
-	takeDamage();
+	takeDamage.call_deferred()
