@@ -26,6 +26,7 @@ func restart():
 	%SwipeAnim.play("swipe_out")
 	
 	player = currentScene.get_node("Player")
+	player.get_node("Camera2D").make_current()
 	$UI/DebugMenu.player = player
 	player.get_node("Camera2D").make_current()
 	player.restart_level.connect(restart)

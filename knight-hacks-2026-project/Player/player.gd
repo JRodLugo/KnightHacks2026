@@ -4,8 +4,8 @@ signal restart_level
 signal finish # this is called from the finish flower, disregard warning
 signal damaged # emitted by enemies.
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -1000.0
+const SPEED = 900.0
+const JUMP_VELOCITY = -1600.0
 const GRAVITY = 2500.0
 const DE_ACCELERATION = 150.0
 
@@ -21,7 +21,8 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("left") and canMoveLeft:
 		velocity.x = -1.0 * SPEED
-		velocity.y = 0
+		if velocity.y < 0:
+			velocity.y = 100
 		canMoveLeft = false
 		rotation = 0
 		scale = Vector2(-1, 1)
@@ -30,7 +31,9 @@ func _unhandled_input(event):
 		change_anim("walk")
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
-		velocity.y = 0
+		if velocity.y > 0:
+			velocity.y = 100
+			velocity.x=SPEED*1.4
 		canMoveRight = false
 		rotation = 0
 		scale = Vector2(1, 1)
@@ -93,7 +96,7 @@ func change_anim(anim: String):
 	%AnimationPlayer.play(anim)
 	%MainSprite.play(anim)
 
-func reset(): # no real use yet but we'll see
+func reset_player(): # no real use yet but we'll see
 	$RightArmPivot.visible = true
 	$LeftArmPivot.visible = true
 	$RightLegPivot.visible = true
@@ -139,10 +142,7 @@ func takeDamage():
 	else:
 		kill()
 	
-		
-	
 # collide with enemies
 
-
 func _on_damaged() -> void:
-	takeDamage();
+	takeDamage.call_deferred()
