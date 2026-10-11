@@ -7,7 +7,7 @@ func _input(event):
 		visible = not visible # flip visibility
 
 func _on_reset_player_button_down() -> void:
-	player.reset()
+	player.reset_player()
 
 func _on_restart_level_button_down() -> void:
 	player.restart_level.emit()
