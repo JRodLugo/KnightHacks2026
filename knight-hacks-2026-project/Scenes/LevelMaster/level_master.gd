@@ -14,6 +14,7 @@ func _ready():
 		newEntry.get_node("LevelTitle").set_text(level.level_name)
 		newEntry.get_node("PlayLevel").button_down.connect(func(): currentLevelData = level; restart())
 		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
+		if levels[0].level_name == level.level_name: newEntry.get_node("PlayLevel").grab_focus()
 	%SwipeAnim.play("swipe_out")
 
 func restart():
