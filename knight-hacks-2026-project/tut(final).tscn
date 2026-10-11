@@ -13,7 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://bmclj0shg67u6" path="res://assets/sprite/Ground_Tile_Grass.png" id="11_dh1wr"]
 [ext_resource type="Texture2D" uid="uid://rho4c4hf16xx" path="res://assets/sprite/Rough_TileMapV3_tocropvedkkjfv.jpg" id="12_adlev"]
 [ext_resource type="PackedScene" uid="uid://cl3pnyiik20ha" path="res://Scenes/MovingPlatform/moving_platform.tscn" id="13_337vv"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dtef6hmuvib4x" path="res://Enemies/Chomper/enemy_chomper.tscn" id="14_lxlcu"]
+=======
+[ext_resource type="PackedScene" uid="uid://brf2txwpq5b6h" path="res://Enemies/Slug/enemy_slug.tscn" id="14_7rfui"]
+[ext_resource type="PackedScene" uid="uid://dtef6hmuvib4x" path="res://Enemies/Chomper/enemy_chomper.tscn" id="15_7rfui"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Resource" id="Resource_eqrsh"]
 script = ExtResource("2_adlev")
@@ -256,11 +261,11 @@ position = Vector2(2843.8555, 113.86182)
 
 [sub_resource type="Resource" id="Resource_337vv"]
 script = ExtResource("2_adlev")
-position = Vector2(2232.9866, 108.73071)
+position = Vector2(22.728027, 62.198975)
 
 [sub_resource type="Resource" id="Resource_baic4"]
 script = ExtResource("2_adlev")
-position = Vector2(2225.196, 2848.551)
+position = Vector2(-19.962402, 2802.0193)
 
 [sub_resource type="Resource" id="Resource_d8obs"]
 script = ExtResource("2_adlev")
@@ -337,15 +342,24 @@ _next_key = 19
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_42k50"]
 _surfaces = [{
+<<<<<<< Updated upstream
 "aabb": AABB(2225.196, 108.73071, 0, 2062.889, 2739.8203, 1e-05),
 "attribute_data": PackedByteArray("/////xCM4UBZiJdAEIzhQFmIl0D/////y4PhQLYxS0DLg+FAtjFLQP////9TBfFAqAJJQFMF8UCoAklA/////4JU80BQtuNAglTzQFC240D/////nHnnQDvW40CceedAO9bjQP/////twOdAYLQaQe3A50BgtBpB/////w2c2EAi7hpBDZzYQCLuGkH/////zLCmQGCH50DMsKZAYIfnQP////8cpKZAmp4rQRykpkCanitB/////1OKfED/Xy1BU4p8QP9fLUH/////EpjXQIuF5EASmNdAi4XkQP////+rbH1AJcXTPqtsfUAlxdM+/////yvfokBrHplAK9+iQGsemUD/////W2ChQIPD3T5bYKFAg8PdPg=="),
+=======
+"aabb": AABB(-19.962402, 62.198975, 0, 4308.0474, 2784.4204, 1e-05),
+"attribute_data": PackedByteArray("/////xCM4UBZiJdAEIzhQFmIl0D/////y4PhQLYxS0DLg+FAtjFLQP////9TBfFAqAJJQFMF8UCoAklA/////4JU80BQtuNAglTzQFC240D/////CYjiQIuF5EAJiOJAi4XkQP////8RmuJAVqUUQRGa4kBWpRRB/////4SczkCGNBVBhJzOQIY0FUH/////zLCmQGCH50DMsKZAYIfnQP/////2YqZA5kEtQfZipkDmQS1B/////+n+EL35iipB6f4QvfmKKkH/////g5HNQMIr5kCDkc1AwivmQP////9tFSU91EhyPm0VJT3USHI+/////yvfokBrHplAK9+iQGsemUD/////W2ChQIPD3T5bYKFAg8PdPg=="),
+>>>>>>> Stashed changes
 "format": 34359742527,
 "index_count": 39,
 "index_data": PackedByteArray("AAABAAIAAgADAAQABAAFAAYABwAIAAkAAAACAAQABAAGAAoABwAJAAsADAAAAAQADAAEAAoADAAKAAcADAAHAAsACwANAA0ADQAMAAsA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 14,
+<<<<<<< Updated upstream
 "vertex_data": PackedByteArray("RGt4ReWam0QAAAAAKWJ4RbCnUEQAAAAAHbuERZxpTkQAAAAArgCGRfrU6UQAAAAAtPJ+RcD16UQAAAAAQEF/Rb/cHkUAAAAAPJNuRQ4YH0UAAAAAFpg3RUzA7UQAAAAAHYo3RVk7MEUAAAAAIxMLRdEIMkUAAAAA5HRtRcap6kQAAAAAyY8LRSB22UIAAAAAUmMzReE7nUQAAAAAsL0xRUC540IAAAAA//////7//7///////v//v//////+//+///////7//7///////v//v//////+//+///////7//7///////v//v//////+//+///////7//7///////v//v/////////+///////7//7//////////vw==")
+=======
+"vertex_data": PackedByteArray("RGt4ReWam0QAAAAAKWJ4RbCnUEQAAAAAHbuERZxpTkQAAAAArgCGRfrU6UQAAAAAyoB5Rcap6kQAAAAAppR5RQWkGEUAAAAAJpBjRQ83GUUAAAAAFpg3RUzA7UQAAAAAW0I3RenpMUUAAAAAALOfwU8gL0UAAAAAEWpiRVZb7EQAAAAAANO1QcDLeEIAAAAAUmMzReE7nUQAAAAAsL0xRUC540IAAAAA//////7//7///////v//v//////+//+///////7//7//////////v//////+//+///////7//7//////////v/////////+//////////7///////v//v/////////+//////////7//////////vw==")
+>>>>>>> Stashed changes
 }]
 
 [sub_resource type="Resource" id="Resource_7n1n5"]
@@ -398,7 +412,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=944719242]
 position = Vector2(0, -11)
-polygon = PackedVector2Array(3380.4985, -173.48352, 4611.4365, -174.94287, 4636.8193, 524.26514, 3381.6973, 508.4287)
+polygon = PackedVector2Array(3351, -167, 4611.4365, -174.94287, 4636.8193, 524.26514, 3381.6973, 508.4287)
 
 [node name="column" type="StaticBody2D" parent="." unique_id=1552955596]
 position = Vector2(-218, 64)
@@ -412,7 +426,15 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="column" unique_id=1377115680]
+<<<<<<< Updated upstream
 polygon = PackedVector2Array(5371.4434, -1141.0701, 6236.633, -1157.3501, 6321.31, 3116.5637, 5554.3057, 3124.5093, 5005.1724, 3113.5273, 4450.9277, 3115.698, 4132.3276, 3104.3235, 4144.2676, 2650.6387, 4430.805, 2632.7305, 4437.7954, 1614.7659, 4933.3296, 1614.2946, 4974.8906, 2558.0347, 5423.5093, 2558.306)
+=======
+polygon = PackedVector2Array(5371.4434, -2714.8076, 6236.633, -2731.0876, 6310.456, 3002.5999, 4179.731, 2981.049, 4175.2686, 2705.9717, 4472.41, 2705.972, 4455.2754, 1247.686, 4933.3296, 1247.2147, 4953.221, 2709.7207, 5423.5093, 2709.992)
+
+[node name="Essence" parent="column" unique_id=127966517 instance=ExtResource("10_gswk4")]
+position = Vector2(4248, 1825)
+scale = Vector2(2, 2)
+>>>>>>> Stashed changes
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=244126307]
 position = Vector2(-451, -84)
@@ -427,12 +449,20 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=1543943573]
+<<<<<<< Updated upstream
 polygon = PackedVector2Array(2872.8555, 635.8618, 2899.2075, 1779.8712, 4003.704, 1766.8405, 4003.135, 1356.6201, 4276.389, 1347.6501, 4317.085, 2392.6555, 4108.169, 2393.6797, 4113.078, 3063.7966, 3846.2021, 3067.5034, 3828.3057, 2399.3054, 2966.5054, 2424.0093, 2965.632, 3341.7092, 2254.196, 3370.551, 2261.9866, 630.7307)
+=======
+polygon = PackedVector2Array(2872.8555, 635.8618, 2899.2075, 1779.8712, 4003.704, 1766.8405, 4003.135, 1356.6201, 4276.389, 1347.6501, 4317.085, 2392.6555, 4021.0493, 2399.3054, 4022.2905, 2964.2512, 3670.0093, 2973.4412, 3651.6292, 2412.8542, 2966.5054, 2424.0093, 2961.1472, 3368.6194, 9.037598, 3324.0193, 51.728027, 584.199)
+
+[node name="Slug" parent="StaticBody2D3" unique_id=444600714 instance=ExtResource("14_7rfui")]
+position = Vector2(4595, 2857)
+>>>>>>> Stashed changes
 
 [node name="MovingPlatform" parent="." unique_id=430009440 instance=ExtResource("13_337vv")]
 position = Vector2(3762, 3586)
 targetOffset = Vector2(2500, 0)
 
+<<<<<<< Updated upstream
 [node name="Essence" parent="." unique_id=1973813749 instance=ExtResource("10_gswk4")]
 position = Vector2(2839, -271)
 
@@ -456,3 +486,22 @@ position = Vector2(4832, 2632)
 
 [node name="Chomper7" parent="." unique_id=1318712179 instance=ExtResource("14_lxlcu")]
 position = Vector2(5077, 2620)
+=======
+[node name="Chomper" parent="." unique_id=2127503277 instance=ExtResource("15_7rfui")]
+position = Vector2(2529, 1680)
+
+[node name="Chomper2" parent="." unique_id=1290427166 instance=ExtResource("15_7rfui")]
+position = Vector2(2830, 1685)
+
+[node name="Chomper3" parent="." unique_id=395197382 instance=ExtResource("15_7rfui")]
+position = Vector2(3200, 1675)
+
+[node name="Chomper4" parent="." unique_id=2046706306 instance=ExtResource("15_7rfui")]
+position = Vector2(3417, 1670)
+
+[node name="Chomper5" parent="." unique_id=1803040732 instance=ExtResource("15_7rfui")]
+position = Vector2(4863, 2775)
+
+[node name="Chomper6" parent="." unique_id=1715625817 instance=ExtResource("15_7rfui")]
+position = Vector2(5045, 2780)
+>>>>>>> Stashed changes
