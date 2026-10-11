@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="11_y61qw"]
 [ext_resource type="PackedScene" uid="uid://brf2txwpq5b6h" path="res://Enemies/Slug/enemy_slug.tscn" id="13_dcs56"]
 [ext_resource type="PackedScene" uid="uid://carc51jqs07q7" path="res://Scenes/Misc/kill_boarder.tscn" id="14_tx6u6"]
+[ext_resource type="Texture2D" uid="uid://1nlh1len6kj" path="res://assets/sprite/bg_mushrooms.webp" id="15_h1y8g"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("5_1em4s")
@@ -53,7 +54,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 8
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dcs56"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1em4s"]
 _surfaces = [{
 "aabb": AABB(-3396.885, 89.18652, 0, 9528.49, 621.06165, 1e-05),
 "attribute_data": PackedByteArray("/////6EuDkGkWwQ+oS4OQaRbBD7/////3hwOQZXBgz/eHA5BlcGDP/////8fIpzALoOCPx8inMAug4I//////2WJncAqABI+ZYmdwCoAEj4="),
@@ -66,20 +67,66 @@ _surfaces = [{
 "vertex_data": PackedByteArray("15y/RYBfskIAAAAA54S/ReKPMUQAAAAA+2lSxcniL0QAAAAAKU5UxTjCxEIAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_tx6u6"]
+[sub_resource type="Resource" id="Resource_loxcm"]
 script = ExtResource("7_euos0")
 texture = ExtResource("6_oq2jp")
-mesh = SubResource("ArrayMesh_dcs56")
+mesh = SubResource("ArrayMesh_1em4s")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_h1y8g"]
+[sub_resource type="Resource" id="Resource_euos0"]
 script = ExtResource("9_ucjya")
-meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_tx6u6")])
+meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_loxcm")])
 
 [sub_resource type="Resource" id="Resource_0lcl8"]
 script = ExtResource("11_tcm2s")
 _edge_meta_materials = Array[ExtResource("10_l36fa")]([null])
 fill_textures = Array[Texture2D]([ExtResource("6_oq2jp")])
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bor82"]
+texture = ExtResource("15_h1y8g")
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lqcak"]
+sources/0 = SubResource("TileSetAtlasSource_bor82")
 
 [node name="Level 1" type="Node2D" unique_id=1517946396]
 
@@ -142,7 +189,7 @@ position = Vector2(-17, 167)
 position = Vector2(-71, -260)
 script = ExtResource("4_h1y8g")
 _points = SubResource("Resource_e0n1a")
-_mesh_cache = SubResource("Resource_h1y8g")
+_mesh_cache = SubResource("Resource_euos0")
 shape_material = SubResource("Resource_0lcl8")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -164,3 +211,8 @@ movement_speed = 700.0
 
 [node name="Kill_Boarder" parent="." unique_id=813336665 instance=ExtResource("14_tx6u6")]
 position = Vector2(-13, 705)
+
+[node name="MushroomDecorations" type="TileMapLayer" parent="." unique_id=1958169733]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAZAP//AAAAAAcAAAAaAP//AAABAAcAAAAbAP//AAACAAcAAAAcAP//AAADAAcAAAAsAP//AAAAAAcAAAAtAP//AAABAAcAAAAuAP//AAACAAcAAAAvAP//AAADAAcAAADu////AAAAAAcAAADv////AAABAAcAAADw////AAACAAcAAADx////AAADAAcAAADT////AAAAAAcAAADU////AAABAAcAAADV////AAACAAcAAADW////AAADAAcAAAC6////AAAAAAcAAAC7////AAABAAcAAAC8////AAACAAcAAAC9////AAADAAcAAACr////AAAAAAcAAACs////AAABAAcAAACt////AAACAAcAAACu////AAADAAcAAABtAP//AAAAAAcAAABuAP//AAABAAcAAABvAP//AAACAAcAAABwAP//AAADAAcAAACeAP//AAAAAAcAAACfAP//AAABAAcAAACgAP//AAACAAcAAAChAP//AAADAAcAAABgAP//AAAEAAcAAABhAP//AAAFAAcAAABiAP//AAAGAAcAAABjAP//AAAHAAcAAADB////AAAEAAcAAADC////AAAFAAcAAADD////AAAGAAcAAADE////AAAHAAcAAAAfAP3/AAAAAAEAAAAfAP7/AAAAAAIAAAAgAP3/AAABAAEAAAAgAP7/AAABAAIAAAAgAP//AAABAAMAAAAhAP3/AAACAAEAAAAhAP7/AAACAAIAAAAhAP//AAACAAMAAAAiAP3/AAADAAEAAAAiAP7/AAADAAIAAAAiAP//AAADAAMAAAA6AP3/AAAAAAEAAAA6AP7/AAAAAAIAAAA7AP3/AAABAAEAAAA7AP7/AAABAAIAAAA7AP//AAABAAMAAAA8AP3/AAACAAEAAAA8AP7/AAACAAIAAAA8AP//AAACAAMAAAA9AP3/AAADAAEAAAA9AP7/AAADAAIAAAA9AP//AAADAAMAAABlAP3/AAAAAAEAAABlAP7/AAAAAAIAAABmAP3/AAABAAEAAABmAP7/AAABAAIAAABmAP//AAABAAMAAABnAP3/AAACAAEAAABnAP7/AAACAAIAAABnAP//AAACAAMAAABoAP3/AAADAAEAAABoAP7/AAADAAIAAABoAP//AAADAAMAAACy//3/AAAEAAEAAACy//7/AAAEAAIAAACz//3/AAAFAAEAAACz//7/AAAFAAIAAACz////AAAFAAMAAAC0//3/AAAGAAEAAAC0//7/AAAGAAIAAAC0////AAAGAAMAAAC1//3/AAAHAAEAAAC1//7/AAAHAAIAAAC1////AAAHAAMAAAA=")
+tile_set = SubResource("TileSet_lqcak")
