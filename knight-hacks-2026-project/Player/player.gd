@@ -22,6 +22,10 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("left") and canMoveLeft:
 		velocity.x = -1.0 * SPEED
+		if velocity.y>0:
+			velocity.y = -2
+			velocity.x = SPEED *-1.4
+		
 		canMoveLeft = false
 		rotation = 0
 		scale = Vector2(-1, 1)
@@ -30,6 +34,9 @@ func _unhandled_input(event):
 		change_anim("walk")
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
+		if velocity.y>0:
+			velocity.y = -2
+			velocity.x = SPEED * 1.4
 		canMoveRight = false
 		rotation = 0
 		scale = Vector2(1, 1)

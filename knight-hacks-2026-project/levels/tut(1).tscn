@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cb1eybgfttg6y" path="res://Scenes/BudFlower/bud_flower.tscn" id="11_q802v"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_tcm2s"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="11_y61qw"]
+[ext_resource type="PackedScene" uid="uid://brf2txwpq5b6h" path="res://Enemies/Slug/enemy_slug.tscn" id="13_dcs56"]
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("5_1em4s")
@@ -51,7 +52,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 8
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_y61qw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_dcs56"]
 _surfaces = [{
 "aabb": AABB(-3396.885, 89.18652, 0, 9528.49, 621.06165, 1e-05),
 "attribute_data": PackedByteArray("/////6EuDkGkWwQ+oS4OQaRbBD7/////3hwOQZXBgz/eHA5BlcGDP/////8fIpzALoOCPx8inMAug4I//////2WJncAqABI+ZYmdwCoAEj4="),
@@ -64,15 +65,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("15y/RYBfskIAAAAA54S/ReKPMUQAAAAA+2lSxcniL0QAAAAAKU5UxTjCxEIAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_q802v"]
+[sub_resource type="Resource" id="Resource_tx6u6"]
 script = ExtResource("7_euos0")
 texture = ExtResource("6_oq2jp")
-mesh = SubResource("ArrayMesh_y61qw")
+mesh = SubResource("ArrayMesh_dcs56")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_dcs56"]
+[sub_resource type="Resource" id="Resource_h1y8g"]
 script = ExtResource("9_ucjya")
-meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_q802v")])
+meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_tx6u6")])
 
 [sub_resource type="Resource" id="Resource_0lcl8"]
 script = ExtResource("11_tcm2s")
@@ -140,7 +141,7 @@ position = Vector2(-17, 167)
 position = Vector2(-71, -260)
 script = ExtResource("4_h1y8g")
 _points = SubResource("Resource_e0n1a")
-_mesh_cache = SubResource("Resource_dcs56")
+_mesh_cache = SubResource("Resource_h1y8g")
 shape_material = SubResource("Resource_0lcl8")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -155,3 +156,7 @@ position = Vector2(2588, -96)
 
 [node name="BudFlower" parent="." unique_id=1499620023 instance=ExtResource("11_q802v")]
 position = Vector2(-264, -58)
+
+[node name="Slug" parent="." unique_id=444600714 instance=ExtResource("13_dcs56")]
+position = Vector2(-996, 12)
+movement_speed = 700.0

@@ -139,7 +139,7 @@ _data = {
 size = Vector2(50, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttndd"]
-size = Vector2(400, 5)
+size = Vector2(800, 5)
 
 [node name="Slug" type="CharacterBody2D" unique_id=444600714 node_paths=PackedStringArray("sprite", "col_shape", "nav_agent")]
 scale = Vector2(2, 2)

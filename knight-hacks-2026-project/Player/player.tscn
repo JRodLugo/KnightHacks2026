@@ -702,7 +702,7 @@ target_position = Vector2(0, 130)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1402125157]
 position = Vector2(0, -144)
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
 
 [node name="IFrames" type="Timer" parent="." unique_id=930878220]
