@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dempwf71lgrcx" path="res://Enemies/Slug/enemy_slug.gd" id="1_6y523"]
 [ext_resource type="Texture2D" uid="uid://c7kbs335abjda" path="res://Enemies/Slug/Slug_sprSheet.png" id="2_gwoif"]
+[ext_resource type="AudioStream" uid="uid://wbemf025hi66" path="res://Enemies/Slug/slug(1).wav" id="3_gwoif"]
 
 [sub_resource type="Animation" id="Animation_ttndd"]
 length = 0.001
@@ -179,6 +180,10 @@ debug_use_custom = true
 debug_path_custom_color = Color(0, 0, 1, 1)
 
 [node name="DownTime" type="Timer" parent="." unique_id=198663408]
+
+[node name="HELLO" type="AudioStreamPlayer2D" parent="." unique_id=1267089692]
+stream = ExtResource("3_gwoif")
+volume_db = 13.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="ColRadius" to="." method="_on_col_radius_body_entered"]

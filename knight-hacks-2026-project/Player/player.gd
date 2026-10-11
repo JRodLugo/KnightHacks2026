@@ -32,6 +32,7 @@ func _unhandled_input(event):
 		$LeftArmPivot.visible = false
 		limb_explode($LeftArmPivot.global_position)
 		change_anim("walk")
+		$Woosh.play()
 	elif event.is_action_pressed("right") and canMoveRight:
 		velocity.x = SPEED
 		if velocity.y>0:
@@ -43,6 +44,7 @@ func _unhandled_input(event):
 		$RightArmPivot.visible = false
 		limb_explode($RightArmPivot.global_position)
 		change_anim("walk")
+		$Woosh.play()
 	elif event.is_action_pressed("stop") and %Groundcast.get_collider():
 		velocity.x = 0
 		change_anim("idle")
@@ -76,6 +78,7 @@ func _physics_process(delta: float) -> void:
 		# weird ternary to remove right then left sequentially, im sorry
 		var selectedLeg = get_node(("Right" if jumpCharges == 1 else "Left") + "LegPivot")
 		selectedLeg.visible = false
+		$Woosh.play()
 		limb_explode(selectedLeg.global_position)
 		
 		if jumpCharges == 0: $LegCollision.disabled = true
@@ -115,6 +118,7 @@ func reset_player(): # no real use yet but we'll see
 func kill():
 	# to make sure for functions like the reset input that call this cold
 	dead = true
+	$Death.play()
 	$RightArmPivot.visible = false
 	$LeftArmPivot.visible = false
 	$RightLegPivot.visible = false

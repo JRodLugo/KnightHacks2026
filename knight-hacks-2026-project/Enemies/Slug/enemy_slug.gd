@@ -46,6 +46,7 @@ func _on_col_radius_body_entered(body: Node2D) -> void:
 		turn_to_player(body);
 		nav_agent.target_position = Vector2();
 		%AnimationPlayer.play("slug/eating");
+		$HELLO.play()
 		body.damaged.emit();
 		body.velocity = Vector2(0,0);
 		print("nom");

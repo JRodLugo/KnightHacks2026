@@ -12,7 +12,7 @@ func _ready():
 	for level in levels:
 		var newEntry = levelEntry.instantiate()
 		newEntry.get_node("LevelTitle").set_text(level.level_name)
-		newEntry.get_node("PlayLevel").button_down.connect(func(): currentLevelData = level; restart())
+		newEntry.get_node("PlayLevel").button_down.connect(func(): $ButtonClick.play(); currentLevelData = level; restart())
 		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
 		if levels[0].level_name == level.level_name: newEntry.get_node("PlayLevel").grab_focus()
 	%SwipeAnim.play("swipe_out")
@@ -35,6 +35,7 @@ func restart():
 
 func level_finish():
 	get_tree().paused = true
+	%LevelFinish.get_node("Win").play()
 	%LevelFinish.visible = true
 	%LevelFinish.get_node("LimbsKept").set_text("Limbs kept:   " + str(get_player_limb_count()))
 	%LevelFinish.get_node("Collectibles").set_text("Buds squashed:   " + str(collected)+"/"+str(currentLevelData.collectible_amount))
@@ -42,6 +43,7 @@ func level_finish():
 	%LFAnim.play("slide_in")
 
 func _on_next_level_button_down() -> void:
+	$ButtonClick.play()
 	%LFAnim.play("RESET")
 	%LFAnim.get_parent().visible = false
 	collected = 0

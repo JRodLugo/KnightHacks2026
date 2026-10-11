@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c250juyfqc3by" path="res://Enemies/Chomper/enemy_chomper.gd" id="1_7g0im"]
 [ext_resource type="Texture2D" uid="uid://c7qvygv2n76kc" path="res://Enemies/Chomper/Chomper_sprSheet.png" id="2_4c3qh"]
+[ext_resource type="AudioStream" uid="uid://dibfsq4n1uj4n" path="res://Enemies/Chomper/chomper(1).wav" id="3_4c3qh"]
+[ext_resource type="AudioStream" uid="uid://uws6hawwbsts" path="res://Enemies/Chomper/chomperAttack(2).wav" id="4_jnr6y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w5mv"]
 radius = 20.0
@@ -210,6 +212,12 @@ libraries/chomper = SubResource("AnimationLibrary_qdhpp")
 position = Vector2(0, -31)
 shape = SubResource("CircleShape2D_vaq45")
 debug_color = Color(0.8728875, 0.72647285, 0, 0.41960785)
+
+[node name="Hiss" type="AudioStreamPlayer2D" parent="." unique_id=1737939965]
+stream = ExtResource("3_4c3qh")
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="." unique_id=1229954775]
+stream = ExtResource("4_jnr6y")
 
 [connection signal="body_entered" from="ColRadius" to="." method="_on_col_radius_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

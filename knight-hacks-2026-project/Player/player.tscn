@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://btl7bno51y6n6" path="res://Player/Assets/Jumping_Sprite_Sheet.png" id="5_vtle1"]
 [ext_resource type="PackedScene" uid="uid://cpyddf2qand11" path="res://Scenes/PauseMenu/pause_menu.tscn" id="6_fhl08"]
 [ext_resource type="Texture2D" uid="uid://bpb8nr15pj47s" path="res://Player/Assets/leftRight_Sprite_Sheet.png" id="6_od3ui"]
+[ext_resource type="AudioStream" uid="uid://bf4nh8t8bs46m" path="res://Player/Assets/woosh(1).wav" id="10_x3vf3"]
+[ext_resource type="AudioStream" uid="uid://x6wk07ixb54a" path="res://Player/Assets/budFlower_killed.wav" id="11_apopc"]
+[ext_resource type="AudioStream" uid="uid://dq3gjfwjynh8y" path="res://Player/Assets/mushroomDeath.wav" id="12_5htga"]
 
 [sub_resource type="Animation" id="Animation_l8h54"]
 length = 0.001
@@ -706,5 +709,16 @@ zoom = Vector2(0.35, 0.35)
 position_smoothing_enabled = true
 
 [node name="IFrames" type="Timer" parent="." unique_id=930878220]
+
+[node name="Woosh" type="AudioStreamPlayer2D" parent="." unique_id=1838165715]
+stream = ExtResource("10_x3vf3")
+volume_db = 22.355
+
+[node name="Squash" type="AudioStreamPlayer2D" parent="." unique_id=1110781007]
+stream = ExtResource("11_apopc")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=609399833]
+stream = ExtResource("12_5htga")
+volume_db = 6.804
 
 [connection signal="damaged" from="." to="." method="_on_damaged"]
