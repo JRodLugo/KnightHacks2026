@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_aho07"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_78mqv"]
 [ext_resource type="Texture2D" uid="uid://rho4c4hf16xx" path="res://assets/sprite/Rough_TileMapV3_tocropvedkkjfv.jpg" id="9_dob74"]
-[ext_resource type="PackedScene" uid="uid://cxnae1fd2sugx" path="res://Scenes/Essence/essence.tscn" id="10_gs8i2"]
 [ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="12_g0nrn"]
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="13_0hpm6"]
 [ext_resource type="PackedScene" uid="uid://pnlptn7ujrlt" path="res://Scenes/FinishFlower/finish_flower.tscn" id="14_0hpm6"]
@@ -483,10 +482,7 @@ position = Vector2(-9.598633, 33)
 scale = Vector2(0.9857858, 1)
 polygon = PackedVector2Array(-714.084, 145.9632, 763.43195, 130.60156, 758.6243, 601.1124, -722.09406, 588.69086)
 
-[node name="Area2D" parent="." unique_id=1973813749 instance=ExtResource("10_gs8i2")]
-position = Vector2(4729, -1863)
-
-[node name="Slope" type="StaticBody2D" parent="." unique_id=2116386085 groups=["slope"]]
+[node name="Slope" type="StaticBody2D" parent="." unique_id=2116386085]
 
 [node name="SS2D_Shape" type="Node2D" parent="Slope" unique_id=1883575659]
 position = Vector2(2518, 222)

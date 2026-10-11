@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cr8ipd63yvt5n" path="res://Scenes/TestScene/test_scene.tscn" id="1_ew8l7"]
 [ext_resource type="Script" uid="uid://cwsqppim08cap" path="res://scripts/level_data.gd" id="1_j20mr"]
+[ext_resource type="Resource" uid="uid://4ppqpmklo4hk" path="res://Scenes/LevelMaster/LevelData/Tut1.tres" id="2_qvi32"]
 
 [resource]
 script = ExtResource("1_j20mr")
 level_name = "Test Level"
 level_scene = ExtResource("1_ew8l7")
+next = ExtResource("2_qvi32")
 metadata/_custom_type_script = "uid://cwsqppim08cap"
