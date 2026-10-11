@@ -388,6 +388,7 @@ polygon = PackedVector2Array(5371.4434, -1141.0701, 6236.633, -1157.3501, 6321.3
 
 [node name="Essence" parent="column" unique_id=127966517 instance=ExtResource("10_gswk4")]
 position = Vector2(4248, 1825)
+scale = Vector2(1.5, 1.5)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=244126307]
 position = Vector2(-451, -84)
