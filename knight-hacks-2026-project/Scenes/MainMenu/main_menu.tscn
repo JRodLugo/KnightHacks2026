@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bn1vc2n3nqiyr" path="res://Scenes/MainMenu/Menu.png" id="2_0qgbs"]
 [ext_resource type="FontFile" uid="uid://553lldmgl4ms" path="res://assets/fonts/QALA.ttf" id="3_adu2g"]
 [ext_resource type="PackedScene" uid="uid://cla4y1qhotjkp" path="res://Scenes/SettingsMenu/settings_menu.tscn" id="5_adu2g"]
+[ext_resource type="PackedScene" uid="uid://c8lwdgafqtkla" path="res://Scenes/MainMenu/button_click.tscn" id="6_0l8wx"]
 
 [node name="MainMenu" type="Control" unique_id=1464975273]
 layout_mode = 3
@@ -88,6 +89,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="ButtonClick" parent="." unique_id=1420810111 instance=ExtResource("6_0l8wx")]
 
 [connection signal="button_down" from="VBoxContainer/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="VBoxContainer/Settings" to="." method="_on_settings_button_down"]

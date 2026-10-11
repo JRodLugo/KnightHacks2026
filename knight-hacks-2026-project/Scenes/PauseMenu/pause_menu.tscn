@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="1_bgicp"]
 [ext_resource type="Script" uid="uid://qfuh5wfstihi" path="res://Scenes/PauseMenu/pause_menu.gd" id="1_pmgrh"]
+[ext_resource type="PackedScene" uid="uid://c8lwdgafqtkla" path="res://Scenes/MainMenu/button_click.tscn" id="2_40me1"]
 [ext_resource type="PackedScene" uid="uid://cla4y1qhotjkp" path="res://Scenes/SettingsMenu/settings_menu.tscn" id="3_7flpu"]
 
 [node name="PauseMenu" type="Control" unique_id=1585771940]
@@ -13,6 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pmgrh")
+
+[node name="ButtonClick" parent="." unique_id=1420810111 instance=ExtResource("2_40me1")]
 
 [node name="Background" type="ColorRect" parent="." unique_id=174115010]
 layout_mode = 1

@@ -12,6 +12,7 @@ func _ready():
 func _on_col_radius_body_entered(body: Node2D) -> void:
 	if body is Player:
 		player_within_radius = true;
+		$Attack.play()
 		body.damaged.emit();
 		# reverse player direction
 		body.velocity = -body.velocity;
@@ -23,6 +24,7 @@ func _on_hiss_radius_body_entered(body: Node2D) -> void:
 		player_within_radius = false;
 		turn_to_player(body)
 		#start hissing
+		$Hiss.play()
 		%AnimationPlayer.play("chomper/idle-to-hiss")
 		pass
 

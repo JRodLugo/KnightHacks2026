@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5yq74itoiyak" path="res://Scenes/SettingsMenu/settings_menu.gd" id="1_1lds4"]
 [ext_resource type="Theme" uid="uid://dctcahscxrwhr" path="res://Scenes/SettingsMenu/settings.tres" id="1_r3on5"]
+[ext_resource type="PackedScene" uid="uid://c8lwdgafqtkla" path="res://Scenes/MainMenu/button_click.tscn" id="2_o2k8u"]
 [ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_7vxyt"]
 
 [node name="SettingsMenu" type="Control" unique_id=1938883888]
@@ -12,6 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1lds4")
+
+[node name="ButtonClick" parent="." unique_id=1420810111 instance=ExtResource("2_o2k8u")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1349154411]
 layout_mode = 1

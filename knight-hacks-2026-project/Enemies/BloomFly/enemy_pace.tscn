@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://6snmv56vkqxa" path="res://Enemies/BloomFly/enemy_pace.gd" id="1_ckxdx"]
 [ext_resource type="Texture2D" uid="uid://dleyg20kwsxqh" path="res://Enemies/BloomFly/BloomFly_sprSheet.png" id="2_tu0sn"]
+[ext_resource type="AudioStream" uid="uid://bv5jo5jjjieh5" path="res://Enemies/BloomFly/bugIDEL.wav" id="3_e7u6i"]
+[ext_resource type="AudioStream" uid="uid://blqs1tm700yt8" path="res://Enemies/BloomFly/bugMOVE.wav" id="4_7nb0x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ff2q2"]
 radius = 14.1
@@ -117,6 +119,13 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1209716908]
 libraries/ = SubResource("AnimationLibrary_hurxv")
 libraries/bloomfly = SubResource("AnimationLibrary_p6rp5")
+
+[node name="Idle" type="AudioStreamPlayer2D" parent="." unique_id=198114923]
+stream = ExtResource("3_e7u6i")
+
+[node name="Move" type="AudioStreamPlayer2D" parent="." unique_id=64110074]
+stream = ExtResource("4_7nb0x")
+volume_db = 5.832
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

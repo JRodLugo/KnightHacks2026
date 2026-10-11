@@ -11,6 +11,8 @@
 [ext_resource type="Resource" uid="uid://1q4si7urpypi" path="res://Scenes/LevelMaster/LevelData/Tut2.tres" id="5_otxae"]
 [ext_resource type="Resource" uid="uid://sd7kpixpnl3b" path="res://Scenes/LevelMaster/LevelData/Tut3.tres" id="6_2t5ai"]
 [ext_resource type="Resource" uid="uid://dip2r104lfik3" path="res://Scenes/LevelMaster/LevelData/TutFin.tres" id="7_otxae"]
+[ext_resource type="AudioStream" uid="uid://cebyoea77kl5s" path="res://Scenes/LevelMaster/MushWin.wav" id="11_2t5ai"]
+[ext_resource type="PackedScene" uid="uid://c8lwdgafqtkla" path="res://Scenes/MainMenu/button_click.tscn" id="13_3t85n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe7c7"]
 bg_color = Color(0.024660021, 0.00089999917, 0.09, 0)
@@ -318,7 +320,13 @@ offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Win" type="AudioStreamPlayer" parent="UI/LevelFinish" unique_id=1995977564]
+stream = ExtResource("11_2t5ai")
+volume_db = 15.0
+
 [node name="DebugMenu" parent="UI" unique_id=729666087 instance=ExtResource("2_3grtt")]
 visible = false
+
+[node name="ButtonClick" parent="." unique_id=1420810111 instance=ExtResource("13_3t85n")]
 
 [connection signal="button_down" from="UI/LevelFinish/NextLevel" to="." method="_on_next_level_button_down"]

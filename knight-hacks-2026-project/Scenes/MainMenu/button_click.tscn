@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c8lwdgafqtkla"]
+
+[ext_resource type="AudioStream" uid="uid://xvmw1lymbgj8" path="res://Scenes/MainMenu/buttonPress.wav" id="1_daqyu"]
+
+[node name="ButtonClick" type="AudioStreamPlayer" unique_id=1420810111]
+stream = ExtResource("1_daqyu")
+volume_db = 12.772

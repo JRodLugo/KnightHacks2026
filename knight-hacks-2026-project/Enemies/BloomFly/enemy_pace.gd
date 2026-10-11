@@ -60,6 +60,7 @@ func _physics_process(delta: float) -> void:
 func movement_handler(delta) -> void:
 	if (!nav_agent.is_target_reached()):
 		is_moving = true;
+		$Move.play()
 		var next_pos : Vector2 = to_local(nav_agent.get_next_path_position());
 		next_pos = next_pos.normalized();
 		var dist_to_target : float = global_position.distance_to(enemy_positions[position_index]);
@@ -84,6 +85,7 @@ func movement_handler(delta) -> void:
 			sprite.flip_h = false;
 	else:
 		is_moving = false;
+		$Idle.play()
 		anim_player.play("bloomfly/idle");
 		velocity = Vector2(); # stop moving immediately
 
