@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_h1y8g"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="5_1em4s"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="6_loxcm"]
+[ext_resource type="Texture2D" uid="uid://8gep7bucpxaj" path="res://assets/sprite/Ground_TileV1.webp" id="6_oq2jp"]
 [ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="7_euos0"]
-[ext_resource type="Texture2D" uid="uid://coxgh1mf8kxng" path="res://assets/sprite/grass singe.webp" id="8_bor82"]
 [ext_resource type="Script" uid="uid://mc8hrt0xxmjg" path="res://addons/rmsmartshape/shapes/mesh_cache.gd" id="9_ucjya"]
 [ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="10_l36fa"]
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_tcm2s"]
@@ -13,28 +13,24 @@
 
 [sub_resource type="Resource" id="Resource_na6ls"]
 script = ExtResource("5_1em4s")
-position = Vector2(23.613708, 235.59918)
+position = Vector2(-946.2512, 82.799866)
 
 [sub_resource type="Resource" id="Resource_fjxbk"]
 script = ExtResource("5_1em4s")
-position = Vector2(3663.7754, 249.61755)
+position = Vector2(3686.0151, 55.009033)
 
 [sub_resource type="Resource" id="Resource_3jhf0"]
 script = ExtResource("5_1em4s")
-position = Vector2(3643.6238, 655.3861)
+position = Vector2(3683.023, 676.0707)
 
 [sub_resource type="Resource" id="Resource_jl3d8"]
 script = ExtResource("5_1em4s")
-position = Vector2(-934.8288, 683.4311)
+position = Vector2(-936.2077, 708.1818)
 texture_idx = -8
 
 [sub_resource type="Resource" id="Resource_58k54"]
 script = ExtResource("5_1em4s")
-position = Vector2(23.613708, 235.59918)
-
-[sub_resource type="Resource" id="Resource_oq2jp"]
-script = ExtResource("5_1em4s")
-position = Vector2(-948.86035, 263.66797)
+position = Vector2(-946.2512, 82.799866)
 
 [sub_resource type="Resource" id="Resource_e0n1a"]
 script = ExtResource("6_loxcm")
@@ -43,42 +39,41 @@ _points = {
 1: SubResource("Resource_fjxbk"),
 2: SubResource("Resource_3jhf0"),
 3: SubResource("Resource_jl3d8"),
-4: SubResource("Resource_58k54"),
-7: SubResource("Resource_oq2jp")
+4: SubResource("Resource_58k54")
 }
-_point_order = PackedInt32Array(0, 1, 2, 3, 7, 4)
+_point_order = PackedInt32Array(0, 1, 2, 3, 4)
 _constraints = {
 Vector2i(0, 4): 15
 }
 _next_key = 8
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rujob"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y61qw"]
 _surfaces = [{
-"aabb": AABB(-948.86035, 235.59918, 0, 4612.6357, 447.8319, 1e-05),
-"attribute_data": PackedByteArray("/////wvqqUA1Obk+C+qpQDU5uT7/////y/qoQGMocz/L+qhAYyhzP//////jaq2/F5B9P+Nqrb8XkH0//////z4FsL83psM+PgWwvzemwz7/////LC0MPUnSrj4sLQw9SdKuPg=="),
+"aabb": AABB(-946.2512, 55.009033, 0, 4632.2666, 653.1728, 1e-05),
+"attribute_data": PackedByteArray("/////xXyqkDwRaM9FfKqQPBFoz3/////j86qQADVej+PzqpAANV6P/////9frK2/dF+DP1+srb90X4M//////1aJr792wvU9Vomvv3bC9T0="),
 "format": 34359742527,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAAACAAMAAwAEAAQABAAAAAMA"),
+"index_count": 9,
+"index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 5,
-"vertex_data": PackedByteArray("aPxkRRieeUMAAAAA+7ljRbbYI0QAAAAAC7VpxJfbKkQAAAAAEDdtxIDVg0MAAAAA4Oi8QWSZa0MAAAAA/////////7//////////v/////////+//////////7//////////vw==")
+"vertex_count": 4,
+"vertex_data": PackedByteArray("PmBmRUAJXEIAAAAAXjBmRYYEKUQAAAAASw1qxKMLMUQAAAAAFJBsxIiZpUIAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_3e35u"]
+[sub_resource type="Resource" id="Resource_q802v"]
 script = ExtResource("7_euos0")
-texture = ExtResource("8_bor82")
-mesh = SubResource("ArrayMesh_rujob")
+texture = ExtResource("6_oq2jp")
+mesh = SubResource("ArrayMesh_y61qw")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_fiah5"]
+[sub_resource type="Resource" id="Resource_dcs56"]
 script = ExtResource("9_ucjya")
-meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_3e35u")])
+meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_q802v")])
 
 [sub_resource type="Resource" id="Resource_0lcl8"]
 script = ExtResource("11_tcm2s")
 _edge_meta_materials = Array[ExtResource("10_l36fa")]([null])
-fill_textures = Array[Texture2D]([ExtResource("8_bor82"), null])
+fill_textures = Array[Texture2D]([ExtResource("6_oq2jp")])
 
 [node name="Level 1" type="Node2D" unique_id=1517946396]
 
@@ -86,12 +81,13 @@ fill_textures = Array[Texture2D]([ExtResource("8_bor82"), null])
 position = Vector2(456, -148)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1608625673]
+position = Vector2(-17, 167)
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D" unique_id=1033871373]
 position = Vector2(-71, -260)
 script = ExtResource("4_h1y8g")
 _points = SubResource("Resource_e0n1a")
-_mesh_cache = SubResource("Resource_fiah5")
+_mesh_cache = SubResource("Resource_dcs56")
 shape_material = SubResource("Resource_0lcl8")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
@@ -99,7 +95,7 @@ metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=257258134]
 position = Vector2(3.365265, 338.28632)
 scale = Vector2(1.0081056, 0.61839306)
-polygon = PackedVector2Array(-50.34349, -586.4994, 3560.5498, -563.8303, 3540.56, 92.335754, -1001.0797, 137.6872, -1014.9984, -541.1095)
+polygon = PackedVector2Array(-1012.4103, -833.59033, 3582.6106, -878.53076, 3579.6426, 125.78461, -1002.4475, 177.71136)
 
 [node name="FinishFlower" parent="." unique_id=1087659301 instance=ExtResource("11_y61qw")]
-position = Vector2(2585, -108)
+position = Vector2(2588, -148)
