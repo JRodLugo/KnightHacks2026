@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://dip2r104lfik3" path="res://Scenes/LevelMaster/LevelData/TutFin.tres" id="7_otxae"]
 [ext_resource type="AudioStream" uid="uid://cebyoea77kl5s" path="res://Scenes/LevelMaster/MushWin.wav" id="11_2t5ai"]
 [ext_resource type="PackedScene" uid="uid://c8lwdgafqtkla" path="res://Scenes/MainMenu/button_click.tscn" id="13_3t85n"]
+[ext_resource type="AudioStream" uid="uid://b8oib6si3owwt" path="res://assets/music/track(1).wav" id="14_fsihh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe7c7"]
 bg_color = Color(0.024660021, 0.00089999917, 0.09, 0)
@@ -328,5 +329,10 @@ volume_db = 15.0
 visible = false
 
 [node name="ButtonClick" parent="." unique_id=1420810111 instance=ExtResource("13_3t85n")]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1262405010]
+stream = ExtResource("14_fsihh")
+volume_db = -7.0
+autoplay = true
 
 [connection signal="button_down" from="UI/LevelFinish/NextLevel" to="." method="_on_next_level_button_down"]

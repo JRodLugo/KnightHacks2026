@@ -106,6 +106,7 @@ func change_anim(anim: String):
 	%MainSprite.play(anim)
 
 func reset_player(): # no real use yet but we'll see
+	$Crystal.play()
 	$RightArmPivot.visible = true
 	$LeftArmPivot.visible = true
 	$RightLegPivot.visible = true
@@ -128,7 +129,10 @@ func kill():
 	canMoveLeft = false
 	canMoveRight = false
 	change_anim("death")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(.5).timeout
+	$BoomBoom.play("explode")
+	$Spore.play()
+	await get_tree().create_timer(.5).timeout
 	restart_level.emit()
 	
 func limb_explode(given_position: Vector2):
