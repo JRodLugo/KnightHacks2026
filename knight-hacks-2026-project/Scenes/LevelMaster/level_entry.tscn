@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dctcahscxrwhr" path="res://Scenes/SettingsMenu/settings.tres" id="1_4ibsa"]
 [ext_resource type="Theme" uid="uid://dv65ia60vg3jj" path="res://Scenes/MainMenu/buttons.tres" id="3_5sxhn"]
+[ext_resource type="Texture2D" uid="uid://bkx672hidouqo" path="res://assets/background.png" id="3_fvb4p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gys1j"]
 bg_color = Color(0.079420015, 0.0056999945, 0.19, 0)
@@ -12,43 +13,87 @@ border_width_bottom = 5
 border_color = Color(0.43137255, 0.3019608, 0.79607844, 1)
 
 [node name="LevelEntry" type="Panel" unique_id=1917596584]
-custom_minimum_size = Vector2(0, 60)
-custom_maximum_size = Vector2(-1, 60)
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 62.0
+custom_minimum_size = Vector2(0, 318)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -159.0
+offset_right = 180.0
+offset_bottom = 159.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_4ibsa")
 theme_override_styles/panel = SubResource("StyleBoxFlat_gys1j")
 
 [node name="LevelTitle" type="Label" parent="." unique_id=748303486]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 16.0
-offset_top = -18.0
-offset_right = 358.0
-offset_bottom = 19.0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 7.0
+offset_right = 171.0
+offset_bottom = 44.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 27
 text = "LEVEL TEXT PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelStats" type="Label" parent="." unique_id=1972808177]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = 75.0
+offset_right = 171.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Limbs Kept: 0 | Buds squashed: 0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayLevel" type="Button" parent="." unique_id=1250043954]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -248.0
-offset_top = -20.0
-offset_right = -13.0
-offset_bottom = 21.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -46.0
+offset_right = 162.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("3_5sxhn")
 theme_override_font_sizes/font_size = 32
 text = "PLAY"
+
+[node name="Thumbnail" type="TextureRect" parent="." unique_id=314149011]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -110.0
+offset_right = 152.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fvb4p")
+expand_mode = 1
 
 [connection signal="button_down" from="PlayLevel" to="." method="_on_play_level_button_down"]

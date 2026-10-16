@@ -9,11 +9,19 @@ var levelEntry: PackedScene = preload("res://Scenes/LevelMaster/level_entry.tscn
 var collected: int = 0
 
 func _ready():
+	%SwipeAnim.get_parent().visible = true
+	DataPersistence.dataTable.resize(levels.size())
 	for level in levels:
 		var newEntry = levelEntry.instantiate()
+		var limbsKept = -1; var collectiblesGot = -1;
+		if DataPersistence.dataTable.get(level.index):
+			limbsKept = DataPersistence.dataTable[level.index][0]
+			collectiblesGot = DataPersistence.dataTable[level.index][1]
 		newEntry.get_node("LevelTitle").set_text(level.level_name)
+		newEntry.get_node("LevelStats").set_text("Limbs kept: %d | Buds squashed: %d/%d" % [limbsKept, collectiblesGot, level.collectible_amount])
+		newEntry.get_node("Thumbnail").texture = level.thumbnail
 		newEntry.get_node("PlayLevel").button_down.connect(func(): $ButtonClick.play(); currentLevelData = level; restart())
-		$UI/LevelSelect/Entries/MarginContainer/VBoxContainer.add_child(newEntry)
+		$UI/LevelSelect/Entries/MarginContainer/ScrollContainer/GridContainer.add_child(newEntry)
 		if levels[0].level_name == level.level_name: newEntry.get_node("PlayLevel").grab_focus()
 	%SwipeAnim.play("swipe_out")
 
@@ -35,9 +43,19 @@ func restart():
 
 func level_finish():
 	get_tree().paused = true
+	var limbCount = get_player_limb_count()
+	
+	# Saving data
+	var previousData = DataPersistence.dataTable.get(currentLevelData.index)
+	if not previousData: previousData = [0, 0] # just making it 0,0 so the new stuff overrides since there isn't any old stuff
+	var newLimbsKept = limbCount if previousData[0] < limbCount else previousData[0]
+	var newCollected = collected if previousData[1] < collected else previousData[1]
+	DataPersistence.dataTable[currentLevelData.index] = [newLimbsKept, newCollected]
+	
+	# Win logic and setting up UI
 	%LevelFinish.get_node("Win").play()
 	%LevelFinish.visible = true
-	%LevelFinish.get_node("LimbsKept").set_text("Limbs kept:   " + str(get_player_limb_count()))
+	%LevelFinish.get_node("LimbsKept").set_text("Limbs kept:   " + str(limbCount))
 	%LevelFinish.get_node("Collectibles").set_text("Buds squashed:   " + str(collected)+"/"+str(currentLevelData.collectible_amount))
 	%LevelFinish.get_node("NextLevel").grab_focus()
 	%LFAnim.play("slide_in")

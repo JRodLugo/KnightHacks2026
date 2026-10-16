@@ -3,10 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://c1q42408so63h" path="res://levels/tut(1).tscn" id="1_d5vnq"]
 [ext_resource type="Resource" uid="uid://1q4si7urpypi" path="res://Scenes/LevelMaster/LevelData/Tut2.tres" id="2_ktygj"]
 [ext_resource type="Script" uid="uid://cwsqppim08cap" path="res://scripts/level_data.gd" id="2_nygse"]
+[ext_resource type="Texture2D" uid="uid://8gep7bucpxaj" path="res://assets/sprite/Ground_TileV1.webp" id="4_ktygj"]
 
 [resource]
 script = ExtResource("2_nygse")
+thumbnail = ExtResource("4_ktygj")
 level_name = "Tutorial 1"
 level_scene = ExtResource("1_d5vnq")
 next = ExtResource("2_ktygj")
+index = 1
 metadata/_custom_type_script = "uid://cwsqppim08cap"

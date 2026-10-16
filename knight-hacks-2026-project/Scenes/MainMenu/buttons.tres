@@ -35,6 +35,9 @@ border_color = Color(0.12955844, 0.1295585, 0.12955835, 1)
 corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33jen"]
+bg_color = Color(0, 0, 0, 1)
+
 [resource]
 default_font = ExtResource("1_mcqx7")
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
@@ -44,3 +47,4 @@ Button/styles/focus = SubResource("StyleBoxFlat_ihsrk")
 Button/styles/hover = SubResource("StyleBoxFlat_mcqx7")
 Button/styles/normal = SubResource("StyleBoxFlat_adu2g")
 Button/styles/pressed = SubResource("StyleBoxFlat_uslqc")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_33jen")

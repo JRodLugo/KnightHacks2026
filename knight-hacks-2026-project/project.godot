@@ -20,6 +20,10 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/image="uid://3jdvqifrhihg"
 config/icon="uid://77glkvansy2v"
 
+[autoload]
+
+DataPersistence="*uid://cog88pnhi4sho"
+
 [display]
 
 window/stretch/mode="canvas_items"
