@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bhnk3p4fmj1y1" path="res://tut(final).tscn" id="1_gkvgd"]
 [ext_resource type="Script" uid="uid://cwsqppim08cap" path="res://scripts/level_data.gd" id="2_tducq"]
+[ext_resource type="Texture2D" uid="uid://bo2cfhubgvc1r" path="res://assets/sprite/Bramble.webp" id="3_tducq"]
 
 [resource]
 script = ExtResource("2_tducq")
+thumbnail = ExtResource("3_tducq")
 level_name = "Final Tutorial"
 level_scene = ExtResource("1_gkvgd")
+index = 4
 metadata/_custom_type_script = "uid://cwsqppim08cap"

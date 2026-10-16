@@ -183,15 +183,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelSelect/Entries/MarginContainer" unique_id=1366039965]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/LevelSelect/Entries/MarginContainer" unique_id=270811917]
+layout_mode = 2
+theme = ExtResource("3_op2tr")
+
+[node name="GridContainer" type="GridContainer" parent="UI/LevelSelect/Entries/MarginContainer/ScrollContainer" unique_id=1392905068]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="LevelEntry" parent="UI/LevelSelect/Entries/MarginContainer/ScrollContainer/GridContainer" unique_id=1917596584 instance_placeholder="res://Scenes/LevelMaster/level_entry.tscn"]
 layout_mode = 2
 
 [node name="ScreenSwipe" type="ColorRect" parent="UI" unique_id=1175082671]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
