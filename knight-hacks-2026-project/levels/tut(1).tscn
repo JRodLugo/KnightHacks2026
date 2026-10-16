@@ -54,7 +54,7 @@ Vector2i(0, 4): 15
 }
 _next_key = 8
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_1em4s"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h1y8g"]
 _surfaces = [{
 "aabb": AABB(-3396.885, 89.18652, 0, 9528.49, 621.06165, 1e-05),
 "attribute_data": PackedByteArray("/////6EuDkGkWwQ+oS4OQaRbBD7/////3hwOQZXBgz/eHA5BlcGDP/////8fIpzALoOCPx8inMAug4I//////2WJncAqABI+ZYmdwCoAEj4="),
@@ -67,15 +67,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("15y/RYBfskIAAAAA54S/ReKPMUQAAAAA+2lSxcniL0QAAAAAKU5UxTjCxEIAAAAA/////////7//////////v/////////+//////////78=")
 }]
 
-[sub_resource type="Resource" id="Resource_loxcm"]
+[sub_resource type="Resource" id="Resource_1em4s"]
 script = ExtResource("7_euos0")
 texture = ExtResource("6_oq2jp")
-mesh = SubResource("ArrayMesh_1em4s")
+mesh = SubResource("ArrayMesh_h1y8g")
 z_index = -10
 
-[sub_resource type="Resource" id="Resource_euos0"]
+[sub_resource type="Resource" id="Resource_loxcm"]
 script = ExtResource("9_ucjya")
-meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_loxcm")])
+meshes = Array[ExtResource("7_euos0")]([SubResource("Resource_1em4s")])
 
 [sub_resource type="Resource" id="Resource_0lcl8"]
 script = ExtResource("11_tcm2s")
@@ -182,19 +182,19 @@ texture = ExtResource("1_dcs56")
 [node name="Player" parent="." unique_id=517375119 groups=["Player"] instance=ExtResource("1_q802v")]
 position = Vector2(456, -148)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1608625673]
+[node name="ground" type="StaticBody2D" parent="." unique_id=1608625673]
 position = Vector2(-17, 167)
 
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D" unique_id=1033871373]
+[node name="SS2D_Shape" type="Node2D" parent="ground" unique_id=1033871373]
 position = Vector2(-71, -260)
 script = ExtResource("4_h1y8g")
 _points = SubResource("Resource_e0n1a")
-_mesh_cache = SubResource("Resource_euos0")
+_mesh_cache = SubResource("Resource_loxcm")
 shape_material = SubResource("Resource_0lcl8")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=257258134]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ground" unique_id=257258134]
 position = Vector2(3.365265, 338.28632)
 scale = Vector2(1.0081056, 0.61839306)
 polygon = PackedVector2Array(-3443.3398, -808.3968, 6008.537, -823.26245, 6005.5684, 181.05298, -3413.322, 170.21094)

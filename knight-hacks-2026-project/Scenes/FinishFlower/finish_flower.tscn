@@ -2,19 +2,70 @@
 
 [ext_resource type="Texture2D" uid="uid://b7ivtjo4pvvss" path="res://Scenes/FinishFlower/Rough_TileMapV3.png" id="1_47twy"]
 [ext_resource type="Script" uid="uid://dx5d0rldcjh0k" path="res://Scenes/FinishFlower/finish_flower.gd" id="1_aqgyd"]
+[ext_resource type="Texture2D" uid="uid://d0sxuero6mf86" path="res://Scenes/FinishFlower/bloomFlower_sprSheet.png" id="2_8twwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogwta"]
+atlas = ExtResource("2_8twwj")
+region = Rect2(0, 0, 336, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twshr"]
+atlas = ExtResource("2_8twwj")
+region = Rect2(336, 0, 336, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i36ck"]
+atlas = ExtResource("2_8twwj")
+region = Rect2(672, 0, 336, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vqgc"]
+atlas = ExtResource("2_8twwj")
+region = Rect2(1008, 0, 336, 560)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdi28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogwta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twshr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i36ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vqgc")
+}],
+"loop": 1,
+"name": &"IDLE",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqcak"]
-size = Vector2(122, 192)
+size = Vector2(124, 192)
 
 [node name="FinishFlower" type="Area2D" unique_id=1087659301]
 script = ExtResource("1_aqgyd")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=612253804]
+position = Vector2(1.500001, 4)
+scale = Vector2(0.37202382, 0.33214283)
+sprite_frames = SubResource("SpriteFrames_fdi28")
+animation = &"IDLE"
+autoplay = "IDLE"
+frame_progress = 0.3805461
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105484877]
+visible = false
 scale = Vector2(1.7087379, 1.708738)
 texture = ExtResource("1_47twy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74862897]
-position = Vector2(0, 5)
+position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_lqcak")
 debug_color = Color(0.6896485, 0.49873078, 0, 0.41960785)
 

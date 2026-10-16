@@ -194,11 +194,11 @@ position = Vector2(4933.3296, 1247.2147)
 
 [sub_resource type="Resource" id="Resource_rlggv"]
 script = ExtResource("2_adlev")
-position = Vector2(4472.41, 2705.972)
+position = Vector2(4475.1953, 2900.9104)
 
 [sub_resource type="Resource" id="Resource_xwnc2"]
 script = ExtResource("2_adlev")
-position = Vector2(4071.4707, 2688.2498)
+position = Vector2(4065.9011, 2872.0488)
 
 [sub_resource type="Resource" id="Resource_8eefr"]
 script = ExtResource("2_adlev")
@@ -228,15 +228,15 @@ _next_key = 17
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yf2v5"]
 _surfaces = [{
-"aabb": AABB(4071.4707, -2731.0876, 0, 2238.9854, 5733.6875, 1e-05),
-"attribute_data": PackedByteArray("/////xOvXEFUQGFBE69cQVRAYUH/////lXMOQfffXkGVcw5B999eQf////9OYg5BTKtJQU5iDkFMq0lB/////8NnHEGm/0pBw2ccQab/SkH/////XM4bQR8zu0BczhtBHzO7QP////8yhixBBSG7QDKGLEEFIbtA/////0c4LUGlR0tBRzgtQaVHS0H/////lqo9QdpMS0GWqj1B2kxLQf////8qGlpB/uFMwSoaWkH+4UzB/////3XYO0FWqUvBddg7QVapS8E="),
+"aabb": AABB(4065.9011, -2731.0876, 0, 2244.555, 5733.6875, 1e-05),
+"attribute_data": PackedByteArray("/////5VzDkH3315BlXMOQfffXkH/////cTAOQR91V0FxMA5BH3VXQf////+ygBxBZ59ZQbKAHEFnn1lB/////1zOG0EfM7tAXM4bQR8zu0D/////MoYsQQUhu0AyhixBBSG7QP////8Tr1xBVEBhQROvXEFUQGFB/////0c4LUGlR0tBRzgtQaVHS0H/////lqo9QdpMS0GWqj1B2kxLQf////8qGlpB/uFMwSoaWkH+4UzB/////3XYO0FWqUvBddg7QVapS8E="),
 "format": 34359742527,
 "index_count": 27,
-"index_data": PackedByteArray("AAABAAIAAwAEAAUAAAACAAMAAwAFAAYAAAADAAYAAAAGAAcACAAAAAcABwAJAAkACQAIAAcA"),
+"index_data": PackedByteArray("AAABAAIAAgADAAQABQAAAAIAAgAEAAYABQACAAYABQAGAAcACAAFAAcABwAJAAkACQAIAAcA"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 10,
-"vertex_data": PackedByteArray("pjPFRZmpO0UAAAAAaZZ+RcGuOUUAAAAAiHd+Rf8DKEUAAAAASMOLRY0fKUUAAAAANDqLRfT1m0QAAAAAoyqaRd/mm0QAAAAAxcmaRYhbKUUAAAAAE3ypRd9fKUUAAAAAEOXCRWexKsUAAAAAjNunReysKcUAAAAA/////////7//////////v/////////+///////7//7///////v//v//////+//+///////7//7///////v//v//////+//+///////7//78=")
+"vertex_data": PackedByteArray("aZZ+RcGuOUUAAAAAax5+RciAM0UAAAAAkNmLRZFONUUAAAAANDqLRfT1m0QAAAAAoyqaRd/mm0QAAAAApjPFRZmpO0UAAAAAxcmaRYhbKUUAAAAAE3ypRd9fKUUAAAAAEOXCRWexKsUAAAAAjNunReysKcUAAAAA/////////7//////////v/////////+//////////7//////////v/////////+///////7//7///////v//v//////+//+///////7//78=")
 }]
 
 [sub_resource type="Resource" id="Resource_rw41a"]
@@ -310,6 +310,7 @@ texture_idx = 21
 script = ExtResource("2_adlev")
 position = Vector2(4008.5469, 2828.3364)
 texture_idx = 12
+width = 6.0
 
 [sub_resource type="Resource" id="Resource_vb0f7"]
 script = ExtResource("3_337vv")
@@ -411,10 +412,10 @@ sources/0 = SubResource("TileSetAtlasSource_whucc")
 
 [node name="Node2D" type="Node2D" unique_id=1550178291]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=337173692]
+[node name="Top_lvl" type="StaticBody2D" parent="." unique_id=337173692]
 position = Vector2(-510, -38)
 
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D" unique_id=1176665449]
+[node name="SS2D_Shape" type="Node2D" parent="Top_lvl" unique_id=1176665449]
 position = Vector2(116, 148)
 rotation = 0.01921685
 script = ExtResource("1_ngnpk")
@@ -424,7 +425,7 @@ shape_material = SubResource("Resource_c5gc3")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=34740131]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Top_lvl" unique_id=34740131]
 polygon = PackedVector2Array(-4193.019, 482.7237, -4196.467, 50.335625, -254.94391, 48.01529, 2941.4329, 68.767105, 2937.2634, 554.167)
 
 [node name="Chomper7" parent="." unique_id=2127503277 instance=ExtResource("15_7rfui")]
@@ -453,85 +454,10 @@ position = Vector2(323, -124)
 position = Vector2(2035, -225)
 scale = Vector2(2, 2)
 
-[node name="BgVines" type="Sprite2D" parent="." unique_id=95478766]
-position = Vector2(4608, 704)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines4" type="Sprite2D" parent="." unique_id=622634451]
-position = Vector2(4544, 704)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines5" type="Sprite2D" parent="." unique_id=660585622]
-position = Vector2(4441, 704)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines6" type="Sprite2D" parent="." unique_id=374136560]
-position = Vector2(4352, 704)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines7" type="Sprite2D" parent="." unique_id=1420387518]
-position = Vector2(3970.0002, 3067)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines8" type="Sprite2D" parent="." unique_id=931805482]
-position = Vector2(4030, 3096)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines9" type="Sprite2D" parent="." unique_id=980937588]
-position = Vector2(4096.0005, 3096)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines10" type="Sprite2D" parent="." unique_id=1531633895]
-position = Vector2(4162.0005, 3061)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines11" type="Sprite2D" parent="." unique_id=56224891]
-position = Vector2(4505.0005, 3008)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines12" type="Sprite2D" parent="." unique_id=156014985]
-position = Vector2(4573, 3067)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines13" type="Sprite2D" parent="." unique_id=1192057189]
-position = Vector2(4677.0005, 3008.0002)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines14" type="Sprite2D" parent="." unique_id=1175347304]
-position = Vector2(4720.0005, 3072)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines15" type="Sprite2D" parent="." unique_id=82811221]
-position = Vector2(4864.0005, 3048)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines16" type="Sprite2D" parent="." unique_id=1355391752]
-position = Vector2(4995.0005, 3014.0002)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="BgVines17" type="Sprite2D" parent="." unique_id=1235683788]
-position = Vector2(3721.0005, 2278.0002)
-scale = Vector2(3.2343743, 3.7109358)
-texture = ExtResource("13_gswk4")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=324619934]
+[node name="Floating_Grass" type="StaticBody2D" parent="." unique_id=324619934]
 position = Vector2(83, 150)
 
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D2" unique_id=1019203590]
+[node name="SS2D_Shape" type="Node2D" parent="Floating_Grass" unique_id=1019203590]
 position = Vector2(-51, -204)
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_7nyxr")
@@ -540,14 +466,14 @@ shape_material = SubResource("Resource_qiqrj")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2" unique_id=944719242]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floating_Grass" unique_id=944719242]
 position = Vector2(0, -11)
 polygon = PackedVector2Array(3380.4985, -173.48352, 4611.4365, -174.94287, 4636.8193, 524.26514, 3381.6973, 508.4287)
 
-[node name="column" type="StaticBody2D" parent="." unique_id=1552955596]
+[node name="right_column" type="StaticBody2D" parent="." unique_id=1552955596]
 position = Vector2(-218, 64)
 
-[node name="SS2D_Shape" type="Node2D" parent="column" unique_id=1931997230]
+[node name="SS2D_Shape" type="Node2D" parent="right_column" unique_id=1931997230]
 z_index = 11
 script = ExtResource("1_ngnpk")
 _points = SubResource("Resource_6ty1f")
@@ -556,18 +482,18 @@ shape_material = SubResource("Resource_40e1t")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="column" unique_id=1377115680]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="right_column" unique_id=1377115680]
 z_index = 5
-polygon = PackedVector2Array(5371.4434, -2714.8076, 6236.633, -2731.0876, 6310.456, 3002.5999, 4073.4006, 2970.922, 4071.4707, 2688.2498, 4472.41, 2705.972, 4455.2754, 1247.686, 4933.3296, 1247.2147, 4953.221, 2709.7207, 5423.5093, 2709.992)
+polygon = PackedVector2Array(5371.4434, -2714.8076, 6236.633, -2731.0876, 6310.456, 3002.5999, 4073.4006, 2970.922, 4065.9011, 2872.0488, 4475.1953, 2900.9104, 4455.2754, 1247.686, 4933.3296, 1247.2147, 4953.221, 2709.7207, 5423.5093, 2709.992)
 
-[node name="Essence" parent="column" unique_id=127966517 instance=ExtResource("10_gswk4")]
+[node name="Essence" parent="right_column" unique_id=127966517 instance=ExtResource("10_gswk4")]
 position = Vector2(4248, 1825)
 scale = Vector2(2, 2)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=244126307]
+[node name="Bottom_lvl" type="StaticBody2D" parent="." unique_id=244126307]
 position = Vector2(-451, -84)
 
-[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D3" unique_id=1567086099]
+[node name="SS2D_Shape" type="Node2D" parent="Bottom_lvl" unique_id=1567086099]
 position = Vector2(29, 522)
 rotation = -0.0012132395
 script = ExtResource("1_ngnpk")
@@ -577,257 +503,452 @@ shape_material = SubResource("Resource_chulx")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=1543943573]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bottom_lvl" unique_id=1543943573]
 polygon = PackedVector2Array(2880.834, 578.52234, 2900.7317, 1776.3881, 4034.8708, 1760.9915, 4035.5278, 1361.4109, 4291.7476, 1363.9324, 4291.3525, 2387.4155, 4035.6904, 2387.3105, 4040.9753, 3345.4712, 2964.5986, 3365.06, -4388.818, 3249.6453, -4552.949, 490.36688)
 
-[node name="Bramble" type="Sprite2D" parent="." unique_id=375320734]
-modulate = Color(1, 1, 1, 0.8)
+[node name="Background" type="Node2D" parent="." unique_id=1780646862]
 position = Vector2(2476, 228)
 scale = Vector2(0.15434794, 0.17608698)
-texture = ExtResource("16_6q801")
 
-[node name="Bramble4" type="Sprite2D" parent="." unique_id=732995842]
+[node name="Vines" type="Node2D" parent="Background" unique_id=1763774249]
+position = Vector2(13812.949, 2703.2097)
+scale = Vector2(20.95509, 21.074448)
+
+[node name="BgVines" type="Sprite2D" parent="Background/Vines" unique_id=95478766]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines4" type="Sprite2D" parent="Background/Vines" unique_id=622634451]
+position = Vector2(-19.787476, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines5" type="Sprite2D" parent="Background/Vines" unique_id=660585622]
+position = Vector2(-51.632935, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines6" type="Sprite2D" parent="Background/Vines" unique_id=374136560]
+position = Vector2(-79.14978, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines7" type="Sprite2D" parent="Background/Vines" unique_id=1420387518]
+position = Vector2(-197.25598, 636.7666)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines8" type="Sprite2D" parent="Background/Vines" unique_id=931805482]
+position = Vector2(-178.70532, 644.5813)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines9" type="Sprite2D" parent="Background/Vines" unique_id=980937588]
+position = Vector2(-158.29944, 644.5813)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines10" type="Sprite2D" parent="Background/Vines" unique_id=1531633895]
+position = Vector2(-137.89355, 635.1497)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines11" type="Sprite2D" parent="Background/Vines" unique_id=56224891]
+position = Vector2(-31.845337, 620.8676)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines12" type="Sprite2D" parent="Background/Vines" unique_id=156014985]
+position = Vector2(-10.821289, 636.7666)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines13" type="Sprite2D" parent="Background/Vines" unique_id=1192057189]
+position = Vector2(21.333496, 620.8677)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines14" type="Sprite2D" parent="Background/Vines" unique_id=1175347304]
+position = Vector2(34.628174, 638.11395)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines15" type="Sprite2D" parent="Background/Vines" unique_id=82811221]
+position = Vector2(79.1499, 631.6466)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines16" type="Sprite2D" parent="Background/Vines" unique_id=1355391752]
+position = Vector2(119.65234, 622.48456)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="BgVines17" type="Sprite2D" parent="Background/Vines" unique_id=1235683788]
+position = Vector2(-274.24146, 424.15186)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("13_gswk4")
+
+[node name="Forest_Back(1)" type="Node2D" parent="Background" unique_id=1363422463]
+modulate = Color(0.84, 0.52766, 0.025199976, 1)
+z_index = -39
+position = Vector2(27450.973, 340.74072)
+scale = Vector2(6.47887, 5.679012)
+
+[node name="Background2" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=1585137362]
+position = Vector2(-8847.223, -829.5)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background4" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=2140646841]
+position = Vector2(-2476.4438, -828.99994)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background3" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=1056569343]
+position = Vector2(-4419.444, -829)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=883830027]
+position = Vector2(-6351.9995, -766)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background5" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=142531205]
+position = Vector2(-8736.223, -2338.9)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background6" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=1133441850]
+position = Vector2(-2365.4438, -2338.4)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background7" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=1771551216]
+position = Vector2(-4308.444, -2338.4)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background8" type="Sprite2D" parent="Background/Forest_Back(1)" unique_id=1693786750]
+position = Vector2(-6793.2217, -2338.9)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Forest_Back(2)" type="Node2D" parent="Background" unique_id=1622593292]
+modulate = Color(0.84, 0.52766, 0.025199976, 1)
+z_index = -39
+position = Vector2(-27638.86, 448.64197)
+scale = Vector2(6.47887, 5.679012)
+
+[node name="Background2" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=2063345733]
+position = Vector2(-8847.223, -829.5)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background4" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=422248731]
+position = Vector2(-2476.4438, -828.99994)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background3" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=1006684106]
+position = Vector2(-4419.444, -829)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=2058427569]
+position = Vector2(-6351.9995, -766)
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background5" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=1421608362]
+position = Vector2(-8736.223, -2338.9)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background6" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=700146330]
+position = Vector2(-2365.4438, -2338.4)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background7" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=981671557]
+position = Vector2(-4308.444, -2338.4)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Background8" type="Sprite2D" parent="Background/Forest_Back(2)" unique_id=1325201471]
+position = Vector2(-6793.2217, -2338.9)
+rotation = -3.1415927
+scale = Vector2(1.9652779, 2.1252778)
+texture = ExtResource("16_gswk4")
+
+[node name="Bramble_MASTER" type="Node2D" parent="Background" unique_id=374256867]
+
+[node name="Bramble" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=375320734]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(2739, 225)
-scale = Vector2(0.15434794, 0.17608698)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble5" type="Sprite2D" parent="." unique_id=478929011]
+[node name="Bramble4" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=732995842]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(2830.0002, 225.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(1703.9434, -17.036987)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble6" type="Sprite2D" parent="." unique_id=1665707416]
+[node name="Bramble5" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=478929011]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(2921, 228)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(2293.5215, -17.036987)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble7" type="Sprite2D" parent="." unique_id=786670970]
+[node name="Bramble6" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1665707416]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(3016.9998, 227)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(2883.0957, 0)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble8" type="Sprite2D" parent="." unique_id=408139759]
+[node name="Bramble7" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=786670970]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(3104.9998, 225)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(3505.0664, -5.678955)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble9" type="Sprite2D" parent="." unique_id=1686950299]
+[node name="Bramble8" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=408139759]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(3123.9998, 226.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(4075.207, -17.036987)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble10" type="Sprite2D" parent="." unique_id=1628319928]
+[node name="Bramble9" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1686950299]
 modulate = Color(1, 1, 1, 0.8)
-position = Vector2(3202.9998, 225.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(4198.3047, -11.35791)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble2" type="Sprite2D" parent="." unique_id=893702379]
+[node name="Bramble10" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1628319928]
+modulate = Color(1, 1, 1, 0.8)
+position = Vector2(4710.1367, -17.036987)
+scale = Vector2(1.0000002, 1)
+texture = ExtResource("16_6q801")
+
+[node name="Bramble2" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=893702379]
 modulate = Color(1, 1, 1, 0.67058825)
-position = Vector2(2557, 225.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(524.78906, -17.036987)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble3" type="Sprite2D" parent="." unique_id=1175641666]
+[node name="Bramble3" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1175641666]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(2649, 222)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(1120.8438, -34.074097)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble11" type="Sprite2D" parent="." unique_id=1805066846]
+[node name="Bramble11" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1805066846]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(3306, 223)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(5377.461, -28.39502)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble12" type="Sprite2D" parent="." unique_id=1727419628]
+[node name="Bramble12" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1727419628]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(3409.9998, 220.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(6051.2617, -45.432007)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble13" type="Sprite2D" parent="." unique_id=1071311503]
+[node name="Bramble13" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1071311503]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(3270.9998, 214)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(5150.699, -79.506226)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble14" type="Sprite2D" parent="." unique_id=1115565483]
+[node name="Bramble14" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1115565483]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(3369.9998, 220)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(5792.1094, -45.43213)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble15" type="Sprite2D" parent="." unique_id=578449721]
+[node name="Bramble15" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=578449721]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(2680.9998, 221)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(1328.166, -39.75305)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble16" type="Sprite2D" parent="." unique_id=155348654]
+[node name="Bramble16" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=155348654]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(2602, 218.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(816.3379, -56.79004)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble17" type="Sprite2D" parent="." unique_id=959197944]
+[node name="Bramble17" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=959197944]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(2516, 217)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(259.1543, -62.469116)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble18" type="Sprite2D" parent="." unique_id=1956303651]
+[node name="Bramble18" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1956303651]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4750, 229)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(14732.947, 5.678955)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble19" type="Sprite2D" parent="." unique_id=1487042292]
+[node name="Bramble19" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1487042292]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4813, 225)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(15141.117, -17.036987)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble20" type="Sprite2D" parent="." unique_id=232728712]
+[node name="Bramble20" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=232728712]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4880, 219.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(15575.201, -51.110962)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble21" type="Sprite2D" parent="." unique_id=1019357977]
+[node name="Bramble21" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1019357977]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4939, 211.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(15957.455, -96.54309)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble22" type="Sprite2D" parent="." unique_id=1152135379]
+[node name="Bramble22" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=1152135379]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(5035, 219.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(16579.426, -51.110962)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble23" type="Sprite2D" parent="." unique_id=2093689251]
+[node name="Bramble23" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=2093689251]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(5127, 217.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(17175.48, -62.468994)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble24" type="Sprite2D" parent="." unique_id=270401548]
+[node name="Bramble24" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=270401548]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4984, 218.00002)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(16249.004, -56.79004)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble25" type="Sprite2D" parent="." unique_id=977365293]
+[node name="Bramble25" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=977365293]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4848, 220)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(15367.877, -45.43213)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Bramble26" type="Sprite2D" parent="." unique_id=217767476]
+[node name="Bramble26" type="Sprite2D" parent="Background/Bramble_MASTER" unique_id=217767476]
 modulate = Color(1, 1, 1, 0.5568628)
-position = Vector2(4766, 217)
-scale = Vector2(0.15434794, 0.17608698)
+position = Vector2(14836.609, -62.469116)
+scale = Vector2(1.0000002, 1)
 texture = ExtResource("16_6q801")
 
-[node name="Underground" type="Sprite2D" parent="." unique_id=175784064]
+[node name="Underground_MASTER" type="Node2D" parent="Background" unique_id=312202121]
+
+[node name="Underground" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=175784064]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -40
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(5250.0005, 1625)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(17972.39, 7933.58)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground10" type="Sprite2D" parent="." unique_id=1891845989]
+[node name="Underground10" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1891845989]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -42
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(1306.0001, 1399)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(-7580.2764, 6650.123)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground2" type="Sprite2D" parent="." unique_id=1463556232]
+[node name="Underground2" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1463556232]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(2728, 3422)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(1632.6758, 18138.764)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground4" type="Sprite2D" parent="." unique_id=1525547872]
+[node name="Underground4" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1525547872]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(7155.9995, 5977)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(30321.102, 32648.639)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground5" type="Sprite2D" parent="." unique_id=345523721]
+[node name="Underground5" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=345523721]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(11908, 3252)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(61108.695, 17173.334)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground6" type="Sprite2D" parent="." unique_id=1151399194]
+[node name="Underground6" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1151399194]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(11925.001, 6216)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(61218.836, 34005.92)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground7" type="Sprite2D" parent="." unique_id=1031810353]
+[node name="Underground7" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1031810353]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(8553, 255)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(39372.086, 153.33337)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground8" type="Sprite2D" parent="." unique_id=1478658533]
+[node name="Underground8" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1478658533]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(2421.0002, 6353)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(-356.33594, 34783.945)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground9" type="Sprite2D" parent="." unique_id=809592338]
+[node name="Underground9" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=809592338]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(-2057.999, 4701)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(-29375.188, 25402.223)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
-[node name="Underground3" type="Sprite2D" parent="." unique_id=1854499481]
+[node name="Underground3" type="Sprite2D" parent="Background/Underground_MASTER" unique_id=1854499481]
 modulate = Color(0.40705615, 0.40705618, 0.40705615, 1)
 z_index = -27
 material = SubResource("ShaderMaterial_gswk4")
-position = Vector2(7188, 3211.0002)
-rotation = 0.009072689
-scale = Vector2(3.7234373, 4.205555)
+position = Vector2(30528.434, 16940.496)
+rotation = 0.007952658
+scale = Vector2(24.123436, 23.883694)
+skew = 0.0023977757
 texture = ExtResource("15_xm8d4")
 
 [node name="MovingPlatform" parent="." unique_id=430009440 instance=ExtResource("13_337vv")]
-position = Vector2(3795, 3412)
+position = Vector2(3795, 3525)
 targetOffset = Vector2(5000, 0)
 linger_time = 2.0
 
@@ -858,145 +979,42 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AABkACQAAAAJAAEAAFBkACUAAAAKAAEAAFBkACYAAAALAAEAAFBjACMAAAAIAAIAAFBjACQAAAAJAAIAAFBjACUAAAAKAAIAAFBiACMAAAAIAAMAAFBiACQAAAAJAAMAAFBiACUAAAAKAAMAAFBiACYAAAALAAMAAFBkAC4AAAAJAAEAAFBkAC8AAAAKAAEAAFBkADAAAAALAAEAAFBjAC0AAAAIAAIAAFBjAC4AAAAJAAIAAFBjAC8AAAAKAAIAAFBiAC0AAAAIAAMAAFBiAC4AAAAJAAMAAFBiAC8AAAAKAAMAAFBiADAAAAALAAMAAFBMADMAAAAJAAEAAFBMADQAAAAKAAEAAFBMADUAAAALAAEAAFBLADIAAAAIAAIAAFBLADMAAAAJAAIAAFBLADQAAAAKAAIAAFBKADIAAAAIAAMAAFBKADMAAAAJAAMAAFBKADQAAAAKAAMAAFBKADUAAAALAAMAAFBRABsAAAAJAAEAAFBRABwAAAAKAAEAAFBRAB0AAAALAAEAAFBQABoAAAAIAAIAAFBQABsAAAAJAAIAAFBQABwAAAAKAAIAAFBPABoAAAAIAAMAAFBPABsAAAAJAAMAAFBPABwAAAAKAAMAAFBPAB0AAAALAAMAAFBZABoAAAAIAAMAAABZABkAAAAIAAIAAABaABoAAAAJAAMAAABaABkAAAAJAAIAAABaABgAAAAJAAEAAABbABoAAAAKAAMAAABbABkAAAAKAAIAAABbABgAAAAKAAEAAABcABoAAAALAAMAAABcABgAAAALAAEAAABKABoAAAAIAAMAAABKABkAAAAIAAIAAABLABoAAAAJAAMAAABLABkAAAAJAAIAAABLABgAAAAJAAEAAABMABoAAAAKAAMAAABMABkAAAAKAAIAAABMABgAAAAKAAEAAABNABoAAAALAAMAAABNABgAAAALAAEAAAA1AA8AAAAJAAEAAFA1ABAAAAAKAAEAAFA1ABEAAAALAAEAAFA0AA4AAAAIAAIAAFA0AA8AAAAJAAIAAFA0ABAAAAAKAAIAAFAzAA4AAAAIAAMAAFAzAA8AAAAJAAMAAFAzABAAAAAKAAMAAFAzABEAAAALAAMAAFA1ABcAAAAJAAEAAFA1ABgAAAAKAAEAAFA1ABkAAAAAAAEAAFA0ABYAAAAIAAIAAFA0ABcAAAAJAAIAAFA0ABgAAAAKAAIAAFAzABYAAAAIAAMAAFAzABcAAAAJAAMAAFAzABgAAAAKAAMAAFAzABkAAAALAAMAAFBLAA0AAAAEAAcAADBKAA0AAAAFAAcAADBJAA0AAAAGAAcAADBIAA0AAAAHAAcAADBPAA0AAAAAAAcAADBOAA0AAAABAAcAADBNAA0AAAACAAcAADBMAA0AAAADAAcAADBTAA0AAAAFAAcAADBSAA0AAAAGAAcAADBRAA0AAAAHAAcAADBQAA0AAAADAAcAADBXAA0AAAAEAAcAADBWAA0AAAAFAAcAADBVAA0AAAAGAAcAADBUAA0AAAAEAAcAADBbAA0AAAADAAcAADBaAA0AAAABAAcAADBZAA0AAAACAAcAADBYAA0AAAADAAcAADBeAA0AAAAHAAcAADBdAA0AAAADAAcAADBcAA0AAAACAAcAADBgAA0AAAAFAAcAADBfAA0AAAAGAAcAADBhAA0AAAAEAAcAADAzABUAAAADAAMAAFAzABQAAAACAAMAAFAzABMAAAABAAMAAFAzABIAAAAAAAcAAFAzAA0AAAADAAcAAFAzAAwAAAACAAcAAFAzAAsAAAABAAcAAFAzAAoAAAAAAAcAAFBsAC4AAAADAAcAAGBsAC8AAAACAAcAAGBsADAAAAABAAcAAGBsADEAAAAAAAcAAGBrAC0AAAAHAAcAAGBrACwAAAAFAAcAAGBrACsAAAAEAAcAAGBrACoAAAAFAAcAAGBrACkAAAAGAAcAAGBrACgAAAAHAAcAAGBrADAAAAAEAAcAAGBrAC8AAAAFAAcAAGBrAC4AAAAGAAcAAGBrACAAAAAEAAcAAGBrAB8AAAAFAAcAAGBrAB4AAAAGAAcAAGBrAB0AAAAHAAcAAGBrAA8AAAAEAAcAAGBrAA4AAAAFAAcAAGBrAA0AAAAGAAcAAGBrAAwAAAAHAAcAAGA1ABIAAAAAAAEAAFA1ABMAAAABAAEAAFA1ABQAAAACAAEAAFA1ABUAAAADAAEAAFA0ABIAAAAAAAIAAFA0ABMAAAABAAIAAFA0ABQAAAACAAIAAFA0ABUAAAADAAIAAFA1ABoAAAABAAEAAFA1ABsAAAACAAEAAFA1ABwAAAADAAEAAFA0ABkAAAAAAAIAAFA0ABoAAAABAAIAAFA0ABsAAAACAAIAAFA0ABwAAAADAAIAAFAzABoAAAABAAMAAFAzABsAAAACAAMAAFAzABwAAAADAAMAAFBqABIAAAAAAAIAAEBpABIAAAAAAAEAAEBrABMAAAABAAMAAEBqABMAAAABAAIAAEBpABMAAAABAAEAAEBrABQAAAACAAMAAEBqABQAAAACAAIAAEBpABQAAAACAAEAAEBrABUAAAADAAMAAEBqABUAAAADAAIAAEBpABUAAAADAAEAAEA=")
 tile_set = SubResource("TileSet_g461s")
 
-[node name="Backgrounds2" type="Node2D" parent="." unique_id=1363422463]
-modulate = Color(0.84, 0.52766, 0.025199976, 1)
-z_index = -39
-position = Vector2(6713, 288)
-
-[node name="Background2" type="Sprite2D" parent="Backgrounds2" unique_id=1585137362]
-position = Vector2(-8847.223, -829.5)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background4" type="Sprite2D" parent="Backgrounds2" unique_id=2140646841]
-position = Vector2(-2476.4438, -828.99994)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background3" type="Sprite2D" parent="Backgrounds2" unique_id=1056569343]
-position = Vector2(-4419.444, -829)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background" type="Sprite2D" parent="Backgrounds2" unique_id=883830027]
-position = Vector2(-6351.9995, -766)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background5" type="Sprite2D" parent="Backgrounds2" unique_id=142531205]
-position = Vector2(-8736.223, -2338.9)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background6" type="Sprite2D" parent="Backgrounds2" unique_id=1133441850]
-position = Vector2(-2365.4438, -2338.4)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background7" type="Sprite2D" parent="Backgrounds2" unique_id=1771551216]
-position = Vector2(-4308.444, -2338.4)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background8" type="Sprite2D" parent="Backgrounds2" unique_id=1693786750]
-position = Vector2(-6793.2217, -2338.9)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Backgrounds3" type="Node2D" parent="." unique_id=1622593292]
-modulate = Color(0.84, 0.52766, 0.025199976, 1)
-z_index = -39
-position = Vector2(-1790, 307)
-
-[node name="Background2" type="Sprite2D" parent="Backgrounds3" unique_id=2063345733]
-position = Vector2(-8847.223, -829.5)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background4" type="Sprite2D" parent="Backgrounds3" unique_id=422248731]
-position = Vector2(-2476.4438, -828.99994)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background3" type="Sprite2D" parent="Backgrounds3" unique_id=1006684106]
-position = Vector2(-4419.444, -829)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background" type="Sprite2D" parent="Backgrounds3" unique_id=2058427569]
-position = Vector2(-6351.9995, -766)
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background5" type="Sprite2D" parent="Backgrounds3" unique_id=1421608362]
-position = Vector2(-8736.223, -2338.9)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background6" type="Sprite2D" parent="Backgrounds3" unique_id=700146330]
-position = Vector2(-2365.4438, -2338.4)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background7" type="Sprite2D" parent="Backgrounds3" unique_id=981671557]
-position = Vector2(-4308.444, -2338.4)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
-[node name="Background8" type="Sprite2D" parent="Backgrounds3" unique_id=1325201471]
-position = Vector2(-6793.2217, -2338.9)
-rotation = -3.1415927
-scale = Vector2(1.9652779, 2.1252778)
-texture = ExtResource("16_gswk4")
-
 [node name="Kill_Boarder" parent="." unique_id=813336665 instance=ExtResource("21_dh1wr")]
 position = Vector2(4784, 3993)
 
-[node name="BgVinesThick" type="Sprite2D" parent="." unique_id=1071153962]
+[node name="level_props" type="Node2D" parent="." unique_id=2037016677]
 position = Vector2(3669.0002, 735)
 scale = Vector2(3, 3)
+
+[node name="BgVinesThick" type="Sprite2D" parent="level_props" unique_id=1071153962]
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick2" type="Sprite2D" parent="." unique_id=35301538]
-position = Vector2(3786.0002, 738)
-scale = Vector2(3, 3)
+[node name="BgVinesThick2" type="Sprite2D" parent="level_props" unique_id=35301538]
+position = Vector2(39, 1)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick3" type="Sprite2D" parent="." unique_id=940752070]
-position = Vector2(3665.0002, 909)
-scale = Vector2(3, 3)
+[node name="BgVinesThick3" type="Sprite2D" parent="level_props" unique_id=940752070]
+position = Vector2(-1.333374, 58)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick4" type="Sprite2D" parent="." unique_id=1825999989]
-position = Vector2(3794, 920)
-scale = Vector2(3, 3)
+[node name="BgVinesThick4" type="Sprite2D" parent="level_props" unique_id=1825999989]
+position = Vector2(41.666626, 61.666687)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick5" type="Sprite2D" parent="." unique_id=618040731]
-position = Vector2(3668.0002, 1074)
-scale = Vector2(3, 3)
+[node name="BgVinesThick5" type="Sprite2D" parent="level_props" unique_id=618040731]
+position = Vector2(-0.33337402, 113)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick6" type="Sprite2D" parent="." unique_id=1597936804]
-position = Vector2(3795, 1085)
-scale = Vector2(3, 3)
+[node name="BgVinesThick6" type="Sprite2D" parent="level_props" unique_id=1597936804]
+position = Vector2(41.999878, 116.66669)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick7" type="Sprite2D" parent="." unique_id=1315330306]
-position = Vector2(3676, 1188)
-scale = Vector2(3, 3)
+[node name="BgVinesThick7" type="Sprite2D" parent="level_props" unique_id=1315330306]
+position = Vector2(2.333252, 151)
 texture = ExtResource("23_cfbek")
 
-[node name="BgVinesThick8" type="Sprite2D" parent="." unique_id=2053893270]
-position = Vector2(3769, 1189)
-scale = Vector2(3, 3)
+[node name="BgVinesThick8" type="Sprite2D" parent="level_props" unique_id=2053893270]
+position = Vector2(33.333252, 151.33334)
 texture = ExtResource("23_cfbek")
 
 [node name="BudFlower" parent="." unique_id=1499620023 instance=ExtResource("24_cfbek")]
